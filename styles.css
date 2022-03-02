@@ -1,0 +1,206 @@
+body{
+    background-color: rgba(229, 241, 201, 0.932);
+    overflow: hidden;
+}
+
+/*Page settings*/
+
+#Page1{
+    overflow-x: hidden;
+    height: 100vh;
+    background-color: aqua;
+}
+
+#Page2{
+    overflow-x: hidden;
+    height: 100vh;
+    background-color: aqua;
+}
+
+
+/*Page index */
+
+.title1{
+    text-align: center;
+}
+
+.row{
+    height: fit-content;
+}
+.home-row{
+    height: 100%;
+    pointer-events: none;
+}
+.homechar{
+    position: relative;
+    padding: 10px 10px 10px 10px;
+    border: 5px solid rgb(212, 50, 104);
+    border-radius: 10px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.button-gender{
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    pointer-events: auto;
+}
+
+.character{
+    height: 500px;
+}
+
+#homechar1{
+    background-color: aquamarine;
+}
+
+
+#homechar2{
+    background-color: yellow;
+}
+
+
+#char-home1{
+    height: 400px;
+    width: auto;
+    position: absolute;
+}
+
+
+/*animasi idle */
+
+#character1{
+    text-align: center;
+    padding: 10px;
+    height: auto;
+    position: relative;
+}
+
+#character1 img{
+    height: 400px;
+    width: auto;
+    position: absolute;
+}
+
+#character1 #eye{
+    animation: kedip 3s infinite;
+    opacity: 1;
+}
+
+#character1 #eye2{
+    animation: kedip2 3s  infinite;
+    opacity: 0;
+}
+
+#character1 #eye3{
+    animation: kedip3 3s  infinite;
+    opacity: 0;
+}
+
+#aksesoris, #hair-back, #head, #eye, #eye2, #eye3, #hair-front, #body, #hand-left, #hand-right{
+    animation: goyang 3s infinite;
+}
+
+
+
+@keyframes kedip{
+    0% {opacity: 1;
+        transform: translateY(0%);
+
+    }
+    5% {opacity: 0;
+        transform: translateY(0%);
+
+    }
+    10% {opacity: 0;
+        transform: translateY(0%);
+    }
+    15% {opacity: 0;
+        transform: translateY(0%);
+
+    }
+    50% {opacity: 1;
+            transform: translateY(2%);
+        
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+
+    }
+}
+
+
+@keyframes kedip2{
+    0% {opacity: 1;
+        transform: translateY(0%);
+    }
+    5% {opacity: 1;
+        transform: translateY(0%);
+
+    }
+    10% {opacity: 0;
+        transform: translateY(0%);
+    }
+    15% {opacity: 0;
+        transform: translateY(0%);
+
+    }
+    50% {opacity: 0;
+            transform: translateY(2%);
+        
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0%);
+
+    }
+}
+
+
+
+
+@keyframes kedip3{
+    0% {opacity: 0;
+        transform: translateY(0%);
+
+    }
+    5% {opacity: 0;
+        transform: translateY(0%);
+
+    }
+    10% {opacity: 1;
+        transform: translateY(0%);
+    }
+    15% {opacity: 1;
+        transform: translateY(0%);
+
+    }
+    50% {opacity: 0;
+            transform: translateY(2%);
+        
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0%);
+
+    }
+}
+
+
+
+@keyframes goyang{
+    0% {transform: translateY(0%);
+    }
+    
+    10%{transform: translateY(0%);
+
+    }
+    50% {transform: translateY(1%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
