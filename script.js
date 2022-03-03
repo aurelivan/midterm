@@ -1,24 +1,51 @@
+//for all page 
+document.oncontextmenu = new Function("return false");
+
+
 //Page 1
 
 //Algorithm for change gender
-var x = document.getElementById("homechar1");
-x.style.display = "block";
-var y = document.getElementById("homechar2");
-y.style.display = "none";
 var z = 1;
 function displayX() {
-    x.style.display = "block";
-    y.style.display = "none";
     z = 1;
+    clicked();
   }
-  function displayY() {
-      y.style.display = "block";
-      x.style.display = "none";
+
+function displayY() {
       z = 0;
+      clicked();
     }
-    chooseChara();
+
+function clicked (){
+    var backchar1 = document.getElementById('char_left');
+    var backchar2 = document.getElementById('char_right');
+    if(z == 1){
+        
+        backchar1.style.backgroundColor = 'blue';
+        backchar2.style.backgroundColor = 'yellow';
+    }
+    else if(z == 0){
+        backchar1.style.backgroundColor = 'yellow';
+        backchar2.style.backgroundColor = 'blue';
+
+    }
+}
+
 function chooseChara(){
-    if(z = 1){
+    if(z == 1){
+        document.getElementById('aksesoris').src='/asset/character/character-boy1/';
+        document.getElementById('hair-back').src='/asset/character/character-boy1/hair-back.png';
+        document.getElementById('head').src='/asset/character/character-boy1/head.png';
+        document.getElementById('eye').src='/asset/character/character-boy1/eye.png';
+        document.getElementById('eye2').src='/asset/character/character-boy1/eye2.png';
+        document.getElementById('eye3').src='/asset/character/character-boy1/eye3.png';
+        document.getElementById('hair-front').src='/asset/character/character-boy1/hair-front.png';
+        document.getElementById('body').src='/asset/character/character-boy1/body.png';
+        document.getElementById('hand-left').src='/asset/character/character-boy1/hand-left.png';
+        document.getElementById('hand-right').src='/asset/character/character-boy1/hand-right.png';
+        document.getElementById('foot').src='/asset/character/character-boy1/foot.png';
+    }
+    else if(z == 0){
         document.getElementById('aksesoris').src='/asset/character/character-girl1/';
         document.getElementById('hair-back').src='/asset/character/character-girl1/hair-back.png';
         document.getElementById('head').src='/asset/character/character-girl1/head.png';
@@ -30,13 +57,12 @@ function chooseChara(){
         document.getElementById('hand-left').src='/asset/character/character-girl1/hand-left.png';
         document.getElementById('hand-right').src='/asset/character/character-girl1/hand-right.png';
         document.getElementById('foot').src='/asset/character/character-girl1/foot.png';
-    }else if(z = 0){
     }
 }
 
-
-var x = document.getElementById("")
-
+function play(){
+    chooseChara();
+}
 
 
 //Page 2
@@ -46,7 +72,7 @@ var d,h,m,s,animate;
 
 function init(){
     d=new Date();
-    m= 23;
+    m= 11;
     s= 00;
     clock();
 };
@@ -62,6 +88,7 @@ function clock(){
     }
     $('min',s);
     $('hr',m);
+    greetings(m);
     animate=setTimeout(clock,1000);
 };
 
@@ -74,13 +101,31 @@ function $(id,val){
 
 window.onload=init;
 
+//greetings
+greetings(m);
+function greetings(){
+    if(m >= 06 && m<=11){
+        document.getElementById("greetings").innerHTML = 'Good Morning';
+    }
+    if(m >= 12 && m<=18){
+        document.getElementById("greetings").innerHTML = 'Good Afternoon';
+    }
+    if(m >= 19 && m<=23){
+        document.getElementById("greetings").innerHTML = 'Good Evening';
+    }
+    if(m >= 00 && m<=05){
+        document.getElementById("greetings").innerHTML = 'Good Night';
+    }
+}
+
+
 //Algorithm for status bar
 
 var i = 0;
-var width_makan = 100;
-var width_tidur = 100;
-var width_belajar = 100;
-var width_bermain = 100;
+var width_makan = 50;
+var width_tidur = 50;
+var width_belajar = 1;
+var width_bermain = 50;
 move();
 function move() {
   if (i == 0) {
@@ -148,5 +193,4 @@ function tambah_bermain(){
     width_bermain = width_bermain +1
   }
 }
-
 

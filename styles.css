@@ -1,21 +1,28 @@
+html{
+    scroll-behavior: auto;
+}
 body{
     background-color: rgba(229, 241, 201, 0.932);
-    overflow: hidden;
+    scroll-behavior: auto !important;
 }
 
 /*Page settings*/
 
 #Page1{
+    background-image: url(https://www.freepik.com/premium-vector/set-kawaii-doodle_3886721.htm);
     overflow: hidden;
     height: 120vh;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 162, 162);
 }
 
 #Page2{
     overflow: hidden;
-    height: 120vh;
-    background-color: aqua;
+    height: 300vh;
+    background-image: url(/asset/background/pagi.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
+
 
 
 /*Page index */
@@ -24,58 +31,82 @@ body{
     text-align: center;
 }
 
+#input_user_name_title{
+    font-weight: bold;
+    text-align: end;
+    font-size: 30px;
+}
+
+#username{
+    height: 40px;
+    width: 50%;
+    border: 5px solid rgb(211, 70, 70);
+    background-color: aliceblue;
+    border-radius: 5px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+
+
+#username::placeholder {
+    font-style: italic;
+  }
+
 .row{
     height: fit-content;
 }
-.home-row{
-    height: 100%;
-    pointer-events: none;
-}
-.homechar{
-    position: relative;
-    padding: 10px 10px 10px 10px;
-    border: 5px solid rgb(212, 50, 104);
-    border-radius: 10px;
-    overflow: hidden;
-    pointer-events: none;
-}
 
-.button-gender{
-    background-color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    pointer-events: auto;
-}
-
-.character{
-    height: 500px;
-}
-
-#homechar1{
-    background-color: aquamarine;
+#characterA{
+    text-align: right;
 }
 
 
-#homechar2{
-    background-color: yellow;
-}
 
+
+#char_right, #char_left{
+    height: 400px;
+}
 
 #char-home1{
     height: 400px;
     width: auto;
-    position: absolute;
+    position: relative;
 }
+
+
+#row-choose{
+    margin-bottom: 0%;
+}
+
+#start_row{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#start{
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/*greetings*/
+
+#greetings{
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
 
 
 /*animasi idle */
 
 #character1{
-    text-align: center;
     padding: 10px;
     height: auto;
     position: relative;
+    text-align: center;
 }
 
 #character1 img{
@@ -102,6 +133,12 @@ body{
 #aksesoris, #hair-back, #head, #eye, #eye2, #eye3, #hair-front, #body, #hand-left, #hand-right{
     animation: goyang 3s infinite;
 }
+
+#foot, #aksesoris, #hair-back, #head, #eye, #eye2, #eye3, #hair-front, #body, #hand-left, #hand-right{
+    margin-left: 100px ;
+}
+
+
 
 
 
@@ -207,6 +244,13 @@ body{
 
 
 
+/*gif*/
+
+#gif_eat{
+    height: 500px;
+    width: auto;
+}
+
 /*Page 2*/
 
 
@@ -221,6 +265,7 @@ body{
 
 #status_bar{
     border: 1px solid black;
+    background: rgb(0, 0, 0, 0.5);
 }
 
 #proggress_fill{
@@ -236,9 +281,10 @@ body{
 }
 
 /*Character row*/
-
-.row_character{
-    height: 60vh;
+#background_image{
+    height: 100px;
+    width: auto;
+    position: relative;
 }
 
 
@@ -253,4 +299,10 @@ body{
     height: 50px;
 }
 
+
+/*others stuff*/
+
+#hand-right{
+    cursor: url('https://res.cloudinary.com/dvkugaw3b/image/upload/v1641562028/cursor_ad12rf.png'), auto;
+  }
 
