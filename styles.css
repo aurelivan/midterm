@@ -6,14 +6,14 @@ body{
 /*Page settings*/
 
 #Page1{
-    overflow-x: hidden;
-    height: 100vh;
-    background-color: aqua;
+    overflow: hidden;
+    height: 120vh;
+    background-color: rgb(255, 255, 255);
 }
 
 #Page2{
-    overflow-x: hidden;
-    height: 100vh;
+    overflow: hidden;
+    height: 120vh;
     background-color: aqua;
 }
 
@@ -204,3 +204,53 @@ body{
         transform: translateY(0%);
     }
 }
+
+
+
+/*Page 2*/
+
+
+/*Clock*/
+.clock{
+    text-align:center;
+    width:auto;
+    height:auto;
+}
+
+/*Status Bar*/
+
+#status_bar{
+    border: 1px solid black;
+}
+
+#proggress_fill{
+    margin-top: 30px;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+#proggress_bar1, #proggress_bar2, #proggress_bar3, #proggress_bar4{
+    background-color: blue;
+    height: 10px;
+    width:100%;
+}
+
+/*Character row*/
+
+.row_character{
+    height: 60vh;
+}
+
+
+/*Button Action*/
+
+#button_action {
+    border-radius: 10px;
+    background-color: brown;
+    color: aliceblue;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+}
+
+
