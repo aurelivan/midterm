@@ -8,7 +8,7 @@ body{
 /*Page settings*/
 
 #Page1{
-    background-image: url(https://www.freepik.com/premium-vector/set-kawaii-doodle_3886721.htm);
+    margin-top: 0px;
     overflow: hidden;
     height: 100vh;
     background-color: rgb(255, 162, 162);
