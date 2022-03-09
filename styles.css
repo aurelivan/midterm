@@ -1,7 +1,9 @@
 body{
+    scroll-behavior: auto !important;
     background-color: rgba(229, 241, 201, 0.932);
     cursor: url('/asset/misc/cursor/cursor_normal.png'), auto;
     font-family: 'Shippori Antique B1', sans-serif;
+    overflow: hidden;
 
 }
 
@@ -367,7 +369,7 @@ body{
     width: 150px;
     height: 150px;
     background-color: #ffffff;
-    background-image: url('/asset/background/malam.png');
+    background-image: url('asset/background/malam.png');
     background-size: cover;
     border-radius: 50%;
     border: 10px solid rgba(230, 70, 70, 0.918);
