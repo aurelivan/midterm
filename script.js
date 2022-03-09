@@ -1,8 +1,11 @@
 //for all page 
-document.oncontextmenu = new Function("return false");
-
-
+//document.oncontextmenu = new Function("return false");
 //Page 1
+//get username
+function input_username(){
+    
+    document.getElementById('greetings').insertAdjacentText('beforeend', username);
+}
 
 //Algorithm for change gender
 var z = 1;
@@ -62,6 +65,7 @@ function chooseChara(){
 
 function play(){
     chooseChara();
+    input_username();
 }
 
 
@@ -89,6 +93,7 @@ function clock(){
     $('min',s);
     $('hr',m);
     greetings(m);
+    clock2(m,s);
     animate=setTimeout(clock,1000);
 };
 
@@ -104,17 +109,18 @@ window.onload=init;
 //greetings
 greetings(m);
 function greetings(){
+    username = document.getElementById('username').value;
     if(m >= 06 && m<=11){
-        document.getElementById("greetings").innerHTML = 'Good Morning';
+        document.getElementById("greetings").innerHTML = 'Good Morning, ' +username;
     }
     if(m >= 12 && m<=18){
-        document.getElementById("greetings").innerHTML = 'Good Afternoon';
+        document.getElementById("greetings").innerHTML = 'Good Afternoon, ' +username;
     }
     if(m >= 19 && m<=23){
-        document.getElementById("greetings").innerHTML = 'Good Evening';
+        document.getElementById("greetings").innerHTML = 'Good Evening, ' +username;
     }
     if(m >= 00 && m<=05){
-        document.getElementById("greetings").innerHTML = 'Good Night';
+        document.getElementById("greetings").innerHTML = 'Good Night, ' +username;
     }
 }
 
@@ -194,3 +200,45 @@ function tambah_bermain(){
   }
 }
 
+
+
+//for clock
+const hour = document.querySelector(".hour");
+const minute = document.querySelector(".minute");
+
+function clock2(m, s) {
+  const minuteDegree = (s / 60) * 360;
+  const hourDegree = (m / 12) * 360;
+
+  minute.style.transform = `rotate(${minuteDegree}deg)`;
+  hour.style.transform = `rotate(${hourDegree}deg)`;
+}
+
+
+
+//change costume{
+xiao_body =  '/asset/costume/Xiao/body.png';
+xiao_hand_right = '/asset/costume/Xiao/hand_right.png';
+xiao_hand_left = '/asset/costume/Xiao/hand_left.png';
+
+    function change_outfit(){
+        document.getElementById('body').src = xiao_body;
+        document.getElementById('hand-left').src= xiao_hand_left;
+        document.getElementById('hand-right').src= xiao_hand_right;
+    }
+
+
+//pop ups
+
+var pop_ups = document.getElementById('pop_ups');
+var pop_ups_in = document.getElementById('pop_ups_in');
+close_pop();
+function open_pop(){
+    pop_ups.style.display = 'block';
+    pop_ups_in.style.display = 'block';
+}
+
+function close_pop(){
+    pop_ups.style.display = 'none';
+    pop_ups_in.style.display = 'none';
+}
