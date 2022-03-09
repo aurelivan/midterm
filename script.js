@@ -36,30 +36,30 @@ function clicked (){
 
 function chooseChara(){
     if(z == 1){
-        document.getElementById('aksesoris').src='/asset/character/character-boy1/';
-        document.getElementById('hair-back').src='/asset/character/character-boy1/hair-back.png';
-        document.getElementById('head').src='/asset/character/character-boy1/head.png';
-        document.getElementById('eye').src='/asset/character/character-boy1/eye.png';
-        document.getElementById('eye2').src='/asset/character/character-boy1/eye2.png';
-        document.getElementById('eye3').src='/asset/character/character-boy1/eye3.png';
-        document.getElementById('hair-front').src='/asset/character/character-boy1/hair-front.png';
-        document.getElementById('body').src='/asset/character/character-boy1/body.png';
-        document.getElementById('hand-left').src='/asset/character/character-boy1/hand-left.png';
-        document.getElementById('hand-right').src='/asset/character/character-boy1/hand-right.png';
-        document.getElementById('foot').src='/asset/character/character-boy1/foot.png';
+        document.getElementById('aksesoris').src='asset/character/character-boy1/';
+        document.getElementById('hair-back').src='asset/character/character-boy1/hair-back.png';
+        document.getElementById('head').src='asset/character/character-boy1/head.png';
+        document.getElementById('eye').src='asset/character/character-boy1/eye.png';
+        document.getElementById('eye2').src='asset/character/character-boy1/eye2.png';
+        document.getElementById('eye3').src='asset/character/character-boy1/eye3.png';
+        document.getElementById('hair-front').src='asset/character/character-boy1/hair-front.png';
+        document.getElementById('body').src='asset/character/character-boy1/body.png';
+        document.getElementById('hand-left').src='asset/character/character-boy1/hand-left.png';
+        document.getElementById('hand-right').src='asset/character/character-boy1/hand-right.png';
+        document.getElementById('foot').src='asset/character/character-boy1/foot.png';
     }
     else if(z == 0){
-        document.getElementById('aksesoris').src='/asset/character/character-girl1/';
-        document.getElementById('hair-back').src='/asset/character/character-girl1/hair-back.png';
-        document.getElementById('head').src='/asset/character/character-girl1/head.png';
-        document.getElementById('eye').src='/asset/character/character-girl1/eye.png';
-        document.getElementById('eye2').src='/asset/character/character-girl1/eye2.png';
-        document.getElementById('eye3').src='/asset/character/character-girl1/eye3.png';
-        document.getElementById('hair-front').src='/asset/character/character-girl1/hair-front.png';
-        document.getElementById('body').src='/asset/character/character-girl1/body.png';
-        document.getElementById('hand-left').src='/asset/character/character-girl1/hand-left.png';
-        document.getElementById('hand-right').src='/asset/character/character-girl1/hand-right.png';
-        document.getElementById('foot').src='/asset/character/character-girl1/foot.png';
+        document.getElementById('aksesoris').src='asset/character/character-girl1/';
+        document.getElementById('hair-back').src='asset/character/character-girl1/hair-back.png';
+        document.getElementById('head').src='asset/character/character-girl1/head.png';
+        document.getElementById('eye').src='asset/character/character-girl1/eye.png';
+        document.getElementById('eye2').src='asset/character/character-girl1/eye2.png';
+        document.getElementById('eye3').src='asset/character/character-girl1/eye3.png';
+        document.getElementById('hair-front').src='asset/character/character-girl1/hair-front.png';
+        document.getElementById('body').src='asset/character/character-girl1/body.png';
+        document.getElementById('hand-left').src='asset/character/character-girl1/hand-left.png';
+        document.getElementById('hand-right').src='asset/character/character-girl1/hand-right.png';
+        document.getElementById('foot').src='asset/character/character-girl1/foot.png';
     }
 }
 
@@ -217,9 +217,9 @@ function clock2(m, s) {
 
 
 //change costume{
-xiao_body =  '/asset/costume/Xiao/body.png';
-xiao_hand_right = '/asset/costume/Xiao/hand_right.png';
-xiao_hand_left = '/asset/costume/Xiao/hand_left.png';
+xiao_body =  'asset/costume/Xiao/body.png';
+xiao_hand_right = 'asset/costume/Xiao/hand_right.png';
+xiao_hand_left = 'asset/costume/Xiao/hand_left.png';
 
     function change_outfit(){
         document.getElementById('body').src = xiao_body;
