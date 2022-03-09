@@ -1,8 +1,6 @@
 //for all page 
 var audio = new Audio('/asset/Audio/Backsound/Sapphire Lotus.mp3');
 audio.loop = true;
-audio.play();
-
 //document.oncontextmenu = new Function("return false");
 //Page 1
 //get username
@@ -67,9 +65,19 @@ function chooseChara(){
     }
 }
 
+
+//submit username
+document.getElementById('start').disabled =true;
+function submit_username(){
+        document.getElementById('username').disabled = true;
+        document.getElementById('start').disabled = false;
+}
+
 function play(){
+    audio.play();
     chooseChara();
     input_username();
+    document.getElementById("Page2").scrollIntoView({behavior: 'auto'});
 }
 
 

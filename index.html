@@ -17,8 +17,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!--Audio backsound-->
-    <embed src="asset/Audio/Backsound/Sapphire Lotus.mp3" loop="true" autostart="true" width="0" height="0">
     <!--Page 1-->
     <div id="Page1"> 
     <div id="cons" class="container">
@@ -37,7 +35,7 @@
           <input type="text" name="name" id="username" placeholder=" Input your username...">
         </div>
         <div class="col-2">
-          <button onclick="submit_username">done!</button>
+          <button onclick="submit_username()">done!</button>
         </div>
       </div>
 
@@ -65,7 +63,7 @@
     <!--Start button-->
 <div class="row">
 <div id="start_row" class="col-12" >
-<a href="#Page2"><button id="start" onclick="play()" >gameplay</button></a>
+<button id="start" onclick="play()">gameplay</button>
 </div>
 </div>
 
