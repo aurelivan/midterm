@@ -8,7 +8,7 @@ body{
 /*Page settings*/
 
 #Page1{
-    background-image: url(https://www.freepik.com/premium-vector/set-kawaii-doodle_3886721.htm);
+    margin-top: 0px;
     overflow: hidden;
     height: 100vh;
     background-color: rgb(255, 162, 162);
@@ -367,7 +367,7 @@ body{
     width: 150px;
     height: 150px;
     background-color: #ffffff;
-    background-image: url(/asset/background/malam.png);
+    background-image: url('/asset/background/malam.png');
     background-size: cover;
     border-radius: 50%;
     border: 10px solid rgba(230, 70, 70, 0.918);
