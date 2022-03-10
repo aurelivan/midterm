@@ -1,7 +1,12 @@
-//for all page 
-var audio = new Audio('/asset/Audio/Backsound/Sapphire Lotus.mp3');
+//for all page
+
+    //background audio
+var audio = new Audio('asset/Audio/Backsound/Sapphire Lotus.mp3');
 audio.loop = true;
-//document.oncontextmenu = new Function("return false");
+    //rgb function
+function rgb(r, g, b, o){
+    return "rgb("+r+","+g+","+b+","+o+")";
+}
 //Page 1
 //get username
 function input_username(){
@@ -21,17 +26,25 @@ function displayY() {
       clicked();
     }
 
+
+
 function clicked (){
     var backchar1 = document.getElementById('char_left');
     var backchar2 = document.getElementById('char_right');
+    var char1 = document.getElementById("char-home1");
+    var char2 = document.getElementById("char-home2");
     if(z == 1){
+        char1.style.height = '500px';
+        char2.style.height = '400px';
+        backchar1.style.backgroundColor = rgb(0,0,0,0.5);
+        backchar2.style.backgroundColor = null ;
         
-        backchar1.style.backgroundColor = 'blue';
-        backchar2.style.backgroundColor = 'yellow';
     }
     else if(z == 0){
-        backchar1.style.backgroundColor = 'yellow';
-        backchar2.style.backgroundColor = 'blue';
+        char2.style.height = '500px';
+        char1.style.height = '400px';
+        backchar2.style.backgroundColor = rgb(0,0,0,0.5);
+        backchar1.style.backgroundColor = null ;
 
     }
 }
@@ -79,8 +92,6 @@ function play(){
     input_username();
     document.getElementById("Page2").scrollIntoView({behavior: 'auto'});
 }
-
-
 //Page 2
 
 //Algoritm for time
@@ -137,6 +148,30 @@ function greetings(){
 }
 
 
+
+//Algortm for gif
+function gif_hid(){
+    document.getElementById('eat_gif').style.display = 'none';
+    document.getElementById('sleep_gif').style.display = 'none';
+    document.getElementById('study_gif').style.display = 'none';
+    document.getElementById('play_gif').style.display = 'none';
+}
+gif_hid();
+function show_gif(i){
+if(i == 1){
+    document.getElementById('eat_gif').style.display = 'block';
+}
+else if(i == 2){
+    document.getElementById('sleep_gif').style.display = 'block';
+}
+else if(i == 3){
+    document.getElementById('study_gif').style.display = 'block';
+}
+else if(i == 4){
+    document.getElementById('play_gif').style.display = 'block';
+}
+}
+
 //Algorithm for status bar
 
 var i = 0;
@@ -176,10 +211,13 @@ function move() {
 
   function tambah_makan(){
       for(var i = 0; i < 20 ; i++){
+     
       if(width_makan > 100){
           return;
       }
-      width_makan = width_makan +1
+      show_gif(1);
+      width_makan = width_makan +1;
+      setTimeout(gif_hid,2000);
     }
 }
 
@@ -188,7 +226,9 @@ function tambah_belajar(){
     if(width_belajar > 100){
         return;
     }
-    width_belajar = width_belajar +1
+    show_gif(3);
+    width_belajar = width_belajar +1;
+    setTimeout(gif_hid,2000);
   }
 }
 
@@ -198,7 +238,9 @@ function tambah_tidur(){
     if(width_tidur > 100){
         return;
     }
-    width_tidur = width_tidur +1
+    show_gif(2);
+    width_tidur = width_tidur +1;
+    setTimeout(gif_hid,2000);
   }
 }
 
@@ -208,7 +250,9 @@ function tambah_bermain(){
     if(width_bermain > 100){
         return;
     }
-    width_bermain = width_bermain +1
+    show_gif(4);
+    width_bermain = width_bermain +1;
+    setTimeout(gif_hid,2000);
   }
 }
 
