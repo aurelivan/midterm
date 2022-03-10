@@ -1,7 +1,7 @@
 body{
     scroll-behavior: auto !important;
     background-color: rgba(229, 241, 201, 0.932);
-    cursor: url('/asset/misc/cursor/cursor_normal.png'), auto;
+    cursor: url('asset/misc/cursor/cursor_normal.png'), auto;
     font-family: 'Shippori Antique B1', sans-serif;
     overflow: hidden;
 
@@ -333,7 +333,7 @@ body{
     padding: 10px;
     width: 100px;
     height: 50px;
-    cursor: url('/asset/misc/cursor/cursor_point.png'), pointer;
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
 
 #button_action:hover{
