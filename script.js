@@ -213,10 +213,10 @@ function move() {
     var tidur = document.getElementById("proggress_bar2");
     var bermain = document.getElementById("proggress_bar3");
     var belajar = document.getElementById("proggress_bar4");
-    var id = setInterval(frame, 50);
+    var id = setInterval(frame, 1000);
     function frame() {
         if(width_makan >0){
-        width_makan = width_makan - 0.1;
+        width_makan = width_makan - 1;
         makan.style.width = width_makan + "%";
         if(width_makan < 20){
             makan.style.backgroundColor = 'red';
@@ -227,7 +227,7 @@ function move() {
 
         }
         if(width_tidur >0){
-        width_tidur = width_tidur - 0.1;
+        width_tidur = width_tidur - 1;
         tidur.style.width = width_tidur + "%";
         if(width_tidur < 20){
             tidur.style.backgroundColor = 'red';
@@ -237,7 +237,7 @@ function move() {
         }
         }
         if(width_bermain >0){
-        width_bermain = width_bermain - 0.1;
+        width_bermain = width_bermain - 1;
         bermain.style.width = width_bermain + "%";
         if(width_bermain < 20){
             bermain.style.backgroundColor = 'red';
@@ -247,7 +247,7 @@ function move() {
         }
         }
         if(width_belajar >0){
-        width_belajar = width_belajar - 0.1;
+        width_belajar = width_belajar - 1;
         belajar.style.width = width_belajar + "%";
         if(width_belajar < 20){
             belajar.style.backgroundColor = 'red';
@@ -349,3 +349,31 @@ function close_pop(){
     pop_ups.style.display = 'none';
     pop_ups_in.style.display = 'none';
 }
+
+// achievements
+document.getElementById('achievements').style.display = 'none';
+
+function calculate(){
+    caltidur = width_tidur;
+    return caltidur;
+}
+
+calculate();
+
+function achievements(){
+    background = document.getElementById('achievements');
+    background.style.display = 'block'; 
+    document.getElementById('user-name').innerHTML = ('Hello ') + username;
+    document.getElementById('makan_status').innerHTML = parseInt(width_makan) + '%';
+    document.getElementById('tidur_status').innerHTML = parseInt(calculate()) +'%';
+    document.getElementById('bermain_status').innerHTML = parseInt(width_bermain) + '%';
+    document.getElementById('belajar_status').innerHTML = parseInt(width_belajar) + '%';
+
+    
+
+    
+
+} 
+ function closeachievements(){
+     document.getElementById('achievements').style.display = 'none';
+ }
