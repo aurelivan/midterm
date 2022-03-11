@@ -324,7 +324,7 @@ body{
 }
 
 #proggress_bar1, #proggress_bar2, #proggress_bar3, #proggress_bar4{
-    background-color: rgb(1, 161, 14);
+    background-color: #01a10e;
     border-radius: 10px;
     height: 10px;
     width:100%;
@@ -361,18 +361,16 @@ body{
 #button_action {
     border-radius: 10px;
     border: none;
-    background-color: rgb(212, 1, 1);
-    color: aliceblue;
     padding: 10px;
-    width: 100px;
-    height: 50px;
+    width: auto;
+    height: 160px;
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
     z-index: 10;
 }
 
 #button_action:hover{
-    width: 120px;
-    height: 60px;
+    height: 200px;
+    transform: translateY(-40px);
 }
 
 
@@ -494,7 +492,6 @@ body{
 
 
   /*Pop ups*/
-
   #pop_ups{
       pointer-events: all;
       background-color: rgb(0, 0, 0, 0.5);
@@ -533,5 +530,3 @@ body{
       border-radius: 10px;
       z-index: 30;
   }
-
- 
