@@ -116,6 +116,7 @@ function clock(){
     $('min',s);
     $('hr',m);
     greetings(m);
+    change_back(m)
     clock2(m,s);
     animate=setTimeout(clock,1000);
 };
@@ -129,21 +130,46 @@ function $(id,val){
 
 window.onload=init;
 
+
+
+//change background
+
+
 //greetings
 greetings(m);
 function greetings(){
     username = document.getElementById('username').value;
     if(m >= 06 && m<=11){
         document.getElementById("greetings").innerHTML = 'Good Morning, ' +username;
+        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/pagi.png)';
     }
     if(m >= 12 && m<=18){
         document.getElementById("greetings").innerHTML = 'Good Afternoon, ' +username;
+        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/siang.png)';
     }
     if(m >= 19 && m<=23){
         document.getElementById("greetings").innerHTML = 'Good Evening, ' +username;
+        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/malam.png)';
     }
     if(m >= 00 && m<=05){
         document.getElementById("greetings").innerHTML = 'Good Night, ' +username;
+        
+    }
+}
+change_back(m)
+function change_back(){
+    username = document.getElementById('username').value;
+    if(m >= 08 && m<=11){
+        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/pagi.png)';
+    }
+    if(m >= 12 && m<=15){
+        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/siang.png)';
+    }
+    if(m >= 16 && m<=18){
+        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/sore.png)';
+    }
+    if(m >= 18 && m<=08){
+        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/malam.png)';
     }
 }
 
@@ -192,18 +218,43 @@ function move() {
         if(width_makan >0){
         width_makan = width_makan - 1;
         makan.style.width = width_makan + "%";
+        if(width_makan < 20){
+            makan.style.backgroundColor = 'red';
+        }
+        else{
+            makan.style.backgroundColor = '#01a10e';
+        }
+
         }
         if(width_tidur >0){
         width_tidur = width_tidur - 1;
         tidur.style.width = width_tidur + "%";
+        if(width_tidur < 20){
+            tidur.style.backgroundColor = 'red';
+        }
+        else{
+            tidur.style.backgroundColor = '#01a10e';
+        }
         }
         if(width_bermain >0){
         width_bermain = width_bermain - 1;
         bermain.style.width = width_bermain + "%";
+        if(width_bermain < 20){
+            bermain.style.backgroundColor = 'red';
+        }
+        else{
+            bermain.style.backgroundColor = '#01a10e';
+        }
         }
         if(width_belajar >0){
         width_belajar = width_belajar - 1;
         belajar.style.width = width_belajar + "%";
+        if(width_belajar < 20){
+            belajar.style.backgroundColor = 'red';
+        }
+        else{
+            belajar.style.backgroundColor = '#01a10e';
+        }
         }
       }
     }
