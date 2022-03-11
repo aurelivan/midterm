@@ -141,15 +141,12 @@ function greetings(){
     username = document.getElementById('username').value;
     if(m >= 06 && m<=11){
         document.getElementById("greetings").innerHTML = 'Good Morning, ' +username;
-        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/pagi.png)';
     }
     if(m >= 12 && m<=18){
         document.getElementById("greetings").innerHTML = 'Good Afternoon, ' +username;
-        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/siang.png)';
     }
     if(m >= 19 && m<=23){
         document.getElementById("greetings").innerHTML = 'Good Evening, ' +username;
-        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/malam.png)';
     }
     if(m >= 00 && m<=05){
         document.getElementById("greetings").innerHTML = 'Good Night, ' +username;
