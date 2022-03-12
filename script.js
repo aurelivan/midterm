@@ -117,6 +117,7 @@ function play(){
     }
 
     document.getElementById("Page2").scrollIntoView({behavior: 'auto'});
+    move();
 }
 //Page 2
 
@@ -231,7 +232,6 @@ var width_makan = 50;
 var width_tidur = 50;
 var width_belajar = 1;
 var width_bermain = 50;
-move();
 function move() {
   if (i == 0) {
     i = 1;
@@ -252,6 +252,10 @@ function move() {
         }
 
         }
+        else{
+            $("#gameover_screen").show();
+        }
+
         if(width_tidur >0){
         width_tidur = width_tidur - 1;
         tidur.style.width = width_tidur + "%";
@@ -285,6 +289,7 @@ function move() {
       }
     }
   }
+
 
 // tombol tambah stat makan, dll
   function tambah_makan(){
