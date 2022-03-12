@@ -7,10 +7,10 @@ audio.loop = true;
 function rgb(r, g, b, o){
     return "rgb("+r+","+g+","+b+","+o+")";
 }
+
 //Page 1
 //get username
 function input_username(){
-    
     document.getElementById('greetings').insertAdjacentText('beforeend', username);
 }
 
@@ -19,33 +19,32 @@ var z = 1;
 function displayX() {
     z = 1;
     clicked();
-  }
+}
 
 function displayY() {
-      z = 0;
-      clicked();
-    }
+    z = 0;
+    clicked();
+}
 
 
 
 function clicked (){
-    var backchar1 = document.getElementById('char_left');
-    var backchar2 = document.getElementById('char_right');
     var char1 = document.getElementById("char-home1");
     var char2 = document.getElementById("char-home2");
+    char1.style.transition = 'all 0.6s';
+    char2.style.transition = 'all 0.6s';
     if(z == 1){
-        char1.style.height = '500px';
-        char2.style.height = '400px';
-        backchar1.style.backgroundColor = rgb(0,0,0,0.5);
-        backchar2.style.backgroundColor = null ;
-        
+        char1.style.transform = 'scale(1.2)';
+        char1.style.filter = 'brightness(110%)';
+        char2.style.transform = 'scale(0.9)';
+        char2.style.filter = 'brightness(40%)';
     }
+    
     else if(z == 0){
-        char2.style.height = '500px';
-        char1.style.height = '400px';
-        backchar2.style.backgroundColor = rgb(0,0,0,0.5);
-        backchar1.style.backgroundColor = null ;
-
+        char2.style.transform = 'scale(1.2)';
+        char2.style.filter = 'brightness(110%)';
+        char1.style.transform = 'scale(0.9)';
+        char1.style.filter = 'brightness(40%)';
     }
 }
 
@@ -90,6 +89,18 @@ function play(){
     audio.play();
     chooseChara();
     input_username();
+    /*$("play").hover(function() { //BELOM JALAN
+        $(this).css("background-color", "beige");
+        $(this).css("transition", "0.3s");
+    });*/
+
+    var p1 = document.getElementById("Page1");
+    var p2 = document.getElementById("Page2");
+    if (p2.style.display === "none") {
+        p2.style.display = "block";
+        p1.style.display = "none";
+    }
+
     document.getElementById("Page2").scrollIntoView({behavior: 'auto'});
 }
 //Page 2
@@ -193,6 +204,16 @@ else if(i == 3){
 else if(i == 4){
     document.getElementById('play_gif').style.display = 'block';
 }
+}
+
+//Tombol back
+function back() {
+    var p1 = document.getElementById("Page1");
+    var p2 = document.getElementById("Page2");
+    if (p1.style.display === "none") {
+        p1.style.display = "block";
+        p2.style.display = "none";
+    }
 }
 
 //Algorithm for status bar

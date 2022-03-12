@@ -1,3 +1,9 @@
+@media (max-width: 720px) {
+    #char-home1, #char-home2 {
+        height: 50px;
+    }
+}
+
 body{
     scroll-behavior: auto !important;
     background-color: rgba(229, 241, 201, 0.932);
@@ -9,10 +15,14 @@ body{
 /*Page settings*/
 
 #Page1{
-    margin-top: 0px;
-    overflow: hidden;
+    margin-top: 0px;    
     height: 100vh;
+    overflow: hidden;
     background-color: rgb(255, 162, 162);
+}
+
+.scroll-here {
+    height: 100vh;
 }
 
 #Page2{
@@ -25,83 +35,48 @@ body{
     background-repeat: no-repeat;
 }
 
-.container{
-    width: 1000px;
-}
-
-
-
 /*Page index */
 
-.title1{
-    text-align: center;
-}
-
-#input_user_name_title{
-    font-weight: bold;
-    text-align: end;
-    font-size: 30px;
-}
-
 #username{
-    height: 40px;
-    width: 50%;
-    border: 5px solid rgb(211, 70, 70);
     background-color: aliceblue;
-    border-radius: 5px;
-    margin-top: 5px;
-    text-align: left;
+    border-radius: 8px; 
+    width: 500px;
 }
-
-
 
 #username::placeholder {
     font-style: italic;
   }
 
-
+#confirm {
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
+    width: 120px;
+}
 
 
 /* Character choice in home setting*/
-#char_right, #char_left{
-    height: 400px;
-}
 
-#char-home1{
-    height: 400px;
-    width: auto;
-    position: relative;
+#char-home1, #char-home2 {
+    height: 280px;
     z-index: 10;
-    pointer-events: none;
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
 
-#char-home2{
-    height: 400px;
-    width: auto;
-    position: relative;
-    z-index: 10;
-    pointer-events: none;
+#char-home1:hover, #char-home2:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
 }
-
-
 
 /*container in home*/
 #row-choose{
     margin-bottom: 0%;
 }
 
-#start_row{
-    margin-top: 20px;
-    text-align: center;
-}
-
 #start{
     border-radius: 10px;
-    text-align: center;
-    pointer-events: all;
-    z-index: 100;
-}
+    border: none;
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 
+}
 
 /*greetings function (e.g good morning user)*/
 
@@ -129,7 +104,6 @@ body{
     height: auto;
     position: relative;
     transform:translateX(-10%) translateY(100px);
-
 }
 
 #character1 img{
@@ -342,7 +316,13 @@ body{
     border-radius: 50%;
     height: 50px;
     width: 50px;
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
+
+#go_back a, #go_back svg {
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
+}
+
 /*Character row*/
 #background_image{
     height: 100px;
@@ -368,20 +348,25 @@ body{
     z-index: 10;
 }
 
-#button_action:hover{
+#button_action:hover {
     height: 200px;
     transform: translateY(-40px);
+}
+
+#pbutton_open, #pbutton {
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
 
 
 /*others stuff*/
 
+#digital {
+    visibility: hidden;
+}
+
 #hand-right{
     cursor: url('asset/misc/cursor/cursor_grab.png'), auto;
   }
-
-
-
 
   /*for clock*/
   
