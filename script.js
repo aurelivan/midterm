@@ -1,18 +1,16 @@
 //for all page
 
-    //background audio
+//background audio
+
 var audio = new Audio('asset/Audio/Backsound/Sapphire Lotus.mp3');
 audio.loop = true;
-    //rgb function
+
+//rgb function
 function rgb(r, g, b, o){
     return "rgb("+r+","+g+","+b+","+o+")";
 }
 //Page 1
-//get username
-function input_username(){
-    
-    document.getElementById('greetings').insertAdjacentText('beforeend', username);
-}
+
 
 //Algorithm for change gender
 var z = 1;
@@ -86,11 +84,20 @@ function submit_username(){
         document.getElementById('start').disabled = false;
 }
 
+//function for loading screen
+
+//function for play / start button
 function play(){
-    audio.play();
-    chooseChara();
-    input_username();
-    document.getElementById("Page2").scrollIntoView({behavior: 'auto'});
+    $("#loading_screen").show();
+    chooseChara();//function for gender
+    $("#greetings").text(username);//display user name at greetings
+    document.getElementById("Page2").scrollIntoView({behavior: 'auto'});//jump to page 2
+    audio.play();//play backsound music 
+    $(document).ready(function($) {
+        setTimeout(function() {
+        $("#loading_screen").hide(1000);
+        }, 1500);
+    });
 }
 //Page 2
 
@@ -119,13 +126,6 @@ function clock(){
     change_back(m)
     clock2(m,s);
     animate=setTimeout(clock,1000);
-};
-
-function $(id,val){
-    if(val<10){
-        val='0'+val;
-    }
-    document.getElementById(id).innerHTML=val;
 };
 
 window.onload=init;
@@ -257,6 +257,7 @@ function move() {
     }
   }
 
+// tombol tambah stat makan, dll
   function tambah_makan(){
       for(var i = 0; i < 20 ; i++){
      
@@ -303,8 +304,6 @@ function tambah_bermain(){
     setTimeout(gif_hid,2000);
   }
 }
-
-
 
 //for clock
 const hour = document.querySelector(".hour");
@@ -366,9 +365,7 @@ function achievements(){
     document.getElementById('bermain_status').innerHTML = parseInt(width_bermain) + '%';
     document.getElementById('belajar_status').innerHTML = parseInt(width_belajar) + '%';
 
-    
 
-    
 
 } 
  function closeachievements(){
