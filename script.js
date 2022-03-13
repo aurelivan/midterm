@@ -195,28 +195,6 @@ function change_back(){
 
 
 //Algortm for gif
-function gif_hid(){
-    document.getElementById('eat_gif').style.display = 'none';
-    document.getElementById('sleep_gif').style.display = 'none';
-    document.getElementById('study_gif').style.display = 'none';
-    document.getElementById('play_gif').style.display = 'none';
-}
-gif_hid();
-function show_gif(i){
-if(i == 1){
-    document.getElementById('eat_gif').style.display = 'block';
-}
-else if(i == 2){
-    document.getElementById('sleep_gif').style.display = 'block';
-}
-else if(i == 3){
-    document.getElementById('study_gif').style.display = 'block';
-}
-else if(i == 4){
-    document.getElementById('play_gif').style.display = 'block';
-}
-}
-
 //Tombol back
 function back() {
     var p1 = document.getElementById("Page1");
@@ -289,52 +267,77 @@ function move() {
 
 
 // tombol tambah stat makan, dll
-  function tambah_makan(){
-      for(var i = 0; i < 20 ; i++){
+$("#tambahMakan").click(function(){
+    $("#gif_col").show();
+    $("#eat_gif").show();
+    $(document).ready(function($) {
+        setTimeout(function() {
+        $("#gif_col").hide();
+        $("#eat_gif").hide();
+        }, 1500);
+    });
+    for(var i = 0; i < 20 ; i++){
      
-      if(width_makan > 100){
-          return;
-      }
-      show_gif(1);
-      width_makan = width_makan +1;
-      setTimeout(gif_hid,2000);
+        if(width_makan > 100){
+            return;
+        }
+        width_makan = width_makan +1;
     }
-}
+});
 
-function tambah_belajar(){
+$("#tambahTidur").click(function(){
+    $("#gif_col").show();
+    $("#sleep_gif").show();
+    $(document).ready(function($) {
+        setTimeout(function() {
+        $("#gif_col").hide();
+        $("#sleep_gif").hide();
+        }, 1500);
+    });
     for(var i = 0; i < 20 ; i++){
-    if(width_belajar > 100){
-        return;
+     
+        if(width_tidur > 100){
+            return;
+        }
+        width_tidur = width_tidur +1;
     }
-    show_gif(3);
-    width_belajar = width_belajar +1;
-    setTimeout(gif_hid,2000);
-  }
-}
+});
 
-
-function tambah_tidur(){
+$("#tambahBelajar").click(function(){
+    $("#gif_col").show();
+    $("#study_gif").show();
+    $(document).ready(function($) {
+        setTimeout(function() {
+        $("#gif_col").hide();
+        $("#study_gif").hide();
+        }, 1500);
+    });
     for(var i = 0; i < 20 ; i++){
-    if(width_tidur > 100){
-        return;
+     
+        if(width_belajar > 100){
+            return;
+        }
+        width_belajar = width_belajar +1;
     }
-    show_gif(2);
-    width_tidur = width_tidur +1;
-    setTimeout(gif_hid,2000);
-  }
-}
+});
 
-
-function tambah_bermain(){
+$("#tambahBermain").click(function(){
+    $("#gif_col").show();
+    $("#play_gif").show();
+    $(document).ready(function($) {
+        setTimeout(function() {
+        $("#gif_col").hide();
+        $("#play_gif").hide();
+        }, 1500);
+    });
     for(var i = 0; i < 20 ; i++){
-    if(width_bermain > 100){
-        return;
+     
+        if(width_bermain > 100){
+            return;
+        }
+        width_bermain = width_bermain +1;
     }
-    show_gif(4);
-    width_bermain = width_bermain +1;
-    setTimeout(gif_hid,2000);
-  }
-}
+});
 
 //for clock
 const hour = document.querySelector(".hour");
