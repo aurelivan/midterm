@@ -46,6 +46,7 @@ body{
     padding: 0%;
     margin: 0%;
     background-repeat: no-repeat;
+    transition: background 1s linear;
 }
 
 /*Page index */
@@ -429,7 +430,7 @@ body{
     width: 150px;
     height: 150px;
     background-color: #ffffff;
-    background-image: url('asset/background/malam.png');
+    background-image: url('asset/misc/Clock.png');
     background-size: cover;
     border-radius: 50%;
     border: 10px solid rgba(230, 70, 70, 0.918);
