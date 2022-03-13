@@ -354,27 +354,27 @@ function clock2(m, s) {
 
 //search outfit file
 function search_gantungan(i){
-    url = '/asset/costume/'+ i + "/gantungan.png"
+    url = 'asset/costume/'+ i + "/gantungan.png"
     return url;
 }
 function search_acc(i){
-        url = '/asset/costume/'+ i + "/accessories.png"
+        url = 'asset/costume/'+ i + "/accessories.png"
     return url;
 }
 function search_body(i){
-        url = '/asset/costume/'+ i + "/body.png"
+        url = 'asset/costume/'+ i + "/body.png"
     return url;
 }
 function search_left(i){
-        url = '/asset/costume/'+ i + "/hand-left.png"
+        url = 'asset/costume/'+ i + "/hand-left.png"
     return url;
 }
 function search_right(i){
-        url = '/asset/costume/'+ i + "/hand-right.png"
+        url = 'asset/costume/'+ i + "/hand-right.png"
     return url;
 }
 function search_foot(i){
-        url = '/asset/costume/'+ i + "/foot.png"
+        url = 'asset/costume/'+ i + "/foot.png"
     return url;
 }
 
