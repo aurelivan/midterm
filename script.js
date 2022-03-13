@@ -117,9 +117,10 @@ $("#start").click(function(){
         p1.style.display = "none";
     }
 
+    document.getElementById("Page2").scrollIntoView({behavior: 'auto'});
     move();
-}
 
+});
 //Page 2
 
 //Algoritm for time
@@ -161,7 +162,7 @@ greetings(m);
 function greetings(){
     username = document.getElementById('username').value;
     if(m >= 06 && m<=11){
-        document.getElementById("greetings").innerHTML = '<h2>Good Morning, ' +username + '</h2>';
+        document.getElementById("greetings").innerHTML = 'Good Morning, ' +username;
     }
     if(m >= 12 && m<=18){
         document.getElementById("greetings").innerHTML = 'Good Afternoon, ' +username;
@@ -202,18 +203,18 @@ function gif_hid(){
 }
 gif_hid();
 function show_gif(i){
-    if(i == 1){
-        document.getElementById('eat_gif').style.display = 'block';
-    }
-    else if(i == 2){
-        document.getElementById('sleep_gif').style.display = 'block';
-    }
-    else if(i == 3){
-        document.getElementById('study_gif').style.display = 'block';
-    }
-    else if(i == 4){
-        document.getElementById('play_gif').style.display = 'block';
-    }
+if(i == 1){
+    document.getElementById('eat_gif').style.display = 'block';
+}
+else if(i == 2){
+    document.getElementById('sleep_gif').style.display = 'block';
+}
+else if(i == 3){
+    document.getElementById('study_gif').style.display = 'block';
+}
+else if(i == 4){
+    document.getElementById('play_gif').style.display = 'block';
+}
 }
 
 //Tombol back
@@ -232,56 +233,60 @@ var width_tidur = 50;
 var width_belajar = 1;
 var width_bermain = 50;
 function move() {
-
-    if (i == 0) {
-        i = 1;
-        var makan = document.getElementById("proggress_bar1");
-        var tidur = document.getElementById("proggress_bar2");
-        var bermain = document.getElementById("proggress_bar3");
-        var belajar = document.getElementById("proggress_bar4");
-        var id = setInterval(frame, 1600);
-        makan.style.transition = 'all 1s';
-        tidur.style.transition = 'all 1s';
-        bermain.style.transition = 'all 1s';
-        belajar.style.transition = 'all 1s';
-        function frame() {
-            if(width_makan >0){
-                width_makan = width_makan - 0.8;
-                makan.style.width = width_makan + "%";
-                if(width_makan < 20){
-                    makan.style.backgroundColor = 'red';
-                }
-                else{
-                makan.style.backgroundColor = '#01a10e';
-                }
-            }
-            if(width_tidur >0){
-                width_tidur = width_tidur - 0.8;
-                tidur.style.width = width_tidur + "%";
-                if(width_tidur < 20){
-                    tidur.style.backgroundColor = 'red';
-                }
-                else{
-                    tidur.style.backgroundColor = '#01a10e';
-                }
-            }
-            if(width_bermain >0){
-                width_bermain = width_bermain - 0.8;
-                bermain.style.width = width_bermain + "%";
-                if(width_bermain < 20){
-                    bermain.style.backgroundColor = 'red';
-                }
-                else{
-                    bermain.style.backgroundColor = '#01a10e';
-                }
-            }
-            
-            if(width_belajar >0){
-                belajar.style.width = width_belajar + "%";
-            }
+    var makan = document.getElementById("proggress_bar1");
+    var tidur = document.getElementById("proggress_bar2");
+    var bermain = document.getElementById("proggress_bar3");
+    var belajar = document.getElementById("proggress_bar4");
+    var id = setInterval(frame, 1000);
+    function frame() {
+        if(width_makan >0){
+        width_makan = width_makan - 1;
+        makan.style.width = width_makan + "%";
+        if(width_makan < 20){
+            makan.style.backgroundColor = 'red';
         }
+        else{
+            makan.style.backgroundColor = '#01a10e';
+        }
+
+        }
+        else{
+            $("#gameover_screen").show();
+        }
+
+        if(width_tidur >0){
+        width_tidur = width_tidur - 1;
+        tidur.style.width = width_tidur + "%";
+        if(width_tidur < 20){
+            tidur.style.backgroundColor = 'red';
+        }
+        else{
+            tidur.style.backgroundColor = '#01a10e';
+        }
+        }
+        if(width_bermain >0){
+        width_bermain = width_bermain - 1;
+        bermain.style.width = width_bermain + "%";
+        if(width_bermain < 20){
+            bermain.style.backgroundColor = 'red';
+        }
+        else{
+            bermain.style.backgroundColor = '#01a10e';
+        }
+        }
+        if(width_belajar >0){
+        width_belajar = width_belajar - 1;
+        belajar.style.width = width_belajar + "%";
+        if(width_belajar < 20){
+            belajar.style.backgroundColor = 'red';
+        }
+        else{
+            belajar.style.backgroundColor = '#01a10e';
+        }
+        }
+      }
     }
-}
+
 
 // tombol tambah stat makan, dll
   function tambah_makan(){
@@ -295,6 +300,18 @@ function move() {
       setTimeout(gif_hid,2000);
     }
 }
+
+function tambah_belajar(){
+    for(var i = 0; i < 20 ; i++){
+    if(width_belajar > 100){
+        return;
+    }
+    show_gif(3);
+    width_belajar = width_belajar +1;
+    setTimeout(gif_hid,2000);
+  }
+}
+
 
 function tambah_tidur(){
     for(var i = 0; i < 20 ; i++){
@@ -318,71 +335,6 @@ function tambah_bermain(){
     setTimeout(gif_hid,2000);
   }
 }
-
-var sem = 1
-function tambah_belajar(){
-    for(var i = 0; i < 20 ; i++){
-        if(width_belajar > 100){
-            width_belajar = 99;
-            return;
-        }
-        show_gif(3);
-        setTimeout(gif_hid,2000);
-
-        if (width_belajar == 99) {
-            sem += 1;
-            show_info();
-            width_belajar = 0;
-        else{
-            $("#gameover_screen").show();
-        }
-
-        }
-
-        //Bisa dioptimize tapi nanti aja
-        //Semakin tinggi semester, makin dikit nambahnya
-        if (sem == 1) {
-            width_belajar += 1.5;
-        }
-        else if (sem == 2) {
-            width_belajar = width_belajar + 1.2;
-        }
-        else if (sem == 3) {
-            width_belajar = width_belajar + 1;
-        }
-        else if (sem == 4) {
-            width_belajar = width_belajar + 0.6;
-        }
-        else if (sem == 5) {
-            width_belajar = width_belajar + 0.4;
-        }
-        else if (sem == 6) {
-            width_belajar = width_belajar + 0.3;
-        }
-        else if (sem == 7) {
-            width_belajar = width_belajar + 0.2;
-        }
-        else if (sem == 8) {
-            width_belajar = width_belajar + 0.1;
-        }
-    }
-}
-
-//Algoritma pencapaian dan warning ("NANTI DULU")
-/*
-info_hide();
-function info_hide(){
-    info = document.getElementById('alert');
-    info.style.display = 'none';
-}
-
-function show_info(){
-    info.style.display = 'flex';
-}
-
-function closeinfo() {
-    info.style.display = 'none';
-}*/
 
 //for clock
 const hour = document.querySelector(".hour");
@@ -478,14 +430,15 @@ calculate();
 function achievements(){
     background = document.getElementById('achievements');
     background.style.display = 'block'; 
-    document.getElementById('user-name').innerHTML = '<h1>Hello, ' + username + '</h1>';
-    document.getElementById('sem').innerHTML = '<h2>Semseter ' + parseInt(sem) + '</h2>';
-    document.getElementById('makan_status').innerHTML = '<h3>Makan : ' + parseInt(width_makan) + '%</h>';
-    document.getElementById('tidur_status').innerHTML = '<h3>Tidur : ' + parseInt(calculate()) + '%</h>';
-    document.getElementById('bermain_status').innerHTML = '<h3>Bermain : ' + parseInt(width_bermain) + '%</h>';
-    document.getElementById('belajar_status').innerHTML = '<h3>Belajar : ' + parseInt(width_belajar) + '%</h>';
+    document.getElementById('user-name').innerHTML = ('Hello ') + username;
+    document.getElementById('makan_status').innerHTML = parseInt(width_makan) + '%';
+    document.getElementById('tidur_status').innerHTML = parseInt(calculate()) +'%';
+    document.getElementById('bermain_status').innerHTML = parseInt(width_bermain) + '%';
+    document.getElementById('belajar_status').innerHTML = parseInt(width_belajar) + '%';
+
+
 
 } 
-function closeachievements(){
-    document.getElementById('achievements').style.display = 'none';
-}
+ function closeachievements(){
+     document.getElementById('achievements').style.display = 'none';
+ }
