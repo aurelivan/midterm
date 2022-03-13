@@ -154,7 +154,7 @@ function clock(){
     greetings(m);
     change_back(m)
     clock2(m,s);
-    animate=setTimeout(clock,1000);
+    animate=setTimeout(clock,20);
 };
 
 window.onload=init;
@@ -185,18 +185,32 @@ function greetings(){
 change_back(m)
 function change_back(){
     username = document.getElementById('username').value;
+    if(m >= 00){
+        $("#Page2").css({
+            backgroundImage : 'url(asset/background/malam.png)'
+        },1000);
+    }
     if(m >= 08 && m<=11){
-        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/pagi.png)';
+        $("#Page2").css({
+            backgroundImage : 'url(asset/background/pagi.png)'
+        },1000);
     }
     if(m >= 12 && m<=15){
-        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/siang.png)';
+        $("#Page2").css({
+            backgroundImage : 'url(asset/background/siang.png)'
+        },1000);
     }
-    if(m >= 16 && m<=18){
-        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/sore.png)';
+    if(m >= 16 && m<=19){
+        $("#Page2").css({
+            backgroundImage : 'url(asset/background/sore.png)'
+        },1000);
     }
-    if(m >= 18 && m<=08){
-        document.getElementById("Page2").style.backgroundImage = 'url(asset/background/malam.png)';
+    if(m >= 18){
+        $("#Page2").css({
+            backgroundImage : 'url(asset/background/malam.png)'
+        },1000);
     }
+
 }
 
 
@@ -223,7 +237,7 @@ function move() {
     var tidur = document.getElementById("proggress_bar2");
     var bermain = document.getElementById("proggress_bar3");
     var belajar = document.getElementById("proggress_bar4");
-    var id = setInterval(frame, 1600);
+    var id = setInterval(frame, 1000);
 
     makan.style.transition = 'all 1s';
     tidur.style.transition = 'all 1s';
