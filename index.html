@@ -24,7 +24,6 @@
   <body>
     <!--Page 1-->
     <div id="Page1" class="p-4"> 
-      <div>
         <!--title-->
         <h1 class="text-center fw-bold mb-4">Set Character</h1>
         <!--row input username-->
@@ -51,34 +50,32 @@
     
         <!--Start button-->
         <div id="background_credit">
-          <div class="container" id="Pop_credit">
+          <div class="container-fluid" id="Pop_credit">
             <div class="row">
-              <div class="col">
-
+              <div class="col-1">
+                <button id="close_credit">X</button>
               </div>
-              <div class="col">
-
+              <div class="col-10">
+                <center>Credit</center>
               </div>
             </div>
             <div class="row">
-
+              <br>
             </div>
             <div class="row">
-
+              <hr>
             </div>
-            <div class="row">
-
-            </div>
-          </div>
-        </div>
-          <button>credit</button>
-        
-        
-        
-        <div class="text-center mt-2 mb-4">
-          <img src="asset/icon/start.png" id="start">
         </div>
       </div>
+          
+        
+        
+        
+        <div id="home-button" class="text-center mt-2 mb-4">
+          <button id="open_credit">credit</button>
+          <img src="asset/icon/start.png" id="start">
+          <button id="open_setting">setting</button>
+        </div>
     </div>
 
     <!--Page 2 -->
@@ -223,7 +220,7 @@
         </div>
       </div>
       <div class="col-2">
-        <button id="btn" onclick="achievements()">Achievements</button>
+        <img class="button-action" id="thropy" src="asset/icon/Trophy.png" onclick="achievements()">
       </div>  
     </div>
 
@@ -260,7 +257,7 @@
         <img class="button-action" id="tambahBermain" src="asset/icon/status_game.png">
       </div>
       <div id="outfit" class="col-2">
-        <img src="asset/icon/Wadrobe.png" id="pbutton_open" onclick="open_pop()">
+        <img class="button-action" src="asset/icon/Baju.png" id="pbutton_open" onclick="open_pop()">
       </div>
     </div>
     <div id="gif_col" class="row">
