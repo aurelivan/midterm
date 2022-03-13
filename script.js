@@ -116,11 +116,9 @@ $("#start").click(function(){
         p2.style.display = "block";
         p1.style.display = "none";
     }
-
-    document.getElementById("Page2").scrollIntoView({behavior: 'auto'});
     move();
-
 });
+
 //Page 2
 
 //Algoritm for time
@@ -162,16 +160,16 @@ greetings(m);
 function greetings(){
     username = document.getElementById('username').value;
     if(m >= 06 && m<=11){
-        document.getElementById("greetings").innerHTML = 'Good Morning, ' +username;
+        document.getElementById("greetings").innerHTML = '<h1>Good Morning, ' +username + '</h1>';
     }
     if(m >= 12 && m<=18){
-        document.getElementById("greetings").innerHTML = 'Good Afternoon, ' +username;
+        document.getElementById("greetings").innerHTML = '<h1>Good Afternoon, ' +username + '</h21';
     }
     if(m >= 19 && m<=23){
-        document.getElementById("greetings").innerHTML = 'Good Evening, ' +username;
+        document.getElementById("greetings").innerHTML = '<h1>Good Evening, ' +username + '</h1>';
     }
     if(m >= 00 && m<=05){
-        document.getElementById("greetings").innerHTML = 'Good Night, ' +username;
+        document.getElementById("greetings").innerHTML = '<h1>Good Night, ' +username + '</h1>';
         
     }
 }
@@ -215,55 +213,54 @@ function move() {
     var tidur = document.getElementById("proggress_bar2");
     var bermain = document.getElementById("proggress_bar3");
     var belajar = document.getElementById("proggress_bar4");
-    var id = setInterval(frame, 1000);
+    var id = setInterval(frame, 1600);
+
+    makan.style.transition = 'all 1s';
+    tidur.style.transition = 'all 1s';
+    bermain.style.transition = 'all 1s';
+    belajar.style.transition = 'all 1s';
+
     function frame() {
         if(width_makan >0){
-        width_makan = width_makan - 1;
-        makan.style.width = width_makan + "%";
-        if(width_makan < 20){
-            makan.style.backgroundColor = 'red';
+            width_makan = width_makan - 0.8;
+            makan.style.width = width_makan + "%";
+            if(width_makan < 20){
+                makan.style.backgroundColor = 'red';
+            }
+            else{
+                makan.style.backgroundColor = '#01a10e';
+            }
         }
-        else{
-            makan.style.backgroundColor = '#01a10e';
-        }
-
-        }
-        else{
+        /*else{
             $("#gameover_screen").show();
-        }
+        }*/
 
         if(width_tidur >0){
-        width_tidur = width_tidur - 1;
-        tidur.style.width = width_tidur + "%";
-        if(width_tidur < 20){
-            tidur.style.backgroundColor = 'red';
+            width_tidur = width_tidur - 0.8;
+            tidur.style.width = width_tidur + "%";
+            if(width_tidur < 20){
+                tidur.style.backgroundColor = 'red';
+            }
+            else{
+                tidur.style.backgroundColor = '#01a10e';
+            }
         }
-        else{
-            tidur.style.backgroundColor = '#01a10e';
-        }
-        }
+
         if(width_bermain >0){
-        width_bermain = width_bermain - 1;
-        bermain.style.width = width_bermain + "%";
-        if(width_bermain < 20){
-            bermain.style.backgroundColor = 'red';
-        }
-        else{
-            bermain.style.backgroundColor = '#01a10e';
-        }
+            width_bermain = width_bermain - 0.8;
+            bermain.style.width = width_bermain + "%";
+            if(width_bermain < 20){
+                bermain.style.backgroundColor = 'red';
+            }
+            else{
+                bermain.style.backgroundColor = '#01a10e';
+            }
         }
         if(width_belajar >0){
-        width_belajar = width_belajar - 1;
-        belajar.style.width = width_belajar + "%";
-        if(width_belajar < 20){
-            belajar.style.backgroundColor = 'red';
+            belajar.style.width = width_belajar + "%";
         }
-        else{
-            belajar.style.backgroundColor = '#01a10e';
-        }
-        }
-      }
     }
+}
 
 
 // tombol tambah stat makan, dll
@@ -277,7 +274,6 @@ $("#tambahMakan").click(function(){
         }, 1500);
     });
     for(var i = 0; i < 20 ; i++){
-     
         if(width_makan > 100){
             return;
         }
@@ -303,21 +299,52 @@ $("#tambahTidur").click(function(){
     }
 });
 
-$("#tambahBelajar").click(function(){
+$("#tambahBelajar").click(function(){ //Belom jalan
     $("#gif_col").show();
     $("#study_gif").show();
     $(document).ready(function($) {
         setTimeout(function() {
-        $("#gif_col").hide();
-        $("#study_gif").hide();
+            $("#gif_col").hide();
+            $("#study_gif").hide();
         }, 1500);
     });
+    
     for(var i = 0; i < 20 ; i++){
-     
         if(width_belajar > 100){
+            width_belajar = 99;
             return;
         }
-        width_belajar = width_belajar +1;
+        if (width_belajar == 99) {
+            sem += 1;
+            show_info();
+            width_belajar = 0;
+        }
+        //Bisa dioptimize tapi nanti aja
+        //Semakin tinggi semester, makin dikit nambahnya
+        if (sem == 1) {
+            width_belajar += 1.5;
+        }
+        else if (sem == 2) {
+            width_belajar = width_belajar + 1.2;
+        }
+        else if (sem == 3) {
+            width_belajar = width_belajar + 1;
+        }
+        else if (sem == 4) {
+            width_belajar = width_belajar + 0.6;
+        }
+        else if (sem == 5) {
+            width_belajar = width_belajar + 0.4;
+        }
+        else if (sem == 6) {
+            width_belajar = width_belajar + 0.3;
+        }
+        else if (sem == 7) {
+            width_belajar = width_belajar + 0.2;
+        }
+        else if (sem == 8) {
+            width_belajar = width_belajar + 0.1;
+        }
     }
 });
 
@@ -330,14 +357,28 @@ $("#tambahBermain").click(function(){
         $("#play_gif").hide();
         }, 1500);
     });
-    for(var i = 0; i < 20 ; i++){
-     
+    for(var i = 0; i < 20 ; i++){     
         if(width_bermain > 100){
             return;
         }
         width_bermain = width_bermain +1;
     }
 });
+//Algoritma pencapaian dan warning ("NANTI DULU")
+/*
+info_hide();
+function info_hide(){
+    info = document.getElementById('alert');
+    info.style.display = 'none';
+}
+
+function show_info(){
+    info.style.display = 'flex';
+}
+
+function closeinfo() {
+    info.style.display = 'none';
+}*/
 
 //for clock
 const hour = document.querySelector(".hour");
@@ -383,15 +424,15 @@ function search_foot(i){
 
 function check_file_outfit(){
     for(i = 0;i <5; i++){
-    var z = $("#change_costum_row");
-    var a = $(document.createElement('div'));
-    $(a).attr('class','change_costum col-2');
-    var b = $(document.createElement('img')); 
-    $(b).attr('src',search_gantungan(i+1));
-    $(b).attr('class','change_outfit');
-    $(a).append(b);
-    $(z).append(a);
-}
+        var z = $("#change_costum_row");
+        var a = $(document.createElement('div'));
+        $(a).attr('class','change_costum col-2');
+        var b = $(document.createElement('img')); 
+        $(b).attr('src',search_gantungan(i+1));
+        $(b).attr('class','change_outfit');
+        $(a).append(b);
+        $(z).append(a);
+    }
 }
 check_file_outfit();
 
@@ -433,15 +474,14 @@ calculate();
 function achievements(){
     background = document.getElementById('achievements');
     background.style.display = 'block'; 
-    document.getElementById('user-name').innerHTML = ('Hello ') + username;
-    document.getElementById('makan_status').innerHTML = parseInt(width_makan) + '%';
-    document.getElementById('tidur_status').innerHTML = parseInt(calculate()) +'%';
-    document.getElementById('bermain_status').innerHTML = parseInt(width_bermain) + '%';
-    document.getElementById('belajar_status').innerHTML = parseInt(width_belajar) + '%';
-
-
+    document.getElementById('user-name').innerHTML = '<h1>Hello, ' + username + '</h1>';
+    document.getElementById('sem').innerHTML = '<h2>Semseter ' + parseInt(sem) + '</h2>';
+    document.getElementById('makan_status').innerHTML = '<h3>Makan : ' + parseInt(width_makan) + '%</h>';
+    document.getElementById('tidur_status').innerHTML = '<h3>Tidur : ' + parseInt(calculate()) + '%</h>';
+    document.getElementById('bermain_status').innerHTML = '<h3>Bermain : ' + parseInt(width_bermain) + '%</h>';
+    document.getElementById('belajar_status').innerHTML = '<h3>Belajar : ' + parseInt(width_belajar) + '%</h>';
 
 } 
- function closeachievements(){
-     document.getElementById('achievements').style.display = 'none';
- }
+function closeachievements(){
+    document.getElementById('achievements').style.display = 'none';
+}
