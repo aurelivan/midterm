@@ -146,7 +146,7 @@ function clock(){
     greetings(m);
     change_back(m)
     clock2(m,s);
-    animate=setTimeout(clock,600);
+    animate=setTimeout(clock,1000); //nanti balikin jadi 1000
 };
 
 window.onload=init;
@@ -182,7 +182,7 @@ function change_back(){
             backgroundImage : 'url(asset/background/malam.png)'
         },1000);
     }
-    if(m >= 08 && m<=11){
+    if(m >= 06 && m<=11){
         $("#Page2").css({
             backgroundImage : 'url(asset/background/pagi.png)'
         },1000);
@@ -393,12 +393,11 @@ const hour = document.querySelector(".hour");
 const minute = document.querySelector(".minute");
 
 function clock2(m, s) {
-  const minuteDegree = (s / 60) * 360;
-  const hourDegree = (m / 12) * 360;
+    const minuteDegree = (s / 60) * 360;
+    const hourDegree = (m / 12) * 360;
 
-  minute.style.transform = `rotate(${minuteDegree}deg)`;
-  hour.style.transform = `rotate(${hourDegree}deg)`;
-  hour.style.transition = '60s';
+    minute.style.transform = `rotate(${minuteDegree}deg)`;
+    hour.style.transform = `rotate(${hourDegree}deg)`;
 }
 
 
