@@ -32,7 +32,7 @@
             <input type="text" name="name" id="username" class="p-2 text-center w-75 border-0" placeholder=" Username... ">
           </div>
           <div class="text-center">
-            <button id="confirm" class="p-1 rounded-3 border-0" onclick="submit_username()">confirm</button>
+            <button type="button" id="confirm" class="btn btn-light btn-outline-primary p-1 rounded-3 border-2" onclick="submit_username()">✔️</button>
           </div>
         </div>
 
@@ -64,6 +64,22 @@
             </div>
             <div class="row">
               <hr>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <h3>Aurelius Ivan Wijaya</h3>
+              </div>
+              <div class="col-6">
+                <h3>Arkana Asa Handoko</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <h3>Maecyntha Irelynn</h3>
+              </div>
+              <div class="col-6">
+                <h3>Patricia Theodora Darmawan</h3>
+              </div>
             </div>
         </div>
       </div>
@@ -99,20 +115,19 @@
       </div>
       <div class="col-4"></div>
     </div>
-    
-    
-    <!--pop-up warning--> <!--
+      
+    <!--pop-up warning-->
     <div id="alert">
       <div id="info">
         <button id="close">X</button>
         <div class="text-center ">
           <h2></h2> <!--nanti ganti jadi "comment" congrats/warning-->
-          <!--<hr>
+          <hr>
           <h3></h3>
           <h4>Halo</h4> <!--nanti hapus-->
-        <!--</div>
+        </div>
       </div>
-    </div> --> 
+    </div>
 
     <!--Status bar -->
     <!--row 1-->
@@ -216,6 +231,15 @@
             <h3 id="tidur_status" class="px-3"></h3>
             <h3 id="bermain_status" class="px-3"></h3>
             <h3 id="belajar_status" class="px-3"></h3>
+          </div>
+          <div id="info" class="col-2">
+            <button id="close" onclick="close_info();">X</button>
+            <div class="text-center ">
+              <h2></h2> <!--nanti ganti jadi "comment" congrats/warning-->
+              <hr>
+              <h3></h3>
+              <h4>Selamat ya! udah naik semester nihh!</h4> <!--nanti hapus-->
+            </div>
           </div>
         </div>
       </div>

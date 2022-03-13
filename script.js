@@ -312,30 +312,36 @@ $("#tambahTidur").click(function(){
             return;
         }
         width_tidur = width_tidur +1;
+        width_bermain = width_bermain -1;
     }
 });
 
-$("#alert").hide();
+function show_info(){
+    $("#info").show();
+    $("#awards").hide();
+    $("#achievements").show();
+}
+
 $("#tambahBelajar").click(function(){ //Belom jalan
     $("#gif_col").show();
     $("#study_gif").show();
     $(document).ready(function($) {
         setTimeout(function() {
-            $("#gif_col").hide();
             $("#study_gif").hide();
+            $("#gif_col").hide();
         }, 1500);
     });
-    
+    width_makan = width_makan -1;
     for(var i = 0; i < 20 ; i++){
         if(width_belajar> 100){
             width_belajar = 99;
             return;
         }
 
-        if (width_belajar == 99) {
+        if (width_belajar >= 99) {
             sem += 1;
-            $("#alert").show();
             width_belajar = 0;
+            show_info();
         }
         
         if (sem == 1) {
@@ -362,14 +368,17 @@ $("#tambahBelajar").click(function(){ //Belom jalan
         else if (sem == 8) {
             width_belajar += 0.06;
         }
+        
     }
+    
 });
 
 //Algoritma pencapaian dan warning ("LANJUT NANTI DULU")
 
-$("#close").click(function() {
-    $("#alert").hide();
-  });
+function close_info(){
+    $("#info").hide();
+    closeachievements();
+}
 
 $("#tambahBermain").click(function(){
     $("#gif_col").show();
@@ -469,8 +478,6 @@ function close_pop(){
     pop_ups_in.style.display = 'none';
 }
 
-// achievements
-document.getElementById('achievements').style.display = 'none';
 
 function calculate(){
     caltidur = width_tidur;
@@ -488,7 +495,7 @@ function achievements(){
     document.getElementById('tidur_status').innerHTML = '<h3>Tidur : ' + parseInt(calculate()) + '%</h>';
     document.getElementById('bermain_status').innerHTML = '<h3>Bermain : ' + parseInt(width_bermain) + '%</h>';
     document.getElementById('belajar_status').innerHTML = '<h3>Belajar : ' + parseInt(width_belajar) + '%</h>';
-
+    $("#awards").show();
 } 
 function closeachievements(){
     document.getElementById('achievements').style.display = 'none';

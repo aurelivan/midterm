@@ -73,6 +73,7 @@ body{
 }
 
 #start{
+    pointer-events: none;
     width: 10%;
     height: auto;
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
@@ -505,23 +506,20 @@ body{
 }
 
 /*alert and achievement*/ 
-#alert {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: all;
-    background-color: rgb(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-    z-index: 40;
-}
 
 #info {
+    display: none;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 50%;
     background-color: beige;
     padding: 20px;
     width: 50%;
     height: auto;
-    z-index: 42;
+    z-index: 2000;
 }
 
 /*Pop ups*/
@@ -565,21 +563,27 @@ body{
 
 /* Achievements */
 #achievements{
+    position: fixed;
+    top: 0;
+    display: none;
     background-color: rgb(0, 0, 0, 0.5);
-    height: 200vh;
-    transform: translateY(-100vh);
+    height: 100%;
     width: 100%;
     position: absolute;
     z-index: 60;
 }
 
 #awards{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 25%;
     background-color: beige;
-    margin: 50px;
     padding: 10px;
-    width: auto;
-    height: 30rem;
-    transform: translateY(50vh);
+    width: 70%;
+    height: 50%;
 }
 
 #btn {
