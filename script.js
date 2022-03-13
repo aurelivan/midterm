@@ -12,6 +12,15 @@ function rgb(r, g, b, o){
 
 //Page 1
 
+//credit list
+
+$("#open_credit").click(function(){
+    $("#background_credit").show();
+});
+$("#close_credit").click(function(){
+    $("#background_credit").hide();
+});
+
 //get username
 function input_username(){
     document.getElementById('greetings').insertAdjacentText('beforeend', username);
