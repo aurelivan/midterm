@@ -53,7 +53,7 @@ function clicked (){
 
 function chooseChara(){
     if(z == 1){
-        document.getElementById('aksesoris').src='asset/character/character-boy1/';
+        document.getElementById('accessories').src='asset/character/character-boy1/';
         document.getElementById('hair-back').src='asset/character/character-boy1/hair-back.png';
         document.getElementById('head').src='asset/character/character-boy1/head.png';
         document.getElementById('eye').src='asset/character/character-boy1/eye.png';
@@ -66,7 +66,7 @@ function chooseChara(){
         document.getElementById('foot').src='asset/character/character-boy1/foot.png';
     }
     else if(z == 0){
-        document.getElementById('aksesoris').src='asset/character/character-girl1/';
+        document.getElementById('accessories').src='asset/character/character-girl1/';
         document.getElementById('hair-back').src='asset/character/character-girl1/hair-back.png';
         document.getElementById('head').src='asset/character/character-girl1/head.png';
         document.getElementById('eye').src='asset/character/character-girl1/eye.png';
@@ -82,16 +82,17 @@ function chooseChara(){
 
 
 //submit username
+
 document.getElementById('start').disabled =true;
 function submit_username(){
         document.getElementById('username').disabled = true;
-        document.getElementById('start').disabled = false;
+        document.getElementById('start').style.pointerEvents = 'all';
+        document.getElementById('start').style.opacity = '1';
 }
-
 //function for loading screen
 
 //function for play / start button
-function play(){
+$("#start").click(function(){
     $("#loading_screen").show();
     chooseChara();//function for gender
     $("#greetings").text(username);//display user name at greetings
@@ -115,8 +116,10 @@ function play(){
         p2.style.display = "block";
         p1.style.display = "none";
     }
+
     move();
 }
+
 //Page 2
 
 //Algoritm for time
@@ -224,13 +227,12 @@ function back() {
 }
 
 //Algorithm for status bar
-
-var i = 0;
 var width_makan = 50;
 var width_tidur = 50;
 var width_belajar = 1;
 var width_bermain = 50;
 function move() {
+
     if (i == 0) {
         i = 1;
         var makan = document.getElementById("proggress_bar1");
@@ -282,15 +284,39 @@ function move() {
 }
 
 // tombol tambah stat makan, dll
-function tambah_makan(){
-    for(var i = 0; i < 20 ; i++){
-        if(width_makan > 100){
-            return;
-        }
-        show_gif(1);
-        width_makan = width_makan +1;
-        setTimeout(gif_hid,2000);
+  function tambah_makan(){
+      for(var i = 0; i < 20 ; i++){
+     
+      if(width_makan > 100){
+          return;
+      }
+      show_gif(1);
+      width_makan = width_makan +1;
+      setTimeout(gif_hid,2000);
     }
+}
+
+function tambah_tidur(){
+    for(var i = 0; i < 20 ; i++){
+    if(width_tidur > 100){
+        return;
+    }
+    show_gif(2);
+    width_tidur = width_tidur +1;
+    setTimeout(gif_hid,2000);
+  }
+}
+
+
+function tambah_bermain(){
+    for(var i = 0; i < 20 ; i++){
+    if(width_bermain > 100){
+        return;
+    }
+    show_gif(4);
+    width_bermain = width_bermain +1;
+    setTimeout(gif_hid,2000);
+  }
 }
 
 var sem = 1
@@ -307,6 +333,10 @@ function tambah_belajar(){
             sem += 1;
             show_info();
             width_belajar = 0;
+        else{
+            $("#gameover_screen").show();
+        }
+
         }
 
         //Bisa dioptimize tapi nanti aja
@@ -336,29 +366,6 @@ function tambah_belajar(){
             width_belajar = width_belajar + 0.1;
         }
     }
-}
-
-function tambah_tidur(){
-    for(var i = 0; i < 20 ; i++){
-    if(width_tidur > 100){
-        return;
-    }
-    show_gif(2);
-    width_tidur = width_tidur +1;
-    setTimeout(gif_hid,2000);
-  }
-}
-
-
-function tambah_bermain(){
-    for(var i = 0; i < 20 ; i++){
-    if(width_bermain > 100){
-        return;
-    }
-    show_gif(4);
-    width_bermain = width_bermain +1;
-    setTimeout(gif_hid,2000);
-  }
 }
 
 //Algoritma pencapaian dan warning ("NANTI DULU")
@@ -391,20 +398,60 @@ function clock2(m, s) {
 
 
 
-//change costume{
-xiao_body =  'asset/costume/Xiao/body.png';
-xiao_hand_right = 'asset/costume/Xiao/hand_right.png';
-xiao_hand_left = 'asset/costume/Xiao/hand_left.png';
+//change costume
 
-    function change_outfit(){
-        document.getElementById('body').src = xiao_body;
-        document.getElementById('hand-left').src= xiao_hand_left;
-        document.getElementById('hand-right').src= xiao_hand_right;
-    }
+//search outfit file
+function search_gantungan(i){
+    url = 'asset/costume/'+ i + "/gantungan.png"
+    return url;
+}
+function search_acc(i){
+        url = 'asset/costume/'+ i + "/accessories.png"
+    return url;
+}
+function search_body(i){
+        url = 'asset/costume/'+ i + "/body.png"
+    return url;
+}
+function search_left(i){
+        url = 'asset/costume/'+ i + "/hand-left.png"
+    return url;
+}
+function search_right(i){
+        url = 'asset/costume/'+ i + "/hand-right.png"
+    return url;
+}
+function search_foot(i){
+        url = 'asset/costume/'+ i + "/foot.png"
+    return url;
+}
+
+function check_file_outfit(){
+    for(i = 0;i <5; i++){
+    var z = $("#change_costum_row");
+    var a = $(document.createElement('div'));
+    $(a).attr('class','change_costum col-2');
+    var b = $(document.createElement('img')); 
+    $(b).attr('src',search_gantungan(i+1));
+    $(b).attr('class','change_outfit');
+    $(a).append(b);
+    $(z).append(a);
+}
+}
+check_file_outfit();
 
 
-//pop ups
+$(".change_outfit").click(function(){
+    var index = $(this).parent().index();
+    document.getElementById('accessories').src = search_acc(index+1);
+    document.getElementById('body').src = search_body(index+1);
+    document.getElementById('hand-left').src = search_left(index+1);
+    document.getElementById('hand-right').src = search_right(index+1);
+    document.getElementById('foot').src = search_foot(index+1);
+});
 
+
+//pop up
 var pop_ups = document.getElementById('pop_ups');
 var pop_ups_in = document.getElementById('pop_ups_in');
 close_pop();

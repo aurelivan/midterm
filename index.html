@@ -47,8 +47,9 @@
     
         <!--Start button-->
         
-        <div class="text-center mt-2 mb-4">
-          <button id="start" class="p-2 text-center w-25" onclick="play()">gameplay</button>
+
+        <div class="text-center mt-2">
+          <img src="asset/icon/start.png" id="start" onclick="play()">
         </div>
       </div>
     </div>
@@ -85,7 +86,6 @@
           <!--<hr>
           <h3 id="sem"></h3>
           <h4>Halo</h4> <!--nanti hapus-->
-          <!--
         </div>
       </div>
     </div> -->
@@ -94,23 +94,35 @@
     <!--row 1-->
     <div class="row">
       <div id="status1" class="col-1">
-        <img src="" alt=""><p>Makan</p>      
+        <img src="" alt=""><img class="bar_image" src="asset/icon/Eatstatus.png" alt="">
       </div>
       <div class="col-2">
         <div id="proggress_fill"><div id="proggress_bar1"></div></div>
       </div>
-      <div id="greetings_container" class="text-center col-6">
-        <h1 id="greetings" class="p-1"></h1>
+      <div id="greetings_container" class="col-6">
+        <p id="greetings"></p>
       </div>
       <div class="col-3">
-        <div id="row"></div>
+        <div id="row">
+        </div>
       </div>
     </div>
-
+/<!--ini buat apa
+    <div class="col-2">
+      <div id="proggress_fill"><div id="proggress_bar1"></div></div>
+    </div>
+    <div id="greetings_container" class="text-center col-6">
+      <h1 id="greetings" class="p-1"></h1>
+    </div>
+    <div class="col-3">
+      <div id="row"></div>
+    </div>
+    </div>
+-->
     <!--row 2-->
     <div class="row">
       <div id="status2" class="col-1">
-        <img src="" alt=""><p>Tidur</p>
+        <img src="" alt=""><img class="bar_image" src="asset/icon/Battery.png" alt="">
       </div>
       <div class="col-2">
         <div id="proggress_fill"><div id="proggress_bar2"></div></div>
@@ -221,7 +233,7 @@
         <img id="button_action" onclick="tambah_bermain()" src="asset/icon/status_game.png">
       </div>
       <div id="outfit" class="col-2">
-        <button id="pbutton_open" onclick="open_pop()"></button>
+        <img src="asset/icon/Wadrobe.png" id="pbutton_open" onclick="open_pop()">
       </div>
     </div>
 
@@ -260,7 +272,6 @@
       </div>
     </div>
     
-
     <!--Gameover screen-->
     <div id="gameover_screen" class="row">
       <div id="gameover">
@@ -268,17 +279,20 @@
         <p>gameover</p>
       </div>
     </div>
-    <!--
+    
     <script>
       var p2 = document.getElementById("Page2");
       p2.style.display = "none";
     </script>
+
     <!--end of the page-->
-    <script src="/jquery-3.6.0.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="script.js">
     </script>
+
     <!-- JavaScript Bundle with Popper -->  
+
 
   </body>
 </html>

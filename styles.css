@@ -81,12 +81,21 @@ body{
 }
 
 #start{
-    border-radius: 10px;
     border: none;
+    width: 15%;
+    height: auto;
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: 0.7s;
 
 }
 
+#start:hover{
+    width: 20%;
+    transform: translateY(-10%);
+    
+}
 /*greetings function (e.g good morning user)*/
 
 #greetings{
@@ -133,7 +142,7 @@ body{
     opacity: 0;
 }
 
-#aksesoris, #hair-back, #head, #eye, #eye2, #eye3, #hair-front, #body, #hand-left, #hand-right{
+#accessories, #hair-back, #head, #eye, #eye2, #eye3, #hair-front, #body, #hand-left, #hand-right{
     animation: goyang 3s infinite;
 }
 
@@ -280,6 +289,14 @@ body{
 }
 
 /*Status Bar*/
+.bar_image{
+    border: 1px solid #555;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: #3498db;
+    width: 50px;
+    height: auto;
+}
 
 #status_bar{
     text-align: center;
@@ -289,7 +306,6 @@ body{
     text-align: center;
     margin-left: 0px;
     padding: 10px 10px ;
-    transform: translateY(-15%);
 }
 
 
@@ -303,7 +319,7 @@ body{
 }
 
 #proggress_bar1, #proggress_bar2, #proggress_bar3, #proggress_bar4{
-    background-color: #01a10e;
+    background-color: #00ff15;
     border-radius: 10px;
     height: 10px;
     width:100%;
@@ -314,19 +330,24 @@ body{
 /*BUtton go back*/
 
 #go_back{
-    background-color: rgb(255, 255, 255);
-    border: none;
-    margin-left: 20px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 160px;
+    width: 160px;
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
+    transform: translateY(10px);
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
 }
 
-#go_back a, #go_back svg {
-    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
+#go_back:hover{
+    transform: translateY(-20px);
+    height: 200px;
+    width: 200px;
+    -webkit-filter: drop-shadow(5px 5px 5px rgb(255, 255, 255));
+    filter: drop-shadow(5px 5px 5px rgb(255, 255, 255));
 }
+
 
 /*Character row*/
 #background_image{
@@ -364,6 +385,8 @@ body{
     filter: drop-shadow(10px 10px 10px rgb(255, 255, 255));
     transition: 0.4s;
 }
+
+
 
 #pbutton_open, #pbutton {
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
@@ -552,7 +575,8 @@ body{
     z-index: 30;
 }
  
-  /* Achievements */
+
+/* Achievements */
 #achievements{
     background-color: rgb(0, 0, 0, 0.5);
     height: 200vh;
@@ -592,7 +616,6 @@ body{
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
 
-
 /*Loading screen setting*/
 
 #loading_screen{
@@ -606,6 +629,7 @@ body{
     transform: translateY(-210vh);
     z-index: 1000;
 }
+
 
 #loader{
     text-align: center;
@@ -640,3 +664,46 @@ body{
   }
 
 
+
+  /*Game over screen*/
+  #gameover_screen{
+    display: none;
+    background-color: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 300vh;
+    top: 0px;
+    z-index: 1000;
+  }
+
+  #gameover{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: auto;
+    height: 120px;
+    font-size: 40px;
+  }
+
+
+  /*Outfit setting*/
+  .change_costum{
+    width: auto;
+    height: auto;
+  }
+
+  .change_outfit{
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    width: auto;
+    height: 160px;
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
+    z-index: 10;
+    width: 150px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
