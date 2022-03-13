@@ -22,9 +22,9 @@
     <div id="Page1" class="p-4"> 
       <div>
         <!--title-->
-        <h1 class="text-center mb-4">Set Character</h1>
+        <h1 class="text-center fw-bold mb-4">Set Character</h1>
         <!--row input username-->
-        <div class="container-fluid row mb-3">
+        <div class="row mb-4">
           <div class="text-center mb-2">
             <input type="text" name="name" id="username" class="p-2 text-center w-75 border-0" placeholder=" Username... ">
           </div>
@@ -47,7 +47,7 @@
     
         <!--Start button-->
         
-        <div class="text-center mt-2">
+        <div class="text-center mt-2 mb-4">
           <img src="asset/icon/start.png" id="start">
         </div>
       </div>
@@ -56,95 +56,97 @@
     <!--Page 2 -->
     <div id="Page2">
       <div class="row_character row">
-        <div class="col-4">
-        </div>
-      <div id="character1" class="col-4">
-        <img id="foot" src="" alt="">
-        <div id="top">
-        <img class="goyang" id="hair-back" src="" alt="">
-        <img class="goyang" id="head" src="" alt="">
-        <img class="goyang" id="eye" src="" alt="">
-        <img class="goyang" id="eye2" src="" alt="">
-        <img class="goyang" id="eye3" src="" alt="">
-        <img class="goyang" id="hair-front" src="" alt="">
-        <img class="goyang" id="accessories" src="" alt="">
+        <div class="col-4"></div>
+        <div id="character1" class="col-4">
+          <img id="foot" src="" alt="">
+          <div id="top">
+          <img class="goyang" id="hair-back" src="" alt="">
+          <img class="goyang" id="head" src="" alt="">
+          <img class="goyang" id="eye" src="" alt="">
+          <img class="goyang" id="eye2" src="" alt="">
+          <img class="goyang" id="eye3" src="" alt="">
+          <img class="goyang" id="hair-front" src="" alt="">
+          <img class="goyang" id="accessories" src="" alt="">
         </div>
         <img class="goyang" id="hand-left" src="" alt="">
         <img class="goyang" id="body" src="" alt="">
         <img class="goyang" id="hand-right" src="" alt="">
       </div>
-      <div class="col-4">
+      <div class="col-4"></div>
+    </div>
+    
+    <!--pop-up warning KERJAIN NANTI LAGI (BENERIN LAYOUT DULU)
+    <div id="alert">
+      <div id="info">
+        <button id="close" onclick="closeinfo()">X</button>
+        <div class="text-center ">
+          <h2 id="user-name"></h2> <!--nanti ganti jadi comment congrats/warning-->
+          <!--<hr>
+          <h3 id="sem"></h3>
+          <h4>Halo</h4> <!--nanti hapus-->
+          <!--
+        </div>
+      </div>
+    </div> -->
+    <!--Status bar -->
+    <!--row 1-->
+    <div class="row">
+      <div id="status1" class="col-1">
+          <img src="" alt=""><img class="bar_image" src="asset/icon/Eatstatus.png" alt="">
+          
+      </div>
+      <div class="col-2">
+        <div id="proggress_fill"><div id="proggress_bar1"></div></div>
+      </div>
+      <div id="greetings_container" class="col-6 mt-3">
+        <h2 id="greetings"></h2>
+      </div>
+      <div class="col-3">
+        <div id="row"></div>
       </div>
     </div>
-    <!--Status bar -->
-        <div class="row">
-            <div id="status1" class="col-1">
-                <img src="" alt=""><img class="bar_image" src="asset/icon/Eatstatus.png" alt="">
-                
-            </div>
-            <div class="col-2">
-              <div id="proggress_fill"><div id="proggress_bar1"></div></div>
-            </div>
-            <div id="greetings_container" class="col-6">
-              <p id="greetings"></p>
-            </div>
-            <div class="col-3">
-              <div id="row">
-              </div>
-            </div>
-        </div>
-
-        <!--row 2-->
-        <div class="row">
-          <div id="status2" class="col-1">
-              <img src="" alt=""><img class="bar_image" src="asset/icon/Battery.png" alt="">
-              
-          </div>
-          <div class="col-2">
-            <div id="proggress_fill"><div id="proggress_bar2"></div></div>
-          </div>
-          <div class="col-3">
-          </div>
-          <div class="col-3">
-          </div>
-          <div class="col-3">
-            <div class="clock">
-          </div>
-          </div>
+    <!--row 2-->
+    <div class="row">
+      <div id="status2" class="col-1">
+          <img src="" alt=""><img class="bar_image" src="asset/icon/Battery.png" alt="">
+          
       </div>
-
-        <!--row 3-->
-        <div class="row">
-          <div id="status3" class="col-1">
-              <img src="" alt=""><img class="bar_image" src="asset/icon/Heart.png" alt="">
-          </div>
-          <div class="col-2">
-            <div id="proggress_fill"><div id="proggress_bar3"></div></div>
-          </div>
-          <div class="col-3">
-          </div>
-          <div class="col-3">
-          </div>
-          <div class="col-3">
-          </div>
+      <div class="col-2">
+        <div id="proggress_fill"><div id="proggress_bar2"></div></div>
       </div>
-      <!--row 4-->
-      <div class="row">
-        <div id="status4" class="col-1">
-            <img src="" alt=""><img class="bar_image" src="asset/icon/Bookstatus.png" alt="">
-            
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-3">
+        <div class="clock">
         </div>
-        <div class="col-2">
-          <div id="proggress_fill"><div id="proggress_bar4"></div></div>
-        </div>
-        <div class="col-3">
-          <div id="pop_ups">
-               
-               
-          </div>
-          <div id="pop_ups_in">
-            <button id="pbutton" onclick="close_pop()">X</button>
-            <div class="container-fluid">
+      </div>
+    </div>
+
+    <!--row 3-->
+    <div class="row">
+      <div id="status3" class="col-1">
+          <img src="" alt=""><img class="bar_image" src="asset/icon/Heart.png" alt="">
+      </div>
+      <div class="col-2">
+        <div id="proggress_fill"><div id="proggress_bar3"></div></div>
+      </div>
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+    </div>
+    <!--row 4-->
+    <div class="row">
+      <div id="status4" class="col-1">
+        <img src="" alt=""><img class="bar_image" src="asset/icon/Bookstatus.png" alt="">
+      </div>
+      <div class="col-2">
+        <div id="proggress_fill"><div id="proggress_bar4"></div></div>
+      </div>
+      <div class="col-3">
+        <div id="pop_ups"></div>
+        <div id="pop_ups_in">
+          <button id="pbutton" onclick="close_pop()">X</button>
+          <div class="container-fluid">
             <div class="row">
               <center>Change outfit</center>
               <br>
@@ -152,31 +154,30 @@
             <div  class="row">
               <hr>
             </div>
-              <div id="change_costum_row" class="row">
-            </div>
-          </div>
-          </div>
-        </div>
-        <div class="col-5">
-        </div>
-        <div class="col-1">
-          <div class="box">
-            <div class="clock2">
-              <div class="numbers">
-                <div class="twelve">12</div>
-                <div class="three">3</div>
-                <div class="six">6</div>
-                <div class="nine">9</div>
-              </div>
-              <div class="arrows">
-                <div class="hour"></div>
-                <div class="minute"></div>
-              </div>
+            <div id="change_costum_row" class="row">
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-5"></div>
+      <div class="col-1">
+        <div class="box">
+          <div class="clock2">
+            <div class="numbers">
+              <div class="twelve">12</div>
+              <div class="three">3</div>
+              <div class="six">6</div>
+              <div class="nine">9</div>
+            </div>
+            <div class="arrows">
+              <div class="hour"></div>
+              <div class="minute"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
+
     <!-- button achievements -->
     <div class="row">
       <div class="col-10">
@@ -185,122 +186,116 @@
             <button onclick="closeachievements()">X</button>
             <h2 id="user-name"></h2>
             <hr>
-            <h3>Semester</h3>
-            <h3>Makan : <h3 id="makan_status"></h3></h3>
-            <h3>Tidur : <h3 id="tidur_status"></h3></h3>
-            <h3>Bermain : <h3 id="bermain_status"></h3></h3>
-            <h3>Belajar : <h3 id="belajar_status"></h3></h3>
-            
-
+            <h3 id="sem" class="py-1 px-3"></h3>
+            <h3 id="makan_status" class="px-3"></h3>
+            <h3 id="tidur_status" class="px-3"></h3>
+            <h3 id="bermain_status" class="px-3"></h3>
+            <h3 id="belajar_status" class="px-3"></h3>
           </div>
         </div>
       </div>
       <div class="col-2">
         <button id="btn" onclick="achievements()">Achievements</button>
       </div>  
-
-      
     </div>
-  
 
 
     <!--greetings-->
 
     <!--Content-->
 
-
-  <!--gif testing-->
-  <div class="row">
-    <div class="col-12">
-      <img id="gif_eat" src="" alt="">
-    </div>
-  </div>
-
-<!--go back button-->
-
-  <div id="button_action_container" class="row">
-    <div class="col-2">
-      <div id="go_back_box">
-      <img id="go_back" src="asset/icon/Setting.png" onclick="back()">
-    </div>
-    </div>
-    <div class="col-2">
-      <img class="button-action" id="tambahMakan" src="asset/icon/status_eat.png" >
-    </div>
-    <div id="tambah_tidur" class="col-2">
-      <img class="button-action" id="tambahTidur" src="asset/icon/status_sleep.png">
-    </div>
-    <div id="tambah_belajar" class="col-2">
-      <img class="button-action" id="tambahBelajar" src="asset/icon/status_study.png">
-    </div>
-    <div id="tambah_bermain" class="col-2">
-      <img class="button-action" id="tambahBermain" src="asset/icon/status_game.png">
-    </div>
-    <div id="outfit" class="col-2">
-      <img src="asset/icon/Wadrobe.png" id="pbutton_open" onclick="open_pop()">
+    <!--gif testing-->
+    <div class="row">
+      <div class="col-12">
+        <img id="gif_eat" src="" alt="">
+      </div>
     </div>
 
-  </div>
-  <div id="gif_col" class="row">
-    <div class="gif_action col-2">
-      <img  id="eat_gif" src="asset/gif/boy/eat.gif" alt="">
-    </div>
-    <div class="gif_action col-2">
-      <img  id="sleep_gif"src="asset/gif/boy/sleep.gif" alt="">
-    </div>
-    <div class="gif_action col-2">
-      <img id="study_gif" src="asset/gif/boy/study.gif" alt="">
-    </div>
-    <div class="gif_action col-2">
-      <img id="play_gif" src="asset/gif/boy/play.gif" alt="">
-    </div>
-  </div>
-    </div>
-<!--page 3 for pop ups-->
-  <div id="digital">
-    <span id="hr">00</span>
-    <span> : </span>
-    <span id="min">00</span>
-  </div>
-  
-          
+    <!--go back button-->
 
-<!--Loading Screen-->
-<div id="loading_screen" class="row">
-  <div class="col-12">
-    <div id="loader_background">
-    <div id="loader">
-      <p>Loading...</p>
-    <div class="loader"></div>
-  </div>
-  </div>
-  </div>
-</div>
+    <div id="button_action_container" class="row">
+      <div class="col-2">
+        <div id="go_back_box">
+          <img id="go_back" src="asset/icon/Setting.png" onclick="back()">
+        </div>
+      </div>
+      <div class="col-2">
+        <img class="button-action" id="tambahMakan" src="asset/icon/status_eat.png" >
+      </div>
+      <div id="tambah_tidur" class="col-2">
+        <img class="button-action" id="tambahTidur" src="asset/icon/status_sleep.png">
+      </div>
+      <div id="tambah_belajar" class="col-2">
+        <img class="button-action" id="tambahBelajar" src="asset/icon/status_study.png">
+      </div>
+      <div id="tambah_bermain" class="col-2">
+        <img class="button-action" id="tambahBermain" src="asset/icon/status_game.png">
+      </div>
+      <div id="outfit" class="col-2">
+        <img src="asset/icon/Wadrobe.png" id="pbutton_open" onclick="open_pop()">
+      </div>
+    </div>
+    <div id="gif_col" class="row">
+      <div class="gif_action col-2">
+        <img  id="eat_gif" src="asset/gif/boy/eat.gif" alt="">
+      </div>
+      <div class="gif_action col-2">
+        <img  id="sleep_gif"src="asset/gif/boy/sleep.gif" alt="">
+      </div>
+      <div class="gif_action col-2">
+        <img id="study_gif" src="asset/gif/boy/study.gif" alt="">
+      </div>
+      <div class="gif_action col-2">
+        <img id="play_gif" src="asset/gif/boy/play.gif" alt="">
+      </div>
+    </div> <!--kyknya ini ga perlu-->
+    </div>
 
-<!--Gameover screen-->
-<div class="container-fluid">
-<div id="gameover_screen" class="row">
-  <div class="row" id="gameover">
-    <img src="" alt="">
-    <p>gameover</p>
-  </div>
-  <div class="row">
-    <div class="col ">
-      <img src="" alt="">
+    <!--Digital clock-->
+    <div id="digital">
+      <span id="hr">00</span>
+      <span> : </span>
+      <span id="min">00</span>
     </div>
-    <div>
-      <img src="" alt="">
+
+    <!--Loading Screen-->
+    <div id="loading_screen" class="row">
+      <div class="col-12">
+        <div id="loader_background">
+          <div id="loader">
+            <h2>Loading...</h2>
+            <div class="loader"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col">
-      <img src="" alt="">
+
+    <!--Gameover screen-->
+    <div class="container-fluid">
+      <div id="gameover_screen" class="row">
+        <div class="row" id="gameover">
+          <img src="" alt="">
+          <p>gameover</p>
+        </div>
+        <div class="row">
+          <div class="col ">
+            <img src="" alt="">
+          </div>
+          <div>
+            <img src="" alt="">
+          </div>
+          <div class="col">
+            <img src="" alt="">
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
-<script>
-  var p2 = document.getElementById("Page2");
-  p2.style.display = "none";
-</script>
+    <!--
+    <script>
+      var p2 = document.getElementById("Page2");
+      p2.style.display = "none";
+    </script>-->
+    
     <!--end of the page-->
     <script src="jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
