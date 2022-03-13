@@ -208,6 +208,7 @@ var width_makan = 50;
 var width_tidur = 50;
 var width_belajar = 1;
 var width_bermain = 50;
+var sem = 1;
 function move() {
     var makan = document.getElementById("proggress_bar1");
     var tidur = document.getElementById("proggress_bar2");
@@ -310,40 +311,40 @@ $("#tambahBelajar").click(function(){ //Belom jalan
     });
     
     for(var i = 0; i < 20 ; i++){
-        if(width_belajar > 100){
+        if(width_belajar> 100){
             width_belajar = 99;
             return;
         }
+
         if (width_belajar == 99) {
             sem += 1;
-            show_info();
+            //show_info();
             width_belajar = 0;
         }
-        //Bisa dioptimize tapi nanti aja
-        //Semakin tinggi semester, makin dikit nambahnya
+        
         if (sem == 1) {
-            width_belajar += 1.5;
+            width_belajar += 1.2;
         }
         else if (sem == 2) {
-            width_belajar = width_belajar + 1.2;
+            width_belajar += 1;
         }
         else if (sem == 3) {
-            width_belajar = width_belajar + 1;
+            width_belajar += 0.6;
         }
         else if (sem == 4) {
-            width_belajar = width_belajar + 0.6;
+            width_belajar += 0.4;
         }
         else if (sem == 5) {
-            width_belajar = width_belajar + 0.4;
+            width_belajar += 0.2;
         }
         else if (sem == 6) {
-            width_belajar = width_belajar + 0.3;
+            width_belajar += 0.1;
         }
         else if (sem == 7) {
-            width_belajar = width_belajar + 0.2;
+            width_belajar += 0.08;
         }
         else if (sem == 8) {
-            width_belajar = width_belajar + 0.1;
+            width_belajar += 0.06;
         }
     }
 });
@@ -364,6 +365,7 @@ $("#tambahBermain").click(function(){
         width_bermain = width_bermain +1;
     }
 });
+
 //Algoritma pencapaian dan warning ("NANTI DULU")
 /*
 info_hide();
