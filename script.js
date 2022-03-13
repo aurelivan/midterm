@@ -114,17 +114,9 @@ $("#start").click(function(){
     });
     chooseChara();
     input_username();
-    /*$("play").hover(function() { //BELOM JALAN
-        $(this).css("background-color", "beige");
-        $(this).css("transition", "0.3s");
-    });*/
-
-    var p1 = document.getElementById("Page1");
-    var p2 = document.getElementById("Page2");
-    if (p2.style.display === "none") {
-        p2.style.display = "block";
-        p1.style.display = "none";
-    }
+    
+    $("#Page2").show();
+    $("#Page1").hide();
     move();
 });
 
@@ -154,7 +146,7 @@ function clock(){
     greetings(m);
     change_back(m)
     clock2(m,s);
-    animate=setTimeout(clock,20);
+    animate=setTimeout(clock,600);
 };
 
 window.onload=init;
@@ -237,7 +229,7 @@ function move() {
     var tidur = document.getElementById("proggress_bar2");
     var bermain = document.getElementById("proggress_bar3");
     var belajar = document.getElementById("proggress_bar4");
-    var id = setInterval(frame, 1000);
+    var id = setInterval(frame, 1600);
 
     makan.style.transition = 'all 1s';
     tidur.style.transition = 'all 1s';
@@ -323,6 +315,7 @@ $("#tambahTidur").click(function(){
     }
 });
 
+$("#alert").hide();
 $("#tambahBelajar").click(function(){ //Belom jalan
     $("#gif_col").show();
     $("#study_gif").show();
@@ -341,7 +334,7 @@ $("#tambahBelajar").click(function(){ //Belom jalan
 
         if (width_belajar == 99) {
             sem += 1;
-            //show_info();
+            $("#alert").show();
             width_belajar = 0;
         }
         
@@ -372,6 +365,12 @@ $("#tambahBelajar").click(function(){ //Belom jalan
     }
 });
 
+//Algoritma pencapaian dan warning ("LANJUT NANTI DULU")
+
+$("#close").click(function() {
+    $("#alert").hide();
+  });
+
 $("#tambahBermain").click(function(){
     $("#gif_col").show();
     $("#play_gif").show();
@@ -389,22 +388,6 @@ $("#tambahBermain").click(function(){
     }
 });
 
-//Algoritma pencapaian dan warning ("NANTI DULU")
-/*
-info_hide();
-function info_hide(){
-    info = document.getElementById('alert');
-    info.style.display = 'none';
-}
-
-function show_info(){
-    info.style.display = 'flex';
-}
-
-function closeinfo() {
-    info.style.display = 'none';
-}*/
-
 //for clock
 const hour = document.querySelector(".hour");
 const minute = document.querySelector(".minute");
@@ -415,6 +398,7 @@ function clock2(m, s) {
 
   minute.style.transform = `rotate(${minuteDegree}deg)`;
   hour.style.transform = `rotate(${hourDegree}deg)`;
+  hour.style.transition = '60s';
 }
 
 

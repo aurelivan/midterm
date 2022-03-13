@@ -1,27 +1,13 @@
-@media (max-width: 720px) {
-    #char-home1, #char-home2 {
-        height: 50px;
-    }
-    .gif_action{
-        left: 60%;
-        right: 0%;
-    }
-}
-
-/*body::-webkit-scrollbar { //buat hilangin scroll bar, tp keanya gabisa
-    display: none;
-} */
-
 body{
     scroll-behavior: auto !important;
     background-color: rgba(229, 241, 201, 0.932);
     cursor: url('asset/misc/cursor/cursor_normal.png'), auto;
-    font-family: "Fairy Cottage";
+    font-family: "Dimbo";
 }
 
 @font-face {
-    font-family: "Fairy Cottage";
-    src: url(asset/font/Fairy\ Cottage.ttf);
+    font-family: "Dimbo";
+    src: url(asset/font/Dimbo\ Regular.ttf);
 }
 
 /*Page settings*/
@@ -70,7 +56,7 @@ body{
 /* Character choice in home setting*/
 
 #char-home1, #char-home2 {
-    height: 280px;
+    height: 350px;
     z-index: 10;
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
@@ -86,18 +72,16 @@ body{
 }
 
 #start{
-    border: none;
-    width: 15%;
+    width: 10%;
     height: auto;
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
-    pointer-events: none;
     opacity: 0.4;
     transition: 0.7s;
 
 }
 
 #start:hover{
-    width: 20%;
+    width: 12%;
     transform: translateY(-10%);
     
 }
@@ -265,7 +249,7 @@ body{
     width: 110%;
     height: 100vh;
     bottom: 0;
-    z-index: 100;
+    z-index: 50;
 }
 
 .gif_action{
@@ -518,7 +502,7 @@ body{
     transform: rotate(90deg);
 }
 
-/*alert and achievement*/ /*NANTI LAGI
+/*alert and achievement*/ 
 #alert {
     display: flex;
     align-items: center;
@@ -527,14 +511,15 @@ body{
     background-color: rgb(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
-    z-index: 200;
+    z-index: 40;
 }
 
 #info {
     background-color: beige;
     padding: 20px;
-    width: 30%;
+    width: 50%;
     height: auto;
+    z-index: 42;
 }
 
 /*Pop ups*/
@@ -583,7 +568,7 @@ body{
     transform: translateY(-100vh);
     width: 100%;
     position: absolute;
-    z-index: 100;
+    z-index: 60;
 }
 
 #awards{
@@ -750,4 +735,21 @@ body{
 #home-button{
     bottom: 100px;
     transform: translateY(-30%);
+}
+
+/*SMALL SCREEN*/
+@media (max-width: 768px) {
+    #char-home1, #char-home2 {
+        height: 300px;
+    }
+    .gif_action{
+        left: 60%;
+        right: 0%;
+    }
+    #start{
+        width: 20%;
+    }
+    #start:hover{
+        width: 24%;
+    }
 }
