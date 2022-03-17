@@ -32,7 +32,6 @@ body{
 
 .scroll-here {
     height: 100vh;
-}
 
 
 /*Page index */
@@ -99,7 +98,6 @@ body{
     left: 0;
     right: 0;
     text-align: center;
-    margin-top: 20px;
     text-decoration: none;
     color: #f3f3f3;
 }
@@ -869,6 +867,12 @@ body{
 @media (max-width: 768px) {
     #char-home1, #char-home2 {
         height: 300px;
+    }
+    #char-home1 {
+        margin-top: 30px;
+    }
+    #char-home2 {
+        margin-bottom: 50px;
     }
     .gif_action{
         left: 60%;
