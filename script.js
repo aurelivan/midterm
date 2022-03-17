@@ -14,11 +14,24 @@ function rgb(r, g, b, o){
 
 //credit list
 
+$("#background_credit").hide();
+
 $("#open_credit").click(function(){
     $("#background_credit").show();
 });
 $("#close_credit").click(function(){
     $("#background_credit").hide();
+});
+
+
+//setting
+$("#background_setting").hide();
+
+$("#open_setting").click(function(){
+    $("#background_setting").show();
+});
+$("#close_setting").click(function(){
+    $("#background_setting").hide();
 });
 
 //get username
@@ -151,11 +164,6 @@ function clock(){
 
 window.onload=init;
 
-
-
-//change background
-
-
 //greetings
 greetings(m);
 function greetings(){
@@ -174,6 +182,8 @@ function greetings(){
         
     }
 }
+
+//change background
 change_back(m)
 function change_back(){
     username = document.getElementById('username').value;
@@ -236,6 +246,9 @@ var width_tidur = 50;
 var width_belajar = 1;
 var width_bermain = 50;
 var sem = 1;
+
+$("#background_warning").hide();
+
 function move() {
     var makan = document.getElementById("proggress_bar1");
     var tidur = document.getElementById("proggress_bar2");
@@ -260,6 +273,16 @@ function move() {
             else{
                 document.getElementById("stat_img3").src = 'asset/stat/lambung3.png';
                 makan.style.backgroundImage = grad_color(width_makan);
+                $(document).ready(function($) {
+                    $("#gif_warning").attr("src", "asset/gif/boy/hungry.gif");
+                    $("#what").text ("You are straving ...")
+                    $("#lesgo").text("Let's Eat");
+                    $("#lesgo").click(function() {
+                        tambah_makan();
+                        $("#background_warning").hide();
+                    });
+                    $("#background_warning").show();
+                }); 
             }
         }
         /*else{
@@ -280,6 +303,16 @@ function move() {
             else if(width_tidur < 20){
                 document.getElementById("stat_img2").src = 'asset/stat/sleep4.png';
                 tidur.style.backgroundImage = grad_color(width_tidur);
+                $(document).ready(function($) { //gifnya kea numpuk sama makan :(
+                    $("#gif_warning").attr("src", "asset/gif/boy/sleepy.gif");
+                    $("#what").text ("You are sleepy ...")
+                    $("#lesgo").text("Let's Sleep");
+                    $("#lesgo").click(function() {
+                        tambah_tidur();
+                        $("#background_warning").hide();
+                    });
+                    $("#background_warning").show();
+                }); 
             }
         }
         if(width_bermain >0){
@@ -297,6 +330,9 @@ function move() {
             else if(width_bermain < 20){
                 document.getElementById("stat_img1").src = 'asset/stat/fun_4.png';
                 bermain.style.backgroundImage = grad_color(width_bermain);
+                /*
+               alert disini
+                */
             }
         }
         if(width_belajar >0){
@@ -305,9 +341,15 @@ function move() {
     }
 }
 
+//close warning pop-up and hide pas awal 
+//$("#background_warning").hide(); -> kyknya ga perlu
 
-// tombol tambah stat makan, dll
-$("#tambahMakan").click(function(){
+$("#close_warning").click(function(){
+    $("#background_warning").hide();
+});
+
+//fungsi tambah
+function tambah_makan() {
     $("#gif_col").show();
     $("#eat_gif").show();
     $(document).ready(function($) {
@@ -321,10 +363,13 @@ $("#tambahMakan").click(function(){
             return;
         }
         width_makan = width_makan +1;
+        if (width_tidur > 0) {
+            width_tidur -= 0.2;
+        }
     }
-});
+}
 
-$("#tambahTidur").click(function(){
+function tambah_tidur() {
     $("#gif_col").show();
     $("#sleep_gif").show();
     $(document).ready(function($) {
@@ -334,80 +379,18 @@ $("#tambahTidur").click(function(){
         }, 1500);
     });
     for(var i = 0; i < 20 ; i++){
-     
+    
         if(width_tidur > 100){
             return;
         }
-        width_tidur = width_tidur +1;
-        width_bermain = width_bermain -1;
+        width_tidur += 1;
+        if (width_bermain > 0) {
+            width_bermain -= 0.2;
+        }
     }
-});
-
-function show_info(){
-    $("#info").show();
-    $("#awards").hide();
-    $("#achievements").show();
 }
 
-$("#tambahBelajar").click(function(){ //Belom jalan
-    $("#gif_col").show();
-    $("#study_gif").show();
-    $(document).ready(function($) {
-        setTimeout(function() {
-            $("#study_gif").hide();
-            $("#gif_col").hide();
-        }, 1500);
-    });
-    width_makan = width_makan -1;
-    for(var i = 0; i < 20 ; i++){
-        if(width_belajar> 100){
-            width_belajar = 99;
-            return;
-        }
-
-        if (width_belajar >= 99) {
-            sem += 1;
-            width_belajar = 0;
-            show_info();
-        }
-        
-        if (sem == 1) {
-            width_belajar += 1.2;
-        }
-        else if (sem == 2) {
-            width_belajar += 1;
-        }
-        else if (sem == 3) {
-            width_belajar += 0.6;
-        }
-        else if (sem == 4) {
-            width_belajar += 0.4;
-        }
-        else if (sem == 5) {
-            width_belajar += 0.2;
-        }
-        else if (sem == 6) {
-            width_belajar += 0.1;
-        }
-        else if (sem == 7) {
-            width_belajar += 0.08;
-        }
-        else if (sem == 8) {
-            width_belajar += 0.06;
-        }
-        
-    }
-    
-});
-
-//Algoritma pencapaian dan warning ("LANJUT NANTI DULU")
-
-function close_info(){
-    $("#info").hide();
-    closeachievements();
-}
-
-$("#tambahBermain").click(function(){
+function tambah_main() {
     $("#gif_col").show();
     $("#play_gif").show();
     $(document).ready(function($) {
@@ -420,9 +403,116 @@ $("#tambahBermain").click(function(){
         if(width_bermain > 100){
             return;
         }
-        width_bermain = width_bermain +1;
+        width_bermain += 1;
+        if (width_tidur > 0) {
+            width_tidur -= 0.2;
+        }
     }
+}
+
+function tambah_belajar() {
+    $("#gif_col").show();
+    $("#study_gif").show();
+    $(document).ready(function($) {
+        setTimeout(function() {
+            $("#study_gif").hide();
+            $("#gif_col").hide();
+        }, 1500);
+    });
+
+    if (width_makan > 0) {
+        width_makan -= 0.2;
+    }
+
+    for(var i = 0; i < 20 ; i++){
+        if(width_belajar > 100){
+            width_belajar = 99;
+            return;
+        }
+
+        if (width_belajar >= 99) {
+            sem += 1;
+            width_belajar = 0;
+            $(document).ready(function($) {
+                $("#background_congrats").show();
+            });  
+        };
+        
+        if (sem == 1) {
+            width_belajar += 1.2;
+        }
+        else if (sem == 2) {
+            width_belajar += 1;
+            $("#naik_sem").html("<h4>Kamu naik ke semester 2</h4>");
+        }
+        else if (sem == 3) {
+            width_belajar += 0.6;
+            $("#naik_sem").html("<h4>Kamu naik ke semester 3</h4>");
+        }
+        else if (sem == 4) {
+            width_belajar += 0.4;
+            $("#naik_sem").html("<h4>Kamu naik ke semester 4</h4>");
+        }
+        else if (sem == 5) {
+            width_belajar += 0.2;
+            $("#naik_sem").html("<h4>Kamu naik ke semester 5</h4>");
+        }
+        else if (sem == 6) {
+            width_belajar += 0.1;
+            $("#naik_sem").html("<h4>Kamu naik ke semester 6</h4>");
+        }
+        else if (sem == 7) {
+            width_belajar += 0.08;
+            $("#naik_sem").html("<h4>Kamu naik ke semester 7</h4>");
+        }
+        else if (sem == 8) {
+            width_belajar += 0.06;
+            $("#naik_sem").html("<h4>Kamu naik ke semester 8</h4>");
+        }
+        else if (sem == 9) {
+            width_belajar = 100;
+            $("#naik_sem").html("<h4>Kamu lulus !!</h4>");
+        }
+    }
+    
+    /* setelah beberapa saat ga belajar akan ada alert tp blm jalan :)
+    $("background_warning").delay(20).show(); //nanti pendekin waktunya buat test
+    $("#what").text ("You need to study -_-")
+    $("#lesgo").text("Let's Study");
+    $("#lesgo").click(function() {
+        tambah_belajar();
+        $("#background_warning").hide();
+    });
+    */
+}
+
+// tombol tambah stat makan, dll
+$("#tambahMakan").click(function(){
+    tambah_makan();
 });
+
+$("#tambahTidur").click(function(){
+    tambah_tidur();
+});
+
+$("#tambahBermain").click(function(){
+    tambah_main();
+});
+
+$("#tambahBelajar").click(function(){
+    tambah_belajar();
+});
+
+//congrats pop-up
+$("#background_congrats").hide();
+
+$("#close_congrats").click(function(){
+    $("#background_congrats").hide();
+});
+
+username = $("#username").val();
+$("#congrats_name").text("Congrats, " + username + "!!");
+
 
 //for clock
 const hour = document.querySelector(".hour");
