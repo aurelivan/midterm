@@ -2,368 +2,362 @@
   (HIDE PAGE 1/ PAGE 2) (GAMEOVER)
   NANTI JANGAN LUPA DINYALAIN PAS FINAL ^-^-->
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Games Midterm</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Games Midterm</title>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="styles.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+      
+    </head>
+    <body>
+      <!--Page 1-->
+      <div id="Page1" class="p-4"> 
+        <!--title-->
+        <h1 class="text-center fw-bold mb-4">Set Character</h1>
+        <!--row input username-->
+        <div class="row mb-4">
+          <div class="text-center mb-2">
+            <input type="text" name="name" id="username" class="p-2 text-center w-75 border-0" placeholder=" Username... ">
+          </div>
+          <div class="text-center">
+            <button type="button" id="confirm" class="btn btn-light btn-outline-primary p-1 rounded-3 border-2" onclick="submit_username()">✔️</button>
+          </div>
+        </div>
+  
+  
+        <!--row character-->
+        <div id="row-choose" class="row text-center">
+          <div class="mb-3 col-sm-6" onclick="displayX()">
+            <img id="char-home1" src="asset/character/character-pic/boy.png"/>
+          </div>
+  
+          <div class="text-center col-sm-6" onclick="displayY()">
+            <img id="char-home2" src="asset/character/character-pic/girl.png"/>
+          </div>
+        </div>
     
-  </head>
-  <body>
-    <!--Page 1-->
-    <div id="Page1" class="p-4"> 
-      <!--title-->
-      <h1 class="text-center fw-bold mb-4">Set Character</h1>
-      <!--row input username-->
-      <div class="row mb-4">
-        <div class="text-center mb-2">
-          <input type="text" name="name" id="username" class="p-2 text-center w-75 border-0" placeholder=" Username... ">
+        <!--Credit pop up-->
+        <div id="background_credit">
+          <div class="container-fluid" id="Pop_credit">
+            <div class="row">
+              <div class="col-1">
+                <button class="closeX" id="close_credit">X</button>
+              </div>
+              <div class="col-10">
+                <center><h2 class="title">Credit</h2></center>
+              </div>
+            </div>
+            <hr />
+            <br />
+            <div class="row text-center">
+              <div class="col-6">
+                <h3>Aurelius Ivan Wijaya</h3>
+              </div>
+              <div class="col-6">
+                <h3>Arkana Asa Andoko</h3>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-6">
+                <h3>Maecyntha Irelynn</h3>
+              </div>
+              <div class="col-6">
+                <h3>Patricia Theodora Darmawan</h3>
+              </div>
+            </div>
+          </div>      
         </div>
-        <div class="text-center">
-          <button type="button" id="confirm" class="btn btn-light btn-outline-primary p-1 rounded-3 border-2" onclick="submit_username()">✔️</button>
+        
+        <!--Setting pop up-->
+        <div id="background_setting">
+          <div class="container-fluid" id="Pop_credit">
+            <div class="row">
+              <div class="col-1">
+                <button class="closeX" id="close_setting">X</button>
+              </div>
+              <div class="col-10">
+                <center><h2 class="title">Setting</h2></center>
+              </div>
+            </div>
+            <hr />
+            <h3 class="text-center">Volume</h3>
+            <div class="row text-center mt-2">
+              <div class="col-sm-6">
+                <button class="click">Nanti ganti" gambar pas click</button>
+              </div>
+              <div class="col-sm-6">
+                <button class="click">Slider (?)</button>
+              </div>
+            </div>
+            <button class="click w-50 mt-3 px-4">Guide (nanti dirapihin lagi)</button>
+          </div>
         </div>
-      </div>
-
-
-      <!--row character-->
-      <div id="row-choose" class="row text-center">
-        <div class="mb-3 col-sm-6" onclick="displayX()">
-          <img id="char-home1" src="asset/character/character-pic/boy.png"/>
-        </div>
-
-        <div class="text-center col-sm-6" onclick="displayY()">
-          <img id="char-home2" src="asset/character/character-pic/girl.png"/>
+  
+        <div id="home-button" class="text-center mt-2 mb-4">
+          <button id="open_credit">credit</button>
+          <img src="asset/icon/start.png" id="start">
+          <button id="open_setting">setting</button>
         </div>
       </div>
   
-      <!--Credit pop up-->
-      <div id="background_credit">
+      <!--ACHIEVEMENT, WARNING, CONGRATS POP UP-->
+      <!--Achievement-->
+      <div id="background_trophy">
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_credit">X</button>
+              <button class="closeX" id="close_trophy">X</button>
             </div>
             <div class="col-10">
-              <center><h2 class="title">Credit</h2></center>
+              <center><h2 id="user-name" class="title"></h2></center>
             </div>
           </div>
           <hr />
-          <br />
-          <div class="row text-center">
-            <div class="col-6">
-              <h3>Aurelius Ivan Wijaya</h3>
-            </div>
-            <div class="col-6">
-              <h3>Arkana Asa Andoko</h3>
-            </div>
-          </div>
-          <div class="row text-center">
-            <div class="col-6">
-              <h3>Maecyntha Irelynn</h3>
-            </div>
-            <div class="col-6">
-              <h3>Patricia Theodora Darmawan</h3>
-            </div>
-          </div>
-        </div>      
+          <h3 id="sem" class="px-3 mb-3"></h3>
+          <h4 id="makan_status" class="px-3"></h4>
+          <h4 id="tidur_status" class="px-3"></h4>
+          <h4 id="bermain_status" class="px-3"></h4>
+          <h4 id="belajar_status" class="px-3"></h4>
+        </div>
       </div>
+  
+      <!--Congrats pop up-->
+      <div id="background_congrats">
+        <div class="container-fluid" id="Pop_credit">
+          <div class="row">
+            <div class="col-1">
+              <button class="closeX" id="close_congrats">X</button>
+            </div>
+            <div class="col-10">
+              <center><h2 id="congrats_name" class="title"></h2></center>
+            </div>
+          </div>
+          <hr />
+          <h4 class="text-center" id="naik_sem"></h4>
+          <img id="gif_congrats" src="asset/gif/boy/congrats.gif">
+        </div>
+      </div>
+  
       
-      <!--Setting pop up-->
-      <div id="background_setting">
+      <!--Warning pop up-->
+      <div id="background_warning">
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_setting">X</button>
+              <button class="closeX" id="close_warning">X</button>
             </div>
             <div class="col-10">
-              <center><h2 class="title">Setting</h2></center>
+              <center><h2 class="title">ALERT !</h2></center>
             </div>
           </div>
           <hr />
-          <h3 class="text-center">Volume</h3>
-          <div class="row text-center mt-2">
-            <div class="col-sm-6">
-              <button class="click">Nanti ganti" gambar pas click</button>
-            </div>
-            <div class="col-sm-6">
-              <button class="click">Slider (?)</button>
-            </div>
-          </div>
-          <button class="click w-50 mt-3 px-4">Guide (nanti dirapihin lagi)</button>
-        </div>
-      </div>
-
-      <div id="home-button" class="text-center mt-2 mb-4">
-        <button id="open_credit">credit</button>
-        <img src="asset/icon/start.png" id="start">
-        <button id="open_setting">setting</button>
-      </div>
-    </div>
-
-    <!--ACHIEVEMENT, WARNING, CONGRATS POP UP-->
-    <!--Congrats pop up-->
-    <div id="background_congrats">
-      <div class="container-fluid" id="Pop_credit">
-        <div class="row">
-          <div class="col-1">
-            <button class="closeX" id="close_congrats">X</button>
-          </div>
-          <div class="col-10">
-            <center><h2 id="congrats_name" class="title"></h2></center>
-          </div>
-        </div>
-        <hr />
-        <h4 class="text-center" id="naik_sem"></h4>
-        <img id="gif_congrats" src="asset/gif/boy/congrats.gif">
-      </div>
-    </div>
-
-    
-    <!--Warning pop up-->
-    <div id="background_warning">
-      <div class="container-fluid" id="Pop_credit">
-        <div class="row">
-          <div class="col-1">
-            <button class="closeX" id="close_warning">X</button>
-          </div>
-          <div class="col-10">
-            <center><h2 class="title">ALERT !</h2></center>
-          </div>
-        </div>
-        <hr />
-        <p class="text-center">Oh No !</p>
-        <p class="what"></p>
-        <div>
-          <img id="gif_warning">
-        </div>
-        <button id="lesgo" class="click"></button>
-      </div>
-    </div>
-
-
-<!--page 2.1 -->
-<div id="Page2_1" class="container-fluid">
-  <div class="row">
-    <div class="col-4">
-      <button class="btn btn-info">II</button>
-    </div>
-    <div class="col-4">
-      <div id="greetings_container" class="col-6 mt-3">
-        <h2 id="greetings"></h2>
-      </div>
-    </div>
-    <div class="col-4 d-flex flex-row-reverse">
-        <div class="box">
-          <div class="clock2">
-            <div class="numbers">
-              <div class="twelve">12</div>
-              <div class="three">3</div>
-              <div class="six">6</div>
-              <div class="nine">9</div>
-            </div>
-            <div class="arrows">
-              <div class="hour"></div>
-              <div class="minute"></div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
-  <div class="row">
-    <div id="stat" class="col d-flex flex-row-reverse">
-      <div id="proggress_bar3"><img id="stat_img1" src="" alt=""></div>
-      <div id="proggress_bar2"><img id="stat_img2" src="" alt=""></div>
-      <div id="proggress_bar1"><img id="stat_img3" src="" alt=""></div>
-    </div>
-  </div>
-  <div class="row_character row">
-    <div id="character1" class="col-12">
-      <div id="shadow"></div>
-      <img id="foot" src="" alt="">
-      <div id="top">
-      <img class="goyang" id="hair-back" src="" alt="">
-      <img class="goyang" id="head" src="" alt="">
-      <img class="goyang" id="eye" src="" alt="">
-      <img class="goyang" id="eye2" src="" alt="">
-      <img class="goyang" id="eye3" src="" alt="">
-      <img class="goyang" id="hair-front" src="" alt="">
-      <img class="goyang" id="accessories" src="" alt="">
-    </div>
-    <img class="goyang" id="hand-left" src="" alt="">
-    <img class="goyang" id="body" src="" alt="">
-    <img class="goyang" id="hand-right" src="" alt="">
-  </div>
-</div>
-  <!--button action-->
-  <div id="stat_first_row" class="row">
-    <div class="col_stat col-12 d-flex flex-row">
-      <button id="tambahMakan" class="btn btn-danger"><img class="button-action" src="asset/icon/status_eat.png" ></button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col_stat col-12 d-flex flex-row">
-      <button id="tambahTidur" class="btn btn-danger"><img class="button-action" src="asset/icon/status_sleep.png"></button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col_stat col-12 d-flex flex-row">
-      <button id="tambahBermain" class="btn btn-danger"><img class="button-action" src="asset/icon/status_game.png"></button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col_stat col-12 d-flex flex-row">
-      <button  id="tambahBelajar" class="btn btn-danger" ><img class="button-action" src="asset/icon/status_study.png"></button>
-    </div>
-  </div>
-  <!--Button in the right-->
-  <div class="right_btn row my-4">
-    <div class="col-12 d-flex flex-row-reverse">
-      <button id="thropy" class="btn btn-danger" onclick="achievements()"><img class="button-action" src="asset/icon/Trophy.png"></button>
-    </div>
-  </div>
-  <div class="row right_btn ">
-    <div class="col-12 d-flex flex-row-reverse">
-      <button id="pbutton_open" class="btn btn-danger" onclick="open_pop()"><img class="button-action" src="asset/icon/Baju.png"></button>
-    </div>
-  </div>
-  <div class="row right_btn ">
-    <div class="col-12" id="belajar_bar">
-      <h3 id="sem" class="py-1 px-3"></h3>
-    </div>
-  </div>
-</div>
-
-    <!--Page 2 -->
-    <div id="Page2" class="container-fluid">
-    <div class="row">
-      <div class="col-2">
-        
-      </div>
-      <div class="col-3">
-        <div id="pop_ups"></div>
-        <div id="pop_ups_in">
-          <button id="pbutton" onclick="close_pop()">X</button>
-          <div class="container-fluid">
-            <div class="row">
-              <center>Change outfit</center>
-              <br>
-            </div>
-            <div  class="row">
-              <hr>
-            </div>
-            <div id="change_costum_row" class="row">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-5"></div>
-    </div>
-
-    <!-- button achievements -->
-    
-    <div class="row">
-      <div class="col-10">
-        <div id="achievements">
-          <div id="awards">
-            <button class="closeX" onclick="closeachievements()">X</button>
-            <h2 class="title" id="user-name"></h2>
-            <hr>
-            <h3 id="makan_status" class="px-3"></h3>
-            <h3 id="tidur_status" class="px-3"></h3>
-            <h3 id="bermain_status" class="px-3"></h3>
-            <h3 id="belajar_status" class="px-3"></h3>
-          </div>
-        </div>
-      </div>  
-    </div>
-
-
-    <!--greetings-->
-
-    <!--Content-->
-
-    <!--gif testing-->
-
-    <!--go back button-->
-
-    <div id="gif_col" class="row">
-      <div class="gif_action col-2">
-        <img  id="eat_gif" src="asset/gif/boy/eat.gif" alt="">
-      </div>
-      <div class="gif_action col-2">
-        <img  id="sleep_gif"src="asset/gif/boy/sleep.gif" alt="">
-      </div>
-      <div class="gif_action col-2">
-        <img id="study_gif" src="asset/gif/boy/study.gif" alt="">
-      </div>
-      <div class="gif_action col-2">
-        <img id="play_gif" src="asset/gif/boy/play.gif" alt="">
-      </div>
-    </div> <!--kyknya ini ga perlu-->
-    </div>
-
-    <!--Digital clock-->
-    <div id="digital">
-      <span id="hr">00</span>
-      <span> : </span>
-      <span id="min">00</span>
-    </div>
-
-    <!--Loading Screen-->
-    <div id="loading_screen" class="row">
-      <div class="col-12">
-        <div id="loader_background">
-          <div id="loader">
-            <h2>Loading...</h2>
-            <div class="loader"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Gameover screen-->
-    <div>
-      <div id="gameover_screen" class="row">
-        <div class="row" id="gameover">
-          <img src="" alt="">
-          <p>gameover</p>
-        </div>
-        <div class="row">
-          <div class="col ">
-            <img src="" alt="">
-          </div>
+          <p class="text-center">Oh No !</p>
+          <p class="what"></p>
           <div>
-            <img src="" alt="">
+            <img id="gif_warning">
           </div>
-          <div class="col">
-            <img src="" alt="">
+          <button id="lesgo" class="click"></button>
+        </div>
+      </div>
+  
+  
+  <!--page 2.1 -->
+  <div id="Page2_1" class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <button class="click btn btn-info">II</button>
+      </div>
+      <div class="col-4">
+        <div id="greetings_container" class="col-6 mt-3">
+          <h2 id="greetings"></h2>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-row-reverse">
+          <div class="box">
+            <div class="clock2">
+              <div class="numbers">
+                <div class="twelve">12</div>
+                <div class="three">3</div>
+                <div class="six">6</div>
+                <div class="nine">9</div>
+              </div>
+              <div class="arrows">
+                <div class="hour"></div>
+                <div class="minute"></div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="stat" class="col d-flex flex-row-reverse">
+        <div id="proggress_bar3"><img id="stat_img1" src="" alt=""></div>
+        <div id="proggress_bar2"><img id="stat_img2" src="" alt=""></div>
+        <div id="proggress_bar1"><img id="stat_img3" src="" alt=""></div>
+      </div>
+    </div>
+    <div class="row_character row">
+      <div id="character1" class="col-12">
+        <div id="shadow"></div>
+        <img id="foot" src="" alt="">
+        <div id="top">
+        <img class="goyang" id="hair-back" src="" alt="">
+        <img class="goyang" id="head" src="" alt="">
+        <img class="goyang" id="eye" src="" alt="">
+        <img class="goyang" id="eye2" src="" alt="">
+        <img class="goyang" id="eye3" src="" alt="">
+        <img class="goyang" id="hair-front" src="" alt="">
+        <img class="goyang" id="accessories" src="" alt="">
+      </div>
+      <img class="goyang" id="hand-left" src="" alt="">
+      <img class="goyang" id="body" src="" alt="">
+      <img class="goyang" id="hand-right" src="" alt="">
+    </div>
+  </div>
+  
+    <!--button action-->
+    <div id="stat_first_row" class="row">
+      <div class="col_stat col-12 d-flex flex-row">
+        <button id="tambahMakan" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_eat.png" ></button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col_stat col-12 d-flex flex-row">
+        <button id="tambahTidur" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_sleep.png"></button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col_stat col-12 d-flex flex-row">
+        <button id="tambahBermain" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_game.png"></button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col_stat col-12 d-flex flex-row">
+        <button id="tambahBelajar" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_study.png"></button>
+      </div>
+    </div>
+  
+    <!--Button in the right-->
+    <div class="right_btn row my-4">
+      <div class="col-12 d-flex flex-row-reverse">
+        <button id="open_trophy" class="click btn btn-danger"><img class="button-action" src="asset/icon/Trophy.png"></button>
+      </div>
+    </div>
+    <div class="row right_btn ">
+      <div class="col-12 d-flex flex-row-reverse">
+        <button id="open_wardrobe" class="click btn btn-danger" onclick="open_pop()"><img class="button-action" src="asset/icon/Baju.png"></button>
+      </div>
+    </div>
+    <div class="row right_btn ">
+      <div class="col-12" id="belajar_bar">
+        <h3 id="sem" class="py-1 px-3"></h3>
+      </div>
+    </div>
+  </div>
+  
+      <!--Wardrobe-->
+      <div id="background_wardrobe">
+        <div class="container-fluid" id="Pop_credit">
+          <div class="row">
+            <div class="col-1">
+              <button class="closeX" id="close_wardrobe">X</button>
+            </div>
+            <div class="col-10">
+              <center><h2 class="title">Change Outfit</h2></center>
+            </div>
+          </div>
+          <hr />
+          <div id="change_costum_row" class="row"></div>
+        </div>
+      </div>
+  
+      <!--greetings-->
+  
+      <!--Content-->
+  
+      <!--gif testing-->
+  
+      <!--go back button-->
+  
+      <div id="gif_col" class="row">
+        <div class="gif_action col-2">
+          <img  id="eat_gif" src="asset/gif/boy/eat.gif" alt="">
+        </div>
+        <div class="gif_action col-2">
+          <img  id="sleep_gif"src="asset/gif/boy/sleep.gif" alt="">
+        </div>
+        <div class="gif_action col-2">
+          <img id="study_gif" src="asset/gif/boy/study.gif" alt="">
+        </div>
+        <div class="gif_action col-2">
+          <img id="play_gif" src="asset/gif/boy/play.gif" alt="">
+        </div>
+      </div> <!--kyknya ini ga perlu-->
+      </div>
+  
+      <!--Digital clock-->
+      <div id="digital">
+        <span id="hr">00</span>
+        <span> : </span>
+        <span id="min">00</span>
+      </div>
+  
+      <!--Loading Screen-->
+      <div id="loading_screen" class="row">
+        <div class="col-12">
+          <div id="loader_background">
+            <div id="loader">
+              <h2>Loading...</h2>
+              <div class="loader"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!--
-    <script>
-      var p2 = document.getElementById("Page2");
-      p2.style.display = "none";
-    </script>-->
-    
-    <!--end of the page-->
-    <script src="jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="script.js">
-    </script>
-    <!-- JavaScript Bundle with Popper -->
-  </body>
-</html>
+  
+      <!--Gameover screen-->
+      <div>
+        <div id="gameover_screen" class="row">
+          <div class="row" id="gameover">
+            <img src="" alt="">
+            <p>gameover</p>
+          </div>
+          <div class="row">
+            <div class="col ">
+              <img src="" alt="">
+            </div>
+            <div>
+              <img src="" alt="">
+            </div>
+            <div class="col">
+              <img src="" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--
+      <script>
+        var p2 = document.getElementById("Page2");
+        p2.style.display = "none";
+      </script>-->
+      
+      <!--end of the page-->
+      <script src="jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="script.js">
+      </script>
+      <!-- JavaScript Bundle with Popper -->
+    </body>
+  </html>
+  
