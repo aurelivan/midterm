@@ -267,12 +267,13 @@ function move() {
             if(width_makan >70){
                 document.getElementById("stat_img3").src = 'asset/stat/lambung1.png';
             }
-            if(width_makan < 70 && width_makan >30){
+            if(width_makan <= 70 && width_makan >30){
                 document.getElementById("stat_img3").src = 'asset/stat/lambung2.png';
             }
-            else{
+            else if (width_makan <= 30) {
                 document.getElementById("stat_img3").src = 'asset/stat/lambung3.png';
                 makan.style.backgroundImage = grad_color(width_makan);
+                
                 $(document).ready(function($) {
                     $("#gif_warning").attr("src", "asset/gif/boy/hungry.gif");
                     $("#what").text ("You are straving ...")
@@ -283,6 +284,7 @@ function move() {
                     });
                     $("#background_warning").show();
                 }); 
+                
             }
         }
         /*else{
@@ -315,6 +317,7 @@ function move() {
                 }); 
             }
         }
+
         if(width_bermain >0){
             width_bermain = width_bermain - 0.8;
             bermain.style.backgroundImage = gradation(width_bermain);
@@ -557,7 +560,7 @@ function search_foot(i){
 }
 
 function check_file_outfit(){
-    for(i = 0;i <5; i++){
+    for(i = 0; i <5; i++){
         var z = $("#change_costum_row");
         var a = $(document.createElement('div'));
         $(a).attr('class','change_costum col-2');
@@ -570,8 +573,20 @@ function check_file_outfit(){
 }
 check_file_outfit();
 
+//$("#background_wardrobe").hide();
+
+$("#open_wardrobe").click(function(){
+    $("#background_wardrobe").show();
+});
+
+$("#close_wardrobe").click(function() {
+    $("#background_wardrobe").hide();
+});
+
 
 $(".change_outfit").click(function(){
+    $("#background_wardrobe").hide();
+
     var index = $(this).parent().index();
     document.getElementById('accessories').src = search_acc(index+1);
     document.getElementById('body').src = search_body(index+1);
@@ -580,40 +595,21 @@ $(".change_outfit").click(function(){
     document.getElementById('foot').src = search_foot(index+1);
 });
 
+//achievements
 
-//pop up
-var pop_ups = document.getElementById('pop_ups');
-var pop_ups_in = document.getElementById('pop_ups_in');
-close_pop();
-function open_pop(){
-    pop_ups.style.display = 'block';
-    pop_ups_in.style.display = 'block';
-}
+$("#user-name").text("Hello, " + username);
+$("#sem").text("Semester " + sem);
+$("#makan_status").text("Makan : " + width_makan);
+$("#tidur_status").text("Tidur : " + width_tidur);
+$("#bermain_status").text("Bermain : " + width_bermain);
+$("#belajar_status").text("Belajar : " + width_belajar);
 
-function close_pop(){
-    pop_ups.style.display = 'none';
-    pop_ups_in.style.display = 'none';
-}
+$("#background_trophy").hide();
 
+$("#open_trophy").click(function(){
+    $("#background_trophy").show();
+});
 
-function calculate(){
-    caltidur = width_tidur;
-    return caltidur;
-}
-
-calculate();
-
-function achievements(){
-    background = document.getElementById('achievements');
-    background.style.display = 'block'; 
-    document.getElementById('user-name').innerHTML = '<h1>Hello, ' + username + '</h1>';
-    document.getElementById('sem').innerHTML = '<h2>Semester ' + parseInt(sem) + '</h2>';
-    document.getElementById('makan_status').innerHTML = '<h3>Makan : ' + parseInt(width_makan) + '%</h>';
-    document.getElementById('tidur_status').innerHTML = '<h3>Tidur : ' + parseInt(calculate()) + '%</h>';
-    document.getElementById('bermain_status').innerHTML = '<h3>Bermain : ' + parseInt(width_bermain) + '%</h>';
-    document.getElementById('belajar_status').innerHTML = '<h3>Belajar : ' + parseInt(width_belajar) + '%</h>';
-    $("#awards").show();
-} 
-function closeachievements(){
-    document.getElementById('achievements').style.display = 'none';
-}
+$("#close_trophy").click(function(){
+    $("#background_trophy").hide();
+}); $("#awards").show();
