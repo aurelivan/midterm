@@ -3,6 +3,7 @@ body{
     background-color: rgba(229, 241, 201, 0.932);
     cursor: url('asset/misc/cursor/cursor_normal.png'), auto;
     font-family: "Dimbo";
+    overflow-x: hidden;
 }
 
 @font-face {
@@ -19,6 +20,8 @@ body{
     background-color: rgb(255, 162, 162);
 }
 
+
+/* del aja kl ga kepake
 #Page2{
     background-color: rgb(255, 166, 233);
     background-size: cover;
@@ -30,6 +33,16 @@ body{
     margin: 0%;
     background-repeat: no-repeat;
     transition: background 1s linear;
+*/
+
+#Page2_1{
+    background-image: url(/asset/background/malam.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding: 20px;
+    height: 100vh;
+    width: 100%;
 }
 
 /*Page index */
@@ -83,36 +96,56 @@ body{
     
 }
 /*greetings function (e.g good morning user)*/
+#greetings_container{
+    width: 10px;
+    overflow-x: hidden;
+}
 
 #greetings{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     text-align: center;
     text-decoration: none;
-    -webkit-text-stroke-width: 1.2px;   
-    -webkit-text-stroke-color: white;   
-    
+    color: #f3f3f3;
 }
 
 /*animation when character idle */
 
-.row_character{
-    text-align: center;
-    position: relative;
-    height: 0px;
+.btn{
+    border: 2px solid white;
 }
 
+#shadow{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 10px;
+    right: 0px;
+    bottom: 0;
+    height: 50px;
+    width:  150px;
+    transform: translateY(360px);
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0,0.3);   
+}
 
 #character1{
     padding: 10px;
-    height: auto;
+    height: 200px;
     position: relative;
-    transform:translateX(-10%) translateY(100px);
 }
 
 #character1 img{
-    width: 120%;
-    height: auto;
     position: absolute;
-    left: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 100px;
+    width: 450px;
     pointer-events: none;
 }
 
@@ -258,14 +291,18 @@ body{
 
 #eat_gif, #sleep_gif, #study_gif, #play_gif{
     display: none;
-    position: absolute;
+    position: fixed;
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     left: 0;
     right: 0;
+    bottom: 0;
+    top: 0;
     text-align: center;
-    width: auto;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 
 }
 
@@ -282,9 +319,9 @@ body{
 /*Status Bar*/
 .bar_image{
     border: 1px solid #555;
-    border-radius: 50%;
+    border-radius: 10px;
+    margin: 10px;
     background-color: #3498db;
-    width: 50px;
     height: auto;
 }
 
@@ -298,20 +335,58 @@ body{
     padding: 10px 10px ;
 }
 
+  /*
 #proggress_fill{
     margin-top: 30px;
     width: 100%;
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
     border-radius: 10px;
+  */
+
+#proggress_bar1{
+    position: absolute;
+    background-color: #000000;
+    right: 80px;
+    border-radius: 50%;
+    border: 1px solid;
+    background-image:
+      linear-gradient(0deg, #00ff15 50%, transparent 0);
+
 }
 
-#proggress_bar1, #proggress_bar2, #proggress_bar3, #proggress_bar4{
-    background-color: #00ff15;
-    border-radius: 10px;
-    height: 10px;
-    width:100%;
+#proggress_bar2{
+    position: absolute;
+    background-color: #000000;
+    right: 46px;
+    transform: translateX(30px);
+    transform: translateY(50px);
+    border-radius: 50%;
+    border: 1px solid;
+    background-image:
+      linear-gradient(0deg, #00ff15 50%, transparent 0);
 }
+
+#proggress_bar3{
+    position: absolute;
+    background-color: #000000;
+    right: 15px; 
+    border-radius: 50%;
+    border: 1px solid;
+    background-image:
+      linear-gradient(0deg, #00ff15 50%, transparent 0);
+}
+
+#proggress_bar4{
+    position: absolute;
+    background-color: #000000;
+    right: 15px; 
+    border-radius: 50%;
+    border: 1px solid;
+    background-image:
+      linear-gradient(0deg, #00ff15 50%, transparent 0);
+}
+
 
 
 
@@ -347,6 +422,7 @@ body{
 
 /*Button Action*/
 #button_action_container{
+    position: relative;
     transform: translateY(50px);
     text-align: center;
     height: auto;
@@ -357,23 +433,28 @@ body{
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
     z-index: 10;
     height: auto;
-    width: 160px;
+    width: 40px;
+    margin: 0px;
     transition: 0.7s;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
 }
 
 .button-action:hover {
-    width: 200px;
-    transform: translateY(-10%);
+    transform: translateY(-15px);
 
 }
 
-#thropy{
-    position: absolute;
-    right: 10px;
+.right_btn{
     transform: translateY(-100px);
 }
+
+
+#tambahBelajar{
+    pointer-events: all;
+}
+
+
 
 /*others stuff*/
 
@@ -387,8 +468,6 @@ body{
 
 #foot{
     width: 150px;
-    -webkit-filter: drop-shadow(0px 10px 5px #222);
-    filter: drop-shadow(0px 10px 5px #222);
 }
 
 
@@ -399,21 +478,17 @@ body{
 .box {
     width: 100px;
     height: 100px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+    transform: translateX(0px);
 }
 
 .clock2 {
-    margin-right: 20%;
-    transform: translateY(-200px);
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     background-color: #ffffff;
     background-image: url('asset/misc/Clock.png');
     background-size: cover;
     border-radius: 50%;
-    border: 10px solid rgba(230, 70, 70, 0.918);
+    border: 5px solid rgba(230, 70, 70, 0.918);
     box-shadow: 0.5rem 0.5rem 1rem #555, -0.5rem -0.5rem 1rem #555;
     position: relative;
 }
@@ -438,34 +513,33 @@ body{
 }
 
 .twelve {
-    left: 35%;
-    transform: translateX(-50%);
-    transform: translateY(-30%);
+    left: 38%;
+    transform: translateX(-10%);
+    transform: translateY(0);
 }
 
 .three {
-    right: 20%;
+    right: 0;
     top: 40%;
-    transform: translateY(-50%);
+    transform: translateY(0%);
 }
 
 .six {
-    bottom: 1rem;
+    bottom: 0;
     left: 40%;
-    transform: translateX(-50%);
+    transform: translateX(0%);
 }
 
 .nine {
     top: 40%;
-    transform: translateY(-50%);
+    transform: translateY(0%);
 }
 
 .arrows {
     width: inherit;
     height: inherit;
     position: absolute;
-    top: -13%;
-    left: -10%;
+    top: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -482,10 +556,10 @@ body{
 }
 
 .arrows div {
-    width: 7px;
-    height: 40px;
+    width: 5px;
+    height: 30px;
     background-color: #ffffff;
-    border: 1px solid red;
+    border: 2px solid rgb(189, 49, 202);
     position: absolute;
     bottom: 50%;
     box-shadow: 0.2rem 0.2rem 0.5rem #777;
@@ -494,7 +568,7 @@ body{
 }
 
 .arrows .hour {
-    height: 30px;
+    height: 20px;
     transform: rotate(90deg);
 }
 
@@ -505,9 +579,11 @@ body{
     height: 200%;
     width: 100%;
     position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
     right: 0px;
     z-index: 20;
-    transform: translateY(-50%);
 }
 
 #pbutton{
@@ -519,6 +595,7 @@ body{
     position: absolute;
     transform: translateY(-30px);
     left: -20px;
+    pointer-events: all;
   }
 
 #pop_ups_in{
@@ -721,6 +798,74 @@ h2.title {
     transform: translateY(-30%);
 }
 
+
+
+/*Stat for page 2.1*/
+#stat{
+    margin-top: 10px;
+}
+#stat div{
+    height: 40px;
+    width: 40px;
+    border: 3px solid rgb(255, 255, 255);
+}
+#stat1{
+    position: absolute;
+    right: 15px; 
+}
+#stat2{
+    position: absolute;
+    right: 46px;
+    transform: translateX(30px);
+    transform: translateY(50px);
+}
+#stat3{
+    position: absolute;
+    right: 80px;
+}
+
+/*Stat button*/
+#stat_first_row{
+    position: relative;
+    margin-top: 0;
+}
+.col_stat{
+    margin-top: 20px;
+}
+
+/*stat images*/
+#stat_img3{
+    width: 40px;
+    transform: translateY(-5px);
+    -webkit-filter: drop-shadow(10px 10px 10px rgb(216, 216, 216));
+    filter: drop-shadow(5px 5px 5px rgb(83, 155, 0));
+}
+
+#stat_img2{
+    width: 35px;
+    transform: translateY(0px);
+    -webkit-filter: drop-shadow(10px 10px 10px rgb(216, 216, 216));
+    filter: drop-shadow(5px 5px 5px rgb(83, 155, 0));
+}
+
+#stat_img1{
+    width: 40px;
+    transform: translateX(-5px);
+    bottom: 0px;
+    -webkit-filter: drop-shadow(10px 10px 10px rgb(216, 216, 216));
+    filter: drop-shadow(5px 5px 5px rgb(83, 155, 0));
+}
+
+/*semester in the bottom*/
+#belajar_bar{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 0;
+}
 /*SMALL SCREEN*/
 @media (max-width: 768px) {
     #char-home1, #char-home2 {
@@ -744,9 +889,9 @@ h2.title {
     }
     #start:hover{
         width: 24%;
-    }
-    
+    }   
     #gif_congrats, #gif_warning {
         width: 50%;
     }
 }
+
