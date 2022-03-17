@@ -105,7 +105,7 @@ $("#start").click(function(){
     $("#loading_screen").show();
     chooseChara();//function for gender
     $("#greetings").text(username);//display user name at greetings
-    document.getElementById("Page2").scrollIntoView({behavior: 'auto'});//jump to page 2
+    document.getElementById("Page2_1").scrollIntoView({behavior: 'auto'});//jump to page 2
     audio.play();//play backsound music 
     $(document).ready(function($) {
         setTimeout(function() {
@@ -115,7 +115,7 @@ $("#start").click(function(){
     chooseChara();
     input_username();
     
-    $("#Page2").show();
+    $("#Page2_1").show();
     $("#Page1").hide();
     move();
 });
@@ -161,16 +161,16 @@ greetings(m);
 function greetings(){
     username = document.getElementById('username').value;
     if(m >= 06 && m<=11){
-        document.getElementById("greetings").innerHTML = '<h1>Good Morning, ' +username + '</h1>';
+        document.getElementById("greetings").innerHTML = '<h1>Morning, ' +username + '</h1>';
     }
     if(m >= 12 && m<=18){
-        document.getElementById("greetings").innerHTML = '<h1>Good Afternoon, ' +username + '</h21';
+        document.getElementById("greetings").innerHTML = '<h1>Afternoon, ' +username + '</h21';
     }
     if(m >= 19 && m<=23){
-        document.getElementById("greetings").innerHTML = '<h1>Good Evening, ' +username + '</h1>';
+        document.getElementById("greetings").innerHTML = '<h1>Evening, ' +username + '</h1>';
     }
     if(m >= 00 && m<=05){
-        document.getElementById("greetings").innerHTML = '<h1>Good Night, ' +username + '</h1>';
+        document.getElementById("greetings").innerHTML = '<h1>Night, ' +username + '</h1>';
         
     }
 }
@@ -178,29 +178,29 @@ change_back(m)
 function change_back(){
     username = document.getElementById('username').value;
     if(m >= 00){
-        $("#Page2").css({
+        $("#Page2_1").css({
             backgroundImage : 'url(asset/background/malam.png)'
-        },1000);
+        },5000);
     }
-    if(m >= 06 && m<=11){
-        $("#Page2").css({
+    if(m >= 08 && m<=11){
+        $("#Page2_1").css({
             backgroundImage : 'url(asset/background/pagi.png)'
-        },1000);
+        },5000);
     }
     if(m >= 12 && m<=15){
-        $("#Page2").css({
+        $("#Page2_1").css({
             backgroundImage : 'url(asset/background/siang.png)'
-        },1000);
+        },5000);
     }
     if(m >= 16 && m<=19){
-        $("#Page2").css({
+        $("#Page2_1").css({
             backgroundImage : 'url(asset/background/sore.png)'
-        },1000);
+        },5000);
     }
     if(m >= 18){
-        $("#Page2").css({
+        $("#Page2_1").css({
             backgroundImage : 'url(asset/background/malam.png)'
-        },1000);
+        },5000);
     }
 
 }
@@ -218,6 +218,18 @@ function back() {
     }
 }
 
+
+//linear gradation
+function gradation(i){
+   var text = "linear-gradient(0deg, rgb(0, 248, 95)" + i +"%, transparent 0)"
+   return text;
+}
+
+function grad_color(i){
+    var text = "linear-gradient(0deg, rgb(252, 29, 0)" + i +"%, transparent 0)"
+    return text;
+ }
+
 //Algorithm for status bar
 var width_makan = 50;
 var width_tidur = 50;
@@ -229,8 +241,7 @@ function move() {
     var tidur = document.getElementById("proggress_bar2");
     var bermain = document.getElementById("proggress_bar3");
     var belajar = document.getElementById("proggress_bar4");
-    var id = setInterval(frame, 1600);
-
+    var id = setInterval(frame, 1000);
     makan.style.transition = 'all 1s';
     tidur.style.transition = 'all 1s';
     bermain.style.transition = 'all 1s';
@@ -239,37 +250,46 @@ function move() {
     function frame() {
         if(width_makan >0){
             width_makan = width_makan - 0.8;
-            makan.style.width = width_makan + "%";
-            if(width_makan < 20){
-                makan.style.backgroundColor = 'red';
-            }
-            else{
-                makan.style.backgroundColor = '#01a10e';
+            makan.style.backgroundImage = gradation(width_makan);
+            if(width_makan < 30){
+                makan.style.backgroundImage = grad_color(width_makan);
             }
         }
         /*else{
             $("#gameover_screen").show();
         }*/
-
         if(width_tidur >0){
             width_tidur = width_tidur - 0.8;
-            tidur.style.width = width_tidur + "%";
-            if(width_tidur < 20){
-                tidur.style.backgroundColor = 'red';
+            tidur.style.backgroundImage = gradation(width_tidur);
+            if(width_tidur >80){
+                document.getElementById("stat_img2").src = 'asset/stat/sleep1.png';
             }
-            else{
-                tidur.style.backgroundColor = '#01a10e';
+            if(width_tidur < 80 && width_tidur >60){
+                document.getElementById("stat_img2").src = 'asset/stat/sleep2.png';
+            }
+            else if(width_tidur < 60 && width_tidur >40){
+                document.getElementById("stat_img2").src = 'asset/stat/sleep3.png';
+            }
+            else if(width_tidur < 20){
+                document.getElementById("stat_img2").src = 'asset/stat/sleep4.png';
+                tidur.style.backgroundImage = grad_color(width_tidur);
             }
         }
-
         if(width_bermain >0){
             width_bermain = width_bermain - 0.8;
-            bermain.style.width = width_bermain + "%";
-            if(width_bermain < 20){
-                bermain.style.backgroundColor = 'red';
+            bermain.style.backgroundImage = gradation(width_bermain);
+            if(width_bermain >80){
+                document.getElementById("stat_img1").src = 'asset/stat/fun_1.png';
             }
-            else{
-                bermain.style.backgroundColor = '#01a10e';
+            if(width_bermain < 80 && width_bermain >60){
+                document.getElementById("stat_img1").src = 'asset/stat/fun_2.png';
+            }
+            else if(width_bermain < 60 && width_bermain >40){
+                document.getElementById("stat_img1").src = 'asset/stat/fun_3.png';
+            }
+            else if(width_bermain < 20){
+                document.getElementById("stat_img1").src = 'asset/stat/fun_4.png';
+                bermain.style.backgroundImage = grad_color(width_bermain);
             }
         }
         if(width_belajar >0){
@@ -490,7 +510,7 @@ function achievements(){
     background = document.getElementById('achievements');
     background.style.display = 'block'; 
     document.getElementById('user-name').innerHTML = '<h1>Hello, ' + username + '</h1>';
-    document.getElementById('sem').innerHTML = '<h2>Semseter ' + parseInt(sem) + '</h2>';
+    document.getElementById('sem').innerHTML = '<h2>Semester ' + parseInt(sem) + '</h2>';
     document.getElementById('makan_status').innerHTML = '<h3>Makan : ' + parseInt(width_makan) + '%</h>';
     document.getElementById('tidur_status').innerHTML = '<h3>Tidur : ' + parseInt(calculate()) + '%</h>';
     document.getElementById('bermain_status').innerHTML = '<h3>Bermain : ' + parseInt(width_bermain) + '%</h>';
