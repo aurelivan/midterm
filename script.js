@@ -516,7 +516,6 @@ $("#close_congrats").click(function(){
 username = $("#username").val();
 $("#congrats_name").text("Congrats, " + username + "!!");
 
-
 //for clock
 const hour = document.querySelector(".hour");
 const minute = document.querySelector(".minute");
@@ -528,8 +527,6 @@ function clock2(m, s) {
     minute.style.transform = `rotate(${minuteDegree}deg)`;
     hour.style.transform = `rotate(${hourDegree}deg)`;
 }
-
-
 
 //change costume
 
@@ -573,7 +570,7 @@ function check_file_outfit(){
 }
 check_file_outfit();
 
-//$("#background_wardrobe").hide();
+$("#background_wardrobe").hide();
 
 $("#open_wardrobe").click(function(){
     $("#background_wardrobe").show();
@@ -597,12 +594,12 @@ $(".change_outfit").click(function(){
 
 //achievements
 
-$("#user-name").text("Hello, " + username);
+$("#user-name").text("Your Gameplay")
 $("#sem").text("Semester " + sem);
-$("#makan_status").text("Makan : " + width_makan);
-$("#tidur_status").text("Tidur : " + width_tidur);
-$("#bermain_status").text("Bermain : " + width_bermain);
-$("#belajar_status").text("Belajar : " + width_belajar);
+$("#makan_status").text("Makan : " + width_makan + "%");
+$("#tidur_status").text("Tidur : " + width_tidur + "%");
+$("#bermain_status").text("Bermain : " + width_bermain + "%");
+$("#belajar_status").text("Belajar : " + width_belajar + "%");
 
 $("#background_trophy").hide();
 
