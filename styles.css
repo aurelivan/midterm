@@ -19,10 +19,6 @@ body{
     background-color: rgb(255, 162, 162);
 }
 
-.scroll-here {
-    height: 100vh;
-}
-
 #Page2{
     background-color: rgb(255, 166, 233);
     background-size: cover;
@@ -52,7 +48,6 @@ body{
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
     width: 120px;
 }
-
 
 /* Character choice in home setting*/
 
@@ -303,8 +298,6 @@ body{
     padding: 10px 10px ;
 }
 
-
-
 #proggress_fill{
     margin-top: 30px;
     width: 100%;
@@ -505,23 +498,6 @@ body{
     transform: rotate(90deg);
 }
 
-/*alert and achievement*/ 
-
-#info {
-    display: none;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 50%;
-    background-color: beige;
-    padding: 20px;
-    width: 50%;
-    height: auto;
-    z-index: 2000;
-}
-
 /*Pop ups*/
 #pop_ups{
     pointer-events: all;
@@ -597,15 +573,6 @@ body{
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
     transform: translateX(100px);
 }
-#user-name{
-    text-align: center;
-    color: #fd6a6a;
-}
-
-#close {
-    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
-}
-
 
 /*Loading screen setting*/
 #loading_screen{
@@ -694,17 +661,33 @@ body{
     filter: drop-shadow(5px 5px 5px #222);
 }
 
+/*close pop up*/
+button.closeX {
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
+}
 
+button.click {
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
+}
 
-/*For credit page*/
+h2.title {
+    text-align: center;
+    color: #fd6a6a;
+}
 
-#open_credit{
-    bottom: 10px;
+/*For credit and setting page*/
+
+#open_credit, #open_setting {
     width:100px;
     border-radius: 10px;
+    cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
-#background_credit{
-    display: none;
+
+#background_credit, #background_setting, 
+#background_congrats, #background_warning{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(0, 0, 0, .7);
     position: fixed;
     left: 0;
@@ -714,27 +697,22 @@ body{
     z-index: 100;
 }
 
-#Pop_credit{
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 20%;
+#Pop_credit {
+    position: fixed;
+    text-align: center;
     padding: 20px;
-    background-color: #ffbdbd;
-    height: 50%;
+    background-color: beige;
+    height: auto;
     width: 70%;
-    position: absolute;
     border: 1px solid rgb(124, 124, 124);
+    box-shadow: 2px 2px 6px #fd6a6a;
     border-radius: 20px;
     z-index: 30;
 }
 
-/*For setting page*/
-#open_setting{
-    width:100px;
-    border-radius: 10px;
+/*congrats pop up*/
+#gif_congrats, #gif_warning {
+    width: 30%;
 }
 
 /*Home button setting*/
@@ -748,12 +726,15 @@ body{
     #char-home1, #char-home2 {
         height: 300px;
     }
+
     #char-home1 {
-        margin-top: 30px;
+        margin-top: 5%;
     }
+
     #char-home2 {
-        margin-bottom: 50px;
+        margin-bottom: 10%;
     }
+
     .gif_action{
         left: 60%;
         right: 0%;
@@ -763,5 +744,9 @@ body{
     }
     #start:hover{
         width: 24%;
+    }
+    
+    #gif_congrats, #gif_warning {
+        width: 50%;
     }
 }
