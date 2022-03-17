@@ -251,7 +251,14 @@ function move() {
         if(width_makan >0){
             width_makan = width_makan - 0.8;
             makan.style.backgroundImage = gradation(width_makan);
-            if(width_makan < 30){
+            if(width_makan >70){
+                document.getElementById("stat_img3").src = 'asset/stat/lambung1.png';
+            }
+            if(width_makan < 70 && width_makan >30){
+                document.getElementById("stat_img3").src = 'asset/stat/lambung2.png';
+            }
+            else{
+                document.getElementById("stat_img3").src = 'asset/stat/lambung3.png';
                 makan.style.backgroundImage = grad_color(width_makan);
             }
         }
