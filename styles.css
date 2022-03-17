@@ -452,6 +452,7 @@ body{
 
 #tambahBelajar{
     pointer-events: all;
+    z-index: 30;
 }
 
 
@@ -597,6 +598,11 @@ body{
     left: -20px;
     pointer-events: all;
   }
+
+#pbutton_open{
+    pointer-events: all;
+    z-index: 30;
+}
 
 #pop_ups_in{
     position: absolute;
