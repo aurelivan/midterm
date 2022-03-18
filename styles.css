@@ -1,13 +1,30 @@
 body{
     scroll-behavior: auto !important;
-    background-color: rgba(229, 241, 201, 0.932);
+    background-color: rgb(255, 162, 162);
     cursor: url('asset/misc/cursor/cursor_normal.png'), auto;
     font-family: "Dimbo";
+    overflow: auto;
     overflow-x: hidden;
+    /*scrollbar*/
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    /*??*/
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
+/*credit img setting*/
+#credit1 {
+    width:100px;
+}
 
-
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
 
 @font-face {
     font-family: "Dimbo";
@@ -22,21 +39,6 @@ body{
     overflow: hidden;
     background-color: rgb(255, 162, 162);
 }
-
-
-/* del aja kl ga kepake
-#Page2{
-    background-color: rgb(255, 166, 233);
-    background-size: cover;
-    overflow: hidden;
-    height: auto;
-    width: auto;
-    background-size: 100%;
-    padding: 5%;
-    margin: 0%;
-    background-repeat: no-repeat;
-    transition: background 1s linear;
-*/
 
 #Page2_1{
     background-image: url(/asset/background/malam.png);
@@ -55,11 +57,12 @@ body{
     background-color: aliceblue;
     border-radius: 8px; 
     width: 500px;
+    outline: none;
 }
 
 #username::placeholder {
     font-style: italic;
-  }
+}
 
 #confirm {
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
@@ -117,7 +120,7 @@ body{
     background-color: #f3f3f3;
     width: 130px;
     border-radius: 20px;
-
+    -webkit-text-stroke: 1.2px black;
 }
 
 /*animation when character idle */
@@ -359,7 +362,7 @@ body{
     border-radius: 50%;
     border: 1px solid;
     background-image:
-      linear-gradient(0deg, #00ff15 50%, transparent 0);
+    linear-gradient(0deg, #00ff15 50%, transparent 0);
 
 }
 
@@ -372,7 +375,7 @@ body{
     border-radius: 50%;
     border: 1px solid;
     background-image:
-      linear-gradient(0deg, #00ff15 50%, transparent 0);
+    linear-gradient(0deg, #00ff15 50%, transparent 0);
 }
 
 #proggress_bar3{
@@ -382,7 +385,7 @@ body{
     border-radius: 50%;
     border: 1px solid;
     background-image:
-      linear-gradient(0deg, #00ff15 50%, transparent 0);
+    linear-gradient(0deg, #00ff15 50%, transparent 0);
 }
 
 #proggress_bar4{
@@ -392,7 +395,7 @@ body{
     border-radius: 50%;
     border: 1px solid;
     background-image:
-      linear-gradient(0deg, #00ff15 50%, transparent 0);
+    linear-gradient(0deg, #00ff15 50%, transparent 0);
 }
 
 
@@ -469,7 +472,7 @@ body{
 /*others stuff*/
 
 #digital {
-    visibility: hidden;
+    display: none;
 }
 
 #hand-right{
@@ -640,27 +643,26 @@ body{
 
 /*Game over screen*/
 #gameover_screen{
-    display: none;
-    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(100, 86, 86, 0.8);
     position: fixed;
     width: 100%;
-    height: 300vh;
+    height: 100vh;
     top: 0px;
     z-index: 1000;
 }
 
 #gameover{
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+    position: fixed;
+    padding: 20px;
     text-align: center;
     width: auto;
-    height: 120px;
     font-size: 40px;
+    z-index: 30;
 }
-
 
 /*Outfit setting*/
 .change_costum{
@@ -700,11 +702,33 @@ button.closeX, button.click, img.click{
 .closeX{
     z-index: 100;
 }
-
-
-h2.title {
+.title {
     text-align: center;
     color: #fd6a6a;
+}
+
+button.notmain_btn {
+    padding: 5px 15px;
+    font-size: 18px;
+    border: none;
+}
+
+button.main_btn {
+    padding: 5px 15px;
+    font-size: 18px;
+    border: none;
+}
+
+button.main_btn:hover {
+    background-color: ghostwhite;
+    color: rgb(30, 25, 32);
+    transform: scale(1.08);
+    transition: 0.2s ease-in-out;
+}
+
+button.main_btn:active {
+    transform: scale(0.98);
+    transition: 0.2s ease-in-out;
 }
 
 /*For credit and setting page*/
@@ -715,9 +739,15 @@ h2.title {
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
 
+#open_credit:hover, #open_setting:hover {
+    background-color: rgb(26, 27, 27);
+    color: wheat;
+    transition: 0.2s ease-in-out;
+}
+
 #background_credit, #background_setting, 
 #background_congrats, #background_warning,
-#background_trophy, #background_wardrobe, #pause_screen, #makan_background {
+#background_trophy, #background_wardrobe, #pause_screen, #makan_background, #background_info, #background_guide {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -731,12 +761,39 @@ h2.title {
     overflow: hidden;
 }
 
+#background_confirmation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(221, 34, 34, 0.7);
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    z-index: 100;
+}
+
 #Pop_credit {
     position: fixed;
     text-align: center;
     padding: 20px;
     background-color: beige;
-    height: 90%;
+    height: auto;
+    width: 70%;
+    border: 1px solid rgb(124, 124, 124);
+    box-shadow: 2px 2px 6px #fd6a6a;
+    border-radius: 20px;
+    z-index: 30;
+}
+
+#Pop_guide {
+    position: fixed;
+    text-align: center;
+    overflow-y: scroll;
+    padding: 20px;
+    background-color: beige;
+    height: 60%;
     width: 70%;
     border: 1px solid rgb(124, 124, 124);
     box-shadow: 2px 2px 6px #fd6a6a;
@@ -749,13 +806,16 @@ h2.title {
     width: 30%;
 }
 
+#lesgo {
+    background-color: darkslategray;
+    color: aliceblue;
+}
+
 /*Home button setting*/
 #home-button{
     bottom: 100px;
     transform: translateY(-30%);
 }
-
-
 
 /*Stat for page 2.1*/
 #stat{

@@ -32,7 +32,7 @@
             <input type="text" name="name" id="username" class="p-2 text-center w-75 border-0" placeholder=" Username... ">
           </div>
           <div class="text-center">
-            <button type="button" id="confirm" class="btn btn-light btn-outline-primary p-1 rounded-3 border-2" onclick="submit_username()">✔️</button>
+            <button type="button" id="confirm" class="btn btn-light btn-outline-primary p-1 rounded-3 border-2" onclick="submit_username()" onmousedown="audio2.play();">✔️</button>
           </div>
         </div>
   
@@ -53,7 +53,7 @@
           <div class="container-fluid" id="Pop_credit">
             <div class="row">
               <div class="col-1">
-                <button class="closeX" id="close_credit">X</button>
+                <button class="closeX" id="close_credit" onmousedown="audio2.play();">X</button>
               </div>
               <div class="col-10">
                 <center><h2 class="title">Credit</h2></center>
@@ -63,52 +63,71 @@
             <br />
             <div class="row text-center">
               <div class="col-6">
+                <img id="credit1" src="asset/credit/Ivan.png"/>
                 <h3>Aurelius Ivan Wijaya</h3>
               </div>
               <div class="col-6">
+                <img id="credit1" src="asset/credit/Arka.png"/>
                 <h3>Arkana Asa Andoko</h3>
               </div>
             </div>
             <div class="row text-center">
               <div class="col-6">
-                <h3>Maecyntha Irelynn</h3>
+                <img id="credit1" src="asset/credit/Mae.png"/>
+                <h3>Maecyntha Irelynn Tantra</h3>
               </div>
               <div class="col-6">
+                <img id="credit1" src="asset/credit/Pat.png"/>
                 <h3>Patricia Theodora Darmawan</h3>
               </div>
             </div>
           </div>      
         </div>
-        
-        <!--Setting pop up-->
-        <div id="background_setting">
-          <div class="container-fluid" id="Pop_credit">
-            <div class="row">
-              <div class="col-1">
-                <button class="closeX" id="close_setting">X</button>
-              </div>
-              <div class="col-10">
-                <center><h2 class="title">Setting</h2></center>
-              </div>
-            </div>
-            <hr />
-            <h3 class="text-center">Volume</h3>
-            <div class="row text-center mt-2">
-              <div class="col-sm-6">
-                <button class="click">Nanti ganti" gambar pas click</button>
-              </div>
-              <div class="col-sm-6">
-                <button class="click">Slider (?)</button>
-              </div>
-            </div>
-            <button class="click w-50 mt-3 px-4">Guide (nanti dirapihin lagi)</button>
-          </div>
-        </div>
-  
-        <div id="home-button" class="text-center mt-2 mb-4">
-          <button id="open_credit">credit</button>
+
+        <div id="home-button" class="text-center mt-2 mb-1">
           <img src="asset/icon/start.png" id="start">
-          <button id="open_setting">setting</button>
+        </div>
+        <div id="home-button" class="text-center mt-1 mb-4">
+          <button id="open_credit"onmousedown="audio2.play();">credit</button>
+        </div>
+      </div>
+
+      <!--guide pop up-->
+      <div id="background_guide">
+        <div class="container-fluid" id="Pop_guide">
+          <div class="row">
+            <div class="col-1">
+              <button class="closeX" id="close_guide" onmousedown="audio2.play();">X</button>
+            </div>
+            <div class="col-10">
+              <center><h2 class="title">Guide Page</h2></center>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-md-6">
+              <h3 class="rounded-3 bg-light py-1 mb-4">To-Do</h3>
+              <h4>Choose and name your avatar</h4> <hr />
+              <h4>Take care of your avatar</h4> <hr />
+              <h4>Educate your avatar</h4> <hr />
+              <h4>Pay attention to status bars on the top-right</h4> <hr />
+            </div>
+            <div class="rounded-3 col-md-6">
+              <h3 class="bg-light py-1 mb-4">Not To-Do</h3>
+              <h4>Leave your avatar with low status</h4> <hr />
+              <h4>Get a study warning for 3 times</h4> <hr />
+            </div>
+          </div>
+          <br />
+          <h3 class="rounded-3 bg-info py-1">Features</h3>
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <h4>Change clothes</h4>
+            </div>
+            <div class="col-md-6">
+              <h4>Check your achievemnets !</h4>
+            </div>
+          </div>
         </div>
       </div>
   
@@ -118,10 +137,10 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_trophy">X</button>
+              <button class="closeX" id="close_trophy"onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
-              <center><h2 id="user-name" class="title"></h2></center>
+              <h2 id="user-name" class="title"></h2>
             </div>
           </div>
           <hr />
@@ -138,7 +157,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_congrats">X</button>
+              <button class="closeX" id="close_congrats"onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <center><h2 id="congrats_name" class="title"></h2></center>
@@ -146,29 +165,28 @@
           </div>
           <hr />
           <h4 class="text-center" id="naik_sem"></h4>
-          <img id="gif_congrats" src="asset/gif/boy/congrats.gif">
+          <img id="gif_congrats">
         </div>
       </div>
-  
       
       <!--Warning pop up-->
       <div id="background_warning">
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_warning">X</button>
+              <button class="closeX" id="close_warning" onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <center><h2 class="title">ALERT !</h2></center>
             </div>
           </div>
           <hr />
-          <p class="text-center">Oh No !</p>
-          <p class="what"></p>
+          <h4 class="text-center">Oh No !</h4>
+          <h4 id="what"></h4>
           <div>
             <img id="gif_warning">
           </div>
-          <button id="lesgo" class="click"></button>
+          <button id="lesgo" class="click rounded-3 main_btn" onmousedown="audio2.play()";></button>
         </div>
       </div>
   
@@ -176,8 +194,9 @@
   <!--page 2.1 -->
   <div id="Page2_1" class="container-fluid">
     <div class="row">
-      <div class="col-4">
-        <button id="open_pause" class="click btn btn-info">II</button>
+      <div class="col-4 click">
+        <button id="open_info" class="click btn btn-info" onmousedown="audio2.play()";>II</button>
+        <button id="open_guide" class="click ml-5 btn btn-info" onmousedown="audio2.play()";>?</button>
       </div>
       <div class="col-4">
         <div id="greetings_container" class="col-6 mt-3">
@@ -226,38 +245,82 @@
       <img class="goyang" id="hand-right" src="" alt="">
     </div>
   </div>
+
+    <!--Info pop up-->
+    <div id="background_info">
+      <div class="container-fluid" id="Pop_credit">
+        <div class="row">
+          <div class="col-1">
+            <button class="closeX" id="close_info">X</button>
+          </div>
+          <div class="col-10">
+            <center><h2 class="title">Menu</h2></center>
+          </div>
+        </div>
+        <hr />
+        <h4>Volume</h4>
+        <div class="row text-center mt-2">
+          <div class="col-sm-6">
+            <button class="click rounded-3 main_btn">Nanti ganti" gambar pas click</button>
+          </div>
+          <div class="col-sm-6">
+            <button class="slider click rounded-3 main_btn">Slider (?)</button>
+          </div>
+        </div>
+        <br />
+        <button id="open_confirmation" class="rounded-3 click notmain_btn btn-danger">reset game</button>
+      </div>
+    </div>
+
+    <!--Reset confirmation pop up-->
+    <div id="background_confirmation">
+      <div class="container-fluid" id="Pop_credit">
+        <div class="row">
+          <div class="col-1">
+            <button class="closeX" id="close_confirmation">X</button>
+          </div>
+          <div class="col-10">
+            <center><h2 class="title">Are You Sure?</h2></center>
+          </div>
+        </div>
+        <hr />
+        <h4 class="text-center">This action cannot be undone</h4>
+        <button class="click rounded-3 notmain_btn btn-danger" onclick="window.location.reload(true)">RESET NOW</button>
+      </div>
+    </div>
   
     <!--button action-->
     <div id="stat_first_row" class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahMakan" class="click btn btn-danger"><img class="button-action" src="asset/food/burger.png" ></button>
+        <button id="tambahMakan" title="eat" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/food/burger.png" ></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahTidur" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_sleep.png"></button>
+        <button id="tambahTidur" title="sleep" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_sleep.png"></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahBermain" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_game.png"></button>
+        <button id="tambahBermain" title="play" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_game.png"></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahBelajar" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_study.png"></button>
+        <button id="tambahBelajar" title="study" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_study.png"></button>
+        <p class="ml-5 mt-3 text-light">  study</p>
       </div>
     </div>
   
     <!--Button in the right-->
     <div class="right_btn row my-4">
       <div class="col-12 d-flex flex-row-reverse">
-        <button id="open_trophy" class="click btn btn-danger"><img class="button-action" src="asset/icon/Trophy.png"></button>
+        <button id="open_trophy" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Trophy.png"></button>
       </div>
     </div>
     <div class="row right_btn ">
       <div class="col-12 d-flex flex-row-reverse">
-        <button id="open_wardrobe" class="click btn btn-danger" onclick="open_pop()"><img class="button-action" src="asset/icon/Baju.png"></button>
+        <button id="open_wardrobe" class="click btn btn-danger" onclick="open_pop()"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Baju.png"></button>
       </div>
     </div>
     <div class="row right_btn ">
@@ -272,7 +335,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX btn btn-danger" id="close_wardrobe">X</button>
+              <button class="closeX" id="close_wardrobe" onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <center><h2 class="title">Change Outfit</h2></center>
@@ -293,16 +356,16 @@
   
       <div id="gif_col" class="row">
         <div class="gif_action col-2">
-          <img  id="eat_gif" src="asset/gif/boy/eat.gif" alt="">
+          <img  id="eat_gif" src="" alt="">
         </div>
         <div class="gif_action col-2">
-          <img  id="sleep_gif"src="asset/gif/boy/sleep.gif" alt="">
+          <img  id="sleep_gif"src="" alt="">
         </div>
         <div class="gif_action col-2">
-          <img id="study_gif" src="asset/gif/boy/study.gif" alt="">
+          <img id="study_gif" src="" alt="">
         </div>
         <div class="gif_action col-2">
-          <img id="play_gif" src="asset/gif/boy/play.gif" alt="">
+          <img id="play_gif" src="" alt="">
         </div>
       </div> <!--kyknya ini ga perlu-->
       </div>
@@ -332,7 +395,7 @@
         <div id="pause_menu" class="container">
           <div class="row">
             <div class="col d-flex flex-row">
-              <button id="close_pause" class="btn btn-danger">x</button>
+              <button id="close_pause" class="btn btn-danger"onmousedown="audio2.play();">x</button>
             </div>
             <div class="col">
               PAUSED
@@ -350,22 +413,14 @@
       </div>
 
       <!--Gameover screen-->
-      <div>
-        <div id="gameover_screen" class="row">
-          <div class="row" id="gameover">
-            <img src="" alt="">
-            <p>gameover</p>
+      <div id="gameover_screen">
+        <div class="container-fluid" id="gameover">
+          <h2 class="text-center text-light">GAMEOVER</h2>
+          <div>
+            <img id="gameover_gif" class="w-25">
           </div>
-          <div class="row">
-            <div class="col ">
-              <img src="" alt="">
-            </div>
-            <div>
-              <img src="" alt="">
-            </div>
-            <div class="col">
-              <img src="" alt="">
-            </div>
+          <div>
+            <button class="click rounded-3 w-25 notmain_btn btn-danger" onclick="window.location.reload(true)">RESET NOW</button>
           </div>
         </div>
       </div>
@@ -414,9 +469,9 @@
 
       <!--
       <script>
-        var p2 = document.getElementById("Page2");
+        var p2 = document.getElementById("Page2_1");
         p2.style.display = "none";
-      </script>-->
+      </script>
       
       <!--end of the page-->
       <script src="jquery-3.6.0.min.js"></script>
