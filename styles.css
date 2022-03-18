@@ -41,6 +41,7 @@ body{
 }
 
 #Page2_1{
+    position: relative;
     background-image: url(/asset/background/malam.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -116,8 +117,7 @@ body{
     right: 0;
     text-align: center;
     text-decoration: none;
-    color: #000000;
-    background-color: #f3f3f3;
+    color: #ffb8b8;
     width: 130px;
     border-radius: 20px;
     -webkit-text-stroke: 1.2px black;
@@ -285,19 +285,31 @@ body{
 
 /*gif */
 
-#gif_col{
+#gif_col2, #gif_col3, #gif_col4{
     display: none;
     background-color: rgb(0, 0, 0, 0.8);
     position: fixed;
     width: 110%;
     height: 100vh;
     bottom: 0;
-    z-index: 50;
+    z-index: 1000;
 }
 
 .gif_action{
-    width: 100vh;
-    height: auto;
+    position: abosulute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 10%;
+    right: 0;
+    border-radius: 10px;
+    height: 80%;
+    width: 1000%;
+    background-image: url(asset/background/eat.png);
+    background-size: cover;
+    background-position: 50%;
+    transform: translateY(20px);
 }
 
 #eat_gif, #sleep_gif, #study_gif, #play_gif{
@@ -935,7 +947,12 @@ button.main_btn:active {
 
 
 /*makan page*/
+#makan_background{
+    display: none;
+}
+
 #makan_page{
+    display: none;
     border-radius: 10px;
     height: 80%;
     width: 90%;
@@ -943,7 +960,7 @@ button.main_btn:active {
     background-size: cover;
     background-position: 50%;
     padding: 10px;
-    transform: translateY(-60px);
+    transform: translateY(20px);
 }
 
 #eat_char{
@@ -1034,4 +1051,24 @@ button.main_btn:active {
     border-radius: 10px;
     height: 10px;
     width:100%;
+}
+
+
+#semester_title{
+    font-size: 30px;
+}
+
+.semester{
+    position: absolute;
+    text-align: center;
+
+}
+
+#semester{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 80px;
+    left: 0;
+    right: 0;
 }
