@@ -11,7 +11,11 @@ body{
     -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-
+/*credit img setting*/
+#credit1 
+{
+    width:100px;
+}
 
 
 @font-face {

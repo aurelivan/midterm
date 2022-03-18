@@ -32,7 +32,7 @@
             <input type="text" name="name" id="username" class="p-2 text-center w-75 border-0" placeholder=" Username... ">
           </div>
           <div class="text-center">
-            <button type="button" id="confirm" class="btn btn-light btn-outline-primary p-1 rounded-3 border-2" onclick="submit_username()">✔️</button>
+            <button type="button" id="confirm" class="btn btn-light btn-outline-primary p-1 rounded-3 border-2" onclick="submit_username()" onmousedown="audio2.play();">✔️</button>
           </div>
         </div>
   
@@ -53,7 +53,7 @@
           <div class="container-fluid" id="Pop_credit">
             <div class="row">
               <div class="col-1">
-                <button class="closeX" id="close_credit">X</button>
+                <button class="closeX" id="close_credit" onmousedown="audio2.play();">X</button>
               </div>
               <div class="col-10">
                 <center><h2 class="title">Credit</h2></center>
@@ -63,17 +63,21 @@
             <br />
             <div class="row text-center">
               <div class="col-6">
+                <img id="credit1" src="asset/credit/Ivan.png"/>
                 <h3>Aurelius Ivan Wijaya</h3>
               </div>
               <div class="col-6">
+                <img id="credit1" src="asset/credit/Arka.png"/>
                 <h3>Arkana Asa Andoko</h3>
               </div>
             </div>
             <div class="row text-center">
               <div class="col-6">
+                <img id="credit1" src="asset/credit/Mae.png"/>
                 <h3>Maecyntha Irelynn</h3>
               </div>
               <div class="col-6">
+                <img id="credit1" src="asset/credit/Pat.png"/>
                 <h3>Patricia Theodora Darmawan</h3>
               </div>
             </div>
@@ -85,7 +89,7 @@
           <div class="container-fluid" id="Pop_credit">
             <div class="row">
               <div class="col-1">
-                <button class="closeX" id="close_setting">X</button>
+                <button class="closeX" id="close_setting" onmousedown="audio2.play();">X</button>
               </div>
               <div class="col-10">
                 <center><h2 class="title">Setting</h2></center>
@@ -95,10 +99,10 @@
             <h3 class="text-center">Volume</h3>
             <div class="row text-center mt-2">
               <div class="col-sm-6">
-                <button class="click">Nanti ganti" gambar pas click</button>
+                <button class="click" onmousedown="audio2.play();">Nanti ganti" gambar pas click</button>
               </div>
               <div class="col-sm-6">
-                <button class="click">Slider (?)</button>
+                <button class="click"onmousedown="audio2.play();">Slider (?)</button>
               </div>
             </div>
             <button class="click w-50 mt-3 px-4">Guide (nanti dirapihin lagi)</button>
@@ -106,9 +110,9 @@
         </div>
   
         <div id="home-button" class="text-center mt-2 mb-4">
-          <button id="open_credit">credit</button>
+          <button id="open_credit"onmousedown="audio2.play();">credit</button>
           <img src="asset/icon/start.png" id="start">
-          <button id="open_setting">setting</button>
+          <button id="open_setting"onmousedown="audio2.play();">setting</button>
         </div>
       </div>
   
@@ -118,7 +122,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_trophy">X</button>
+              <button class="closeX" id="close_trophy"onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <h2 id="user-name" class="title"></h2>
@@ -138,7 +142,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_congrats">X</button>
+              <button class="closeX" id="close_congrats"onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <center><h2 id="congrats_name" class="title"></h2></center>
@@ -156,7 +160,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_warning">X</button>
+              <button class="closeX" id="close_warning" onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <center><h2 class="title">ALERT !</h2></center>
@@ -168,7 +172,7 @@
           <div>
             <img id="gif_warning">
           </div>
-          <button id="lesgo" class="click"></button>
+          <button id="lesgo" class="click"onmousedown="audio2.play();"></button>
         </div>
       </div>
   
@@ -177,7 +181,7 @@
   <div id="Page2_1" class="container-fluid">
     <div class="row">
       <div class="col-4">
-        <button id="open_pause" class="click btn btn-info">II</button>
+        <button id="open_pause" class="click btn btn-info" onmousedown="audio2.play();">II</button>
       </div>
       <div class="col-4">
         <div id="greetings_container" class="col-6 mt-3">
@@ -230,34 +234,34 @@
     <!--button action-->
     <div id="stat_first_row" class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahMakan" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_eat.png" ></button>
+        <button id="tambahMakan" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_eat.png" ></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahTidur" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_sleep.png"></button>
+        <button id="tambahTidur" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_sleep.png"></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahBermain" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_game.png"></button>
+        <button id="tambahBermain" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_game.png"></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahBelajar" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_study.png"></button>
+        <button id="tambahBelajar" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_study.png"></button>
       </div>
     </div>
   
     <!--Button in the right-->
     <div class="right_btn row my-4">
       <div class="col-12 d-flex flex-row-reverse">
-        <button id="open_trophy" class="click btn btn-danger"><img class="button-action" src="asset/icon/Trophy.png"></button>
+        <button id="open_trophy" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Trophy.png"></button>
       </div>
     </div>
     <div class="row right_btn ">
       <div class="col-12 d-flex flex-row-reverse">
-        <button id="open_wardrobe" class="click btn btn-danger" onclick="open_pop()"><img class="button-action" src="asset/icon/Baju.png"></button>
+        <button id="open_wardrobe" class="click btn btn-danger" onclick="open_pop()"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Baju.png"></button>
       </div>
     </div>
     <div class="row right_btn ">
@@ -272,7 +276,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX btn btn-danger" id="close_wardrobe">X</button>
+              <button class="closeX btn btn-danger" id="close_wardrobe"onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <center><h2 class="title">Change Outfit</h2></center>
@@ -293,16 +297,16 @@
   
       <div id="gif_col" class="row">
         <div class="gif_action col-2">
-          <img  id="eat_gif" src="asset/gif/boy/eat.gif" alt="">
+          <img  id="eat_gif" src="" alt="">
         </div>
         <div class="gif_action col-2">
-          <img  id="sleep_gif"src="asset/gif/boy/sleep.gif" alt="">
+          <img  id="sleep_gif"src="" alt="">
         </div>
         <div class="gif_action col-2">
-          <img id="study_gif" src="asset/gif/boy/study.gif" alt="">
+          <img id="study_gif" src="" alt="">
         </div>
         <div class="gif_action col-2">
-          <img id="play_gif" src="asset/gif/boy/play.gif" alt="">
+          <img id="play_gif" src="" alt="">
         </div>
       </div> <!--kyknya ini ga perlu-->
       </div>
@@ -332,7 +336,7 @@
         <div id="pause_menu" class="container">
           <div class="row">
             <div class="col d-flex flex-row">
-              <button id="close_pause" class="btn btn-danger">x</button>
+              <button id="close_pause" class="btn btn-danger"onmousedown="audio2.play();">x</button>
             </div>
             <div class="col">
               PAUSED
