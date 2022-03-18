@@ -64,11 +64,12 @@ body{
     background-color: aliceblue;
     border-radius: 8px; 
     width: 500px;
+    outline: none;
 }
 
 #username::placeholder {
     font-style: italic;
-  }
+}
 
 #confirm {
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
@@ -122,6 +123,7 @@ body{
     right: 0;
     text-align: center;
     text-decoration: none;
+    -webkit-text-stroke: 1.2px black;
     color: #f3f3f3;
 }
 
@@ -707,11 +709,15 @@ button.closeX, button.click, img.click{
 .closeX{
     z-index: 100;
 }
-
-
-h2.title {
+.title {
     text-align: center;
     color: #fd6a6a;
+}
+
+button.main_btn {
+    padding: 5px 15px;
+    font-size: 18px;
+    border: none;
 }
 
 /*For credit and setting page*/
@@ -724,7 +730,8 @@ h2.title {
 
 #background_credit, #background_setting, 
 #background_congrats, #background_warning,
-#background_trophy, #background_wardrobe, #pause_screen {
+#background_trophy, #background_wardrobe,
+#background_info {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -736,6 +743,19 @@ h2.title {
     top: 0px;
     z-index: 100;
     overflow: hidden;
+}
+
+#background_confirmation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(221, 34, 34, 0.7);
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    z-index: 100;
 }
 
 #Pop_credit {
@@ -756,13 +776,16 @@ h2.title {
     width: 30%;
 }
 
+#lesgo {
+    background-color: darkslategray;
+    color: aliceblue;
+}
+
 /*Home button setting*/
 #home-button{
     bottom: 100px;
     transform: translateY(-30%);
 }
-
-
 
 /*Stat for page 2.1*/
 #stat{
