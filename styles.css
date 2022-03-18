@@ -4,7 +4,15 @@ body{
     cursor: url('asset/misc/cursor/cursor_normal.png'), auto;
     font-family: "Dimbo";
     overflow-x: hidden;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
+
+
+
 
 @font-face {
     font-family: "Dimbo";
@@ -43,6 +51,7 @@ body{
     padding: 20px;
     height: 100vh;
     width: 100%;
+    transition: 2s;
 }
 
 /*Page index */
@@ -452,8 +461,12 @@ body{
 
 #tambahBelajar{
     pointer-events: all;
+    z-index: 20;
 }
 
+#open_thropy, #open_wardorbe{
+    z-index: 20;
+}
 
 
 /*others stuff*/
@@ -658,12 +671,18 @@ body{
     height: auto;
 }
 
+.change_costum img{
+    height: auto;
+    width: 120px;
+}
+
+
 .change_outfit{
     border-radius: 10px;
     border: none;
-    padding: 10px;
+    padding: 5px;
     width: auto;
-    height: 160px;
+    height: 140px;
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
     z-index: 10;
     width: 150px;
@@ -681,6 +700,11 @@ button.closeX, button.click, img.click{
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
 
+.closeX{
+    z-index: 100;
+}
+
+
 h2.title {
     text-align: center;
     color: #fd6a6a;
@@ -696,7 +720,7 @@ h2.title {
 
 #background_credit, #background_setting, 
 #background_congrats, #background_warning,
-#background_trophy, #background_wardrobe {
+#background_trophy, #background_wardrobe, #pause_screen {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -707,6 +731,7 @@ h2.title {
     height: 100vh;
     top: 0px;
     z-index: 100;
+    overflow: hidden;
 }
 
 #Pop_credit {
@@ -714,7 +739,7 @@ h2.title {
     text-align: center;
     padding: 20px;
     background-color: beige;
-    height: auto;
+    height: 90%;
     width: 70%;
     border: 1px solid rgb(124, 124, 124);
     box-shadow: 2px 2px 6px #fd6a6a;
@@ -801,6 +826,23 @@ h2.title {
     width: 100%;
     bottom: 0;
 }
+
+
+
+/*Pause screen*/
+#pause_menu{
+    position: fixed;
+    text-align: center;
+    padding: 20px;
+    background-color: beige;
+    height: 90%;
+    width: 70%;
+    border: 1px solid rgb(124, 124, 124);
+    box-shadow: 2px 2px 6px #fd6a6a;
+    border-radius: 20px;
+    z-index: 30;
+}
+
 /*SMALL SCREEN*/
 @media (max-width: 768px) {
     #char-home1, #char-home2 {

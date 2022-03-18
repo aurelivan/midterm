@@ -190,22 +190,22 @@ function change_back(){
     if(m >= 00){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/malam.png)'
-        },5000);
+        },1000);
     }
-    if(m >= 08 && m<=11){
+    if(m >= 08 && m<12){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/pagi.png)'
-        },5000);
+        },4000);
     }
     if(m >= 12 && m<=15){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/siang.png)'
-        },5000);
+        },4000);
     }
     if(m >= 16 && m<=19){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/sore.png)'
-        },5000);
+        },1000);
     }
     if(m >= 18){
         $("#Page2_1").css({
@@ -613,3 +613,13 @@ $("#open_trophy").click(function(){
 $("#close_trophy").click(function(){
     $("#background_trophy").hide();
 }); $("#awards").show();
+
+
+//pause menu
+$("#pause_screen").hide();
+$("#open_pause").click(function(){
+    $("#pause_screen").show();
+});
+$("#close_pause").click(function(){
+    $("#pause_screen").hide();
+});

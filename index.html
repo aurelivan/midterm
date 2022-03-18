@@ -177,7 +177,7 @@
   <div id="Page2_1" class="container-fluid">
     <div class="row">
       <div class="col-4">
-        <button class="click btn btn-info">II</button>
+        <button id="open_pause" class="click btn btn-info">II</button>
       </div>
       <div class="col-4">
         <div id="greetings_container" class="col-6 mt-3">
@@ -272,7 +272,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_wardrobe">X</button>
+              <button class="closeX btn btn-danger" id="close_wardrobe">X</button>
             </div>
             <div class="col-10">
               <center><h2 class="title">Change Outfit</h2></center>
@@ -326,6 +326,29 @@
         </div>
       </div>
   
+
+      <!--Pause Screen-->
+      <div id="pause_screen" class="container-fluid">
+        <div id="pause_menu" class="container">
+          <div class="row">
+            <div class="col d-flex flex-row">
+              <button id="close_pause" class="btn btn-danger">x</button>
+            </div>
+            <div class="col">
+              PAUSED
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button>
+                test
+              </button>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+
       <!--Gameover screen-->
       <div>
         <div id="gameover_screen" class="row">
