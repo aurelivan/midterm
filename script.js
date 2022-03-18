@@ -109,6 +109,8 @@ function gameover() {
     else {
         $("#gameover_gif").attr("src", "asset/gif/girl/gameover.gif");
     }
+    $("#background_info").hide();
+    $("#background_confirmation").hide();
 }
 
 //get username
@@ -188,14 +190,73 @@ function submit_username(){
 }
 //function for loading screen
 
+//Algoritm for time
+var d,h,m,s,animate;
+
+var deadline;
+var alert_count;
+
+function init(){
+    deadline = 0;
+    dropout = 0;
+    alert_count = 0;
+    d=new Date();
+    m= 11;
+    s= 00;
+    clock();
+};
+
+function clock(){
+    s++;
+    if(s==60){
+        s=0;
+        m++;
+        deadline++;
+        if(m==24){
+            m=0;
+        }
+        if (alert_count >= 3) {
+            dropout++;
+        }
+        if (dropout >= 1 && alert_count >= 3) {
+            gameover();
+            $("#background_warning").hide();
+        }
+        if (deadline >= 2) {
+            $("#background_warning").show();
+            $("#what").text ("You need to study -_-")
+            if (z == 1) {
+                $("#gif_warning").attr("src", "asset/gif/boy/shocked.png");
+            }
+            else {
+                $("#gif_warning").attr("src", "asset/gif/girl/shocked.png");
+            }
+            $("#lesgo").text("Let's Study");
+            $("#lesgo").click(function() {
+                tambah_belajar();
+                $("#background_warning").hide();
+            });
+            alert_count++;
+            deadline = 1;
+        }
+    }
+    $('min',s);
+    $('hr',m);
+    greetings(m);
+    change_back(m)
+    clock2(m,s);
+    animate=setTimeout(clock,1000); //nanti balikin jadi 1000
+};
+
 //function for play / start button
 $("#start").click(function(){
+    init();
     gif_gender();
     $("#loading_screen").show();
     chooseChara();//function for gender
     $("#greetings").text(username);//display user name at greetings
     document.getElementById("Page2_1").scrollIntoView({behavior: 'auto'});//jump to page 2
-    musick.play();//play backsound music 
+    audio.play();//play backsound music 
     $(document).ready(function($) {
         setTimeout(function() {
         $("#loading_screen").hide(1000);
@@ -231,67 +292,6 @@ $("#open_confirmation").click(function(){
 $("#close_confirmation").click(function(){
     $("#background_confirmation").hide();
 });
-
-//Algoritm for time
-var d,h,m,s,animate;
-
-var deadline;
-var alert_count;
-
-function init(){
-    deadline = 0;
-    dropout = 0;
-    alert_count = 0;
-    d=new Date();
-    m= 11;
-    s= 00;
-    clock();
-};
-
-function clock(){
-    s++;
-    if(s==60){
-        s=0;
-        m++;
-        deadline++;
-        if(m==24){
-            m=0;
-        }
-        if (alert_count >= 3) {
-            dropout++;
-        }
-        if (dropout >= 1 && alert_count >= 3) {
-            gameover();
-            $("#background_warning").hide();
-        }
-        if (deadline >= 1.5) {
-            $("#background_warning").show();
-            $("#what").text ("You need to study -_-")
-            if (z == 1) {
-                $("#gif_warning").attr("src", "asset/gif/boy/shocked.png");
-            }
-            else {
-                $("#gif_warning").attr("src", "asset/gif/girl/shocked.png");
-            }
-            $("#lesgo").text("Let's Study");
-            $("#lesgo").click(function() {
-                tambah_belajar();
-                $("#background_warning").hide();
-            });
-            alert_count++;
-            deadline = 1;
-        }
-    }
-    $('min',s);
-    $('hr',m);
-    greetings(m);
-    change_back(m)
-    clock2(m,s);
-    animate=setTimeout(clock,1000); //nanti balikin jadi 1000
-};
-
-
-window.onload=init;
 
 
 //greetings
