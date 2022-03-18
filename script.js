@@ -75,6 +75,7 @@ function clicked (){
 
 function chooseChara(){
     if(z == 1){
+        document.getElementById('eat_char').src = 'asset/character/eat/boy/1.gif'
         document.getElementById('accessories').src='asset/character/character-boy1/';
         document.getElementById('hair-back').src='asset/character/character-boy1/hair-back.png';
         document.getElementById('head').src='asset/character/character-boy1/head.png';
@@ -88,6 +89,7 @@ function chooseChara(){
         document.getElementById('foot').src='asset/character/character-boy1/foot.png';
     }
     else if(z == 0){
+        document.getElementById('eat_char').src = 'asset/character/eat/girl/1.gif'
         document.getElementById('accessories').src='asset/character/character-girl1/';
         document.getElementById('hair-back').src='asset/character/character-girl1/hair-back.png';
         document.getElementById('head').src='asset/character/character-girl1/head.png';
@@ -116,6 +118,7 @@ function submit_username(){
 //function for play / start button
 $("#start").click(function(){
     $("#loading_screen").show();
+    change_makan_ava()//change gender for mini games makan
     chooseChara();//function for gender
     $("#greetings").text(username);//display user name at greetings
     document.getElementById("Page2_1").scrollIntoView({behavior: 'auto'});//jump to page 2
@@ -251,11 +254,13 @@ $("#background_warning").hide();
 
 function move() {
     var makan = document.getElementById("proggress_bar1");
+    var makan2 = document.getElementById("bar_eat_fill");
     var tidur = document.getElementById("proggress_bar2");
     var bermain = document.getElementById("proggress_bar3");
     var belajar = document.getElementById("proggress_bar4");
     var id = setInterval(frame, 1000);
     makan.style.transition = 'all 1s';
+    makan2.style.transition = 'all 1s';
     tidur.style.transition = 'all 1s';
     bermain.style.transition = 'all 1s';
     belajar.style.transition = 'all 1s';
@@ -264,6 +269,13 @@ function move() {
         if(width_makan >0){
             width_makan = width_makan - 0.8;
             makan.style.backgroundImage = gradation(width_makan);
+            makan2.style.width = width_makan + "%";
+            if(width_makan2 < 20){
+                makan2.style.backgroundColor = 'red';
+            }
+            else{
+                makan2.style.backgroundColor = '#01a10e';
+            }
             if(width_makan >70){
                 document.getElementById("stat_img3").src = 'asset/stat/lambung1.png';
             }
@@ -353,23 +365,7 @@ $("#close_warning").click(function(){
 
 //fungsi tambah
 function tambah_makan() {
-    $("#gif_col").show();
-    $("#eat_gif").show();
-    $(document).ready(function($) {
-        setTimeout(function() {
-        $("#gif_col").hide();
-        $("#eat_gif").hide();
-        }, 1500);
-    });
-    for(var i = 0; i < 20 ; i++){
-        if(width_makan > 100){
-            return;
-        }
-        width_makan = width_makan +1;
-        if (width_tidur > 0) {
-            width_tidur -= 0.2;
-        }
-    }
+    $("#makan_background").show();
 }
 
 function tambah_tidur() {
@@ -623,3 +619,68 @@ $("#open_pause").click(function(){
 $("#close_pause").click(function(){
     $("#pause_screen").hide();
 });
+
+
+
+//eat menu (testing)
+$('#makan_background').hide();
+$('#close_makan').click(function(){
+    $('#makan_background').hide();
+});
+
+
+var makan1,makan2, makan3;
+function change_makan_ava(){
+    if(z == 1){
+    makan1 =  document.getElementById('eat_char').src = 'asset/character/eat/boy/1.gif';
+    makan2 =  document.getElementById('eat_char').src = 'asset/character/eat/boy/2.gif';   
+    makan3 =  document.getElementById('eat_char').src = 'asset/character/eat/boy/3.gif';   
+    }
+    else{
+    makan1 =  document.getElementById('eat_char').src = 'asset/character/eat/girl/1.gif';
+    makan2 =  document.getElementById('eat_char').src = 'asset/character/eat/girl/2.gif';   
+    makan3 =  document.getElementById('eat_char').src = 'asset/character/eat/girl/3.gif'; 
+    }
+}
+
+$( function drag_drop() {
+    $( ".drag" ).draggable({  
+        helper: "clone",
+        cursor: "move",
+        appendTo: '#makan_background',
+        drag: function(){
+            document.getElementById('eat_char').src = makan2; 
+        },
+     });
+    $("#drag").mouseup(function(){
+        document.getElementById('eat_char').src = makan1;
+    });
+    $( "#drop" ).droppable(
+        {
+        drop :function()
+        {            
+            document.getElementById('eat_char').src = makan3;
+            $(document).ready(function($) {
+                setTimeout(function() {
+            document.getElementById('eat_char').src = makan1;
+                }, 1500);
+        });
+            for(var i = 0; i < 20 ; i++){
+                if(width_makan > 100){
+                    return;
+                }
+                width_makan = width_makan +1;
+                if (width_tidur > 0) {
+                    width_tidur -= 0.2;
+                }
+            }
+
+        },
+        });
+        });
+
+
+ 
+        
+        // mouse leaving the container stops dragging
+
