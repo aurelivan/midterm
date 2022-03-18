@@ -374,7 +374,7 @@ function move() {
     var makan2 = document.getElementById("bar_eat_fill");
     var tidur = document.getElementById("proggress_bar2");
     var bermain = document.getElementById("proggress_bar3");
-    var belajar = document.getElementById("proggress_bar4");
+    var belajar = document.getElementById("bar_study_fill");
     var id = setInterval(frame, 1000);
     makan.style.transition = 'all 1s';
     makan2.style.transition = 'all 1s';
@@ -489,13 +489,7 @@ function move() {
                 }); 
             }
         }
-        if(width_belajar >0){
-            belajar.style.width = width_belajar + "%";
-        }
-        else {
-            gameover();
-            $("#background_warning").hide();
-        }
+        belajar.style.width = width_belajar + "%";
     }
 }
 
