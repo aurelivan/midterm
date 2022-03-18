@@ -2,8 +2,59 @@
 
 //background audio
 
-var audio = new Audio('asset/Audio/Backsound/Sapphire Lotus.mp3');
-audio.loop = true;
+var musick = new Audio('asset/Audio/Backsound/Sapphire Lotus.mp3');
+musick.loop = true;
+
+function mulaiMusick()
+{
+    var play=document.getElementById("mulai");
+    var mute=document.getElementById("mute");
+    var volumeslider=document.getElementById('volumeslider');
+
+    play.addEventListener('click', fplay);
+    mute.addEventListener('click', fmute);
+    volumeslider.addEventListener('mousemove', setvolume);
+
+    function setvolume()
+    {
+        musick.volume=volumeslider.value / 100 
+    }
+
+
+    function fplay()
+    {
+        if(musick.paused)
+        {
+            musick.play();
+            play.style.background="url (asset/icon/pause.png)";
+        }else{
+            musick.pause();
+            play.style.background="url (asset/icon/speaker.png)";
+        }
+    }
+
+    function fmute()
+    {
+        if(musick.muted)
+        {
+            musick.muted = false;
+            mute.style.background="url (asset/icon/mute speaker.png)";
+        }else{
+            musick.muted = true;
+            mute.style.background="url (asset/icon/speaker.png)";
+        }
+    }
+}
+
+window.addEventListener('load', mulaiMusick); 
+
+
+
+
+//clicking noises
+
+const audio2 = new Audio();
+audio2.src = "asset/Audio/click/click.mp3";
 
 //clicking noises
 
@@ -242,6 +293,7 @@ $("#close_confirmation").click(function(){
     $("#background_confirmation").hide();
 });
 
+
 //greetings
 greetings(m);
 function greetings(){
@@ -296,7 +348,6 @@ function change_back(){
 
 
 //Algortm for gif
-
 function gif_gender()
 {
     if (z == 1)
@@ -393,6 +444,9 @@ function move() {
             gameover();
             $("#background_warning").hide();
         }
+        /*else{
+            $("#gameover_screen").show();
+        }*/
         if(width_tidur >0){
             width_tidur = width_tidur - 0.8;
             tidur.style.backgroundImage = gradation(width_tidur);
@@ -561,7 +615,6 @@ function tambah_belajar() {
         setTimeout(function() {
             $("#study_gif").hide();
             $("#gif_col").hide();
-            
         }, 1500);
 
         if (study == 1) {
@@ -587,7 +640,6 @@ function tambah_belajar() {
             width_belajar = 99;
             return;
         }
-
         if (sem > 9) {
             return;
         }
@@ -670,6 +722,8 @@ $("#close_congrats").click(function(){
     $("#background_congrats").hide();
 });
 
+username = $("#username").val();
+$("#congrats_name").text("Congrats, " + username + "!!");
 //for clock
 const hour = document.querySelector(".hour");
 const minute = document.querySelector(".minute");
@@ -735,6 +789,7 @@ $("#close_wardrobe").click(function() {
 });
 
 
+
 $(".change_outfit").click(function(){
     $("#background_wardrobe").hide();
 
@@ -772,6 +827,7 @@ $("#open_trophy").click(function(){
     achievements();
 });
 
+
 $("#close_trophy").click(function(){
     $("#background_trophy").hide();
 }); $("#awards").show();
@@ -784,4 +840,3 @@ $("#open_pause").click(function(){
 });
 $("#close_pause").click(function(){
     $("#pause_screen").hide();
-});
