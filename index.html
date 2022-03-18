@@ -39,11 +39,11 @@
   
         <!--row character-->
         <div id="row-choose" class="row text-center">
-          <div class="mb-3 col-sm-6" onclick="displayX()">
+          <div class="mb-3 col-sm-6" onclick="displayX()" onmousedown="audio2.play()">
             <img id="char-home1" src="asset/character/character-pic/boy.png"/>
           </div>
   
-          <div class="text-center col-sm-6" onclick="displayY()">
+          <div class="text-center col-sm-6" onclick="displayY()" onmousedown="audio2.play()">
             <img id="char-home2" src="asset/character/character-pic/girl.png"/>
           </div>
         </div>
@@ -85,7 +85,7 @@
         </div>
 
         <div id="home-button" class="text-center mt-2 mb-1">
-          <img src="asset/icon/start.png" id="start">
+          <img src="asset/icon/start.png" id="start" onmousedown="audio2.play()">
         </div>
         <div id="home-button" class="text-center mt-1 mb-4">
           <button id="open_credit"onmousedown="audio2.play();">credit</button>
@@ -259,16 +259,12 @@
         </div>
         <hr />
         <h4>Volume</h4>
-        <div class="row text-center mt-2">
-          <div class="col-sm-6">
-            <button class="click rounded-3 main_btn">Nanti ganti" gambar pas click</button>
-          </div>
-          <div class="col-sm-6">
-            <button class="slider click rounded-3 main_btn">Slider (?)</button>
-          </div>
+        <button type="button" class="btnmusik click" id="mulai" onmousedown="audio2.play();"><img src="asset/icon/sound_unmute.png" id="speaker" class="click"></button>
+        <div>
+          <input type="range" class="mt-4 click" id="volumeslider" max="100" min="0" step="1" value="100" /> 
         </div>
         <br />
-        <button id="open_confirmation" class="rounded-3 click notmain_btn btn-danger">reset game</button>
+        <button id="open_confirmation" class="rounded-3 click notmain_btn btn-danger" onmousedown="audio2.play()">reset game</button>
       </div>
     </div>
 
@@ -285,7 +281,7 @@
         </div>
         <hr />
         <h4 class="text-center">This action cannot be undone</h4>
-        <button class="click rounded-3 notmain_btn btn-danger" onclick="window.location.reload(true)">RESET NOW</button>
+        <button class="click rounded-3 notmain_btn btn-danger" onclick="window.location.reload(true)" onmousedown="audio2.play()">RESET NOW</button>
       </div>
     </div>
   
@@ -471,9 +467,6 @@
           </div>
         </div>
       </div>
-
-
-
       <!--
       <script>
         var p2 = document.getElementById("Page2_1");
