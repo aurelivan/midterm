@@ -100,8 +100,8 @@ body{
 #start:hover{
     width: 12%;
     transform: translateY(-10%);
-    
 }
+
 /*greetings function (e.g good morning user)*/
 #greetings_container{
     width: 10px;
@@ -116,9 +116,7 @@ body{
     right: 0;
     text-align: center;
     text-decoration: none;
-    color: #000000;
-    background-color: #f3f3f3;
-    width: 130px;
+    color: #f3f3f3;
     border-radius: 20px;
     -webkit-text-stroke: 1.2px black;
 }
@@ -698,7 +696,7 @@ body{
 }
 
 /*close pop up*/
-button.closeX, button.click, img.click{
+button.closeX, button.click, img.click, input.click{
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
 
@@ -887,7 +885,34 @@ button.main_btn:active {
     bottom: 0;
 }
 
+.btnmusik {
+    border: none;
+    background: none;
+}
 
+#speaker {
+    width: 10%;
+    height: auto;
+    background-color: none;
+}
+
+#mute_speaker
+{
+    width: 70px;
+    height: auto;
+    background-color: none;
+}
+
+input[type='range']
+{
+    -webkit-appearance: none;
+    height: 7px;
+    background-color: grey;
+}
+input#volumeslider
+{
+    width: 200px;
+}
 
 /*Pause screen*/
 #pause_menu{
@@ -929,6 +954,9 @@ button.main_btn:active {
     }   
     #gif_congrats, #gif_warning {
         width: 50%;
+    }
+    #speaker {
+        width: 20%;
     }
 }
 

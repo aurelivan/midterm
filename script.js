@@ -2,8 +2,38 @@
 
 //background audio
 
-var audio = new Audio('asset/Audio/Backsound/Sapphire Lotus.mp3');
-audio.loop = true;
+var musick = new Audio('asset/Audio/Backsound/Sapphire Lotus.mp3');
+musick.loop = true;
+
+function mulaiMusick()
+{
+    var play=document.getElementById("mulai");
+    var volumeslider=document.getElementById('volumeslider');
+
+    play.addEventListener('click', fplay);
+    volumeslider.addEventListener('mousemove', setvolume);
+
+    function setvolume()
+    {
+        musick.volume=volumeslider.value / 100 
+    }
+
+
+    function fplay()
+    {
+        if(musick.paused)
+        {
+            musick.play();
+            $("#speaker").attr("src", "asset/icon/sound_unmute.png");
+            /*play.style.background="url (asset/icon/pause.png)";*/
+        }else{
+            musick.pause();
+            $("#speaker").attr("src", "asset/icon/mute_speaker.png");
+        }
+    }
+}
+
+window.addEventListener('load', mulaiMusick); 
 
 //clicking noises
 
@@ -144,7 +174,7 @@ $("#start").click(function(){
     chooseChara();//function for gender
     $("#greetings").text(username);//display user name at greetings
     document.getElementById("Page2_1").scrollIntoView({behavior: 'auto'});//jump to page 2
-    audio.play();//play backsound music 
+    musick.play();//play backsound music 
     $(document).ready(function($) {
         setTimeout(function() {
         $("#loading_screen").hide(1000);
@@ -269,16 +299,16 @@ greetings(m);
 function greetings(){
     username = document.getElementById('username').value;
     if(m >= 06 && m<=11){
-        document.getElementById("greetings").innerHTML = '<h1>Morning, ' +username + '</h1>';
+        document.getElementById("greetings").innerHTML = '<h1>Morning,<br />' +username + '</h1>';
     }
     if(m >= 12 && m<=18){
-        document.getElementById("greetings").innerHTML = '<h1>Afternoon, ' +username + '</h21';
+        document.getElementById("greetings").innerHTML = '<h1>Afternoon,<br />' +username + '</h21';
     }
     if(m >= 19 && m<=23){
-        document.getElementById("greetings").innerHTML = '<h1>Evening, ' +username + '</h1>';
+        document.getElementById("greetings").innerHTML = '<h1>Evening,<br />' +username + '</h1>';
     }
     if(m >= 00 && m<=05){
-        document.getElementById("greetings").innerHTML = '<h1>Night, ' +username + '</h1>';
+        document.getElementById("greetings").innerHTML = '<h1>Night,<br />' +username + '</h1>';
         
     }
 }
