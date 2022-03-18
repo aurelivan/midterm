@@ -88,7 +88,7 @@
           <img src="asset/icon/start.png" id="start" onmousedown="audio2.play()">
         </div>
         <div id="home-button" class="text-center mt-1 mb-4">
-          <button id="open_credit"onmousedown="audio2.play();">credit</button>
+          <button class="btn btn-info" id="open_credit"onmousedown="audio2.play();">credit</button>
         </div>
       </div>
 
@@ -137,7 +137,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_trophy"onmousedown="audio2.play();">X</button>
+              <button class="closeX btn btn-danger" id="close_trophy"onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <h2 id="user-name" class="title"></h2>
@@ -157,7 +157,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_congrats"onmousedown="audio2.play();">X</button>
+              <button class="closeX btn btn-danger" id="close_congrats"onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <center><h2 id="congrats_name" class="title"></h2></center>
@@ -174,7 +174,7 @@
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_warning" onmousedown="audio2.play();">X</button>
+              <button class="closeX btn btn-danger"" id="close_warning" onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <center><h2 class="title">ALERT !</h2></center>
@@ -222,9 +222,9 @@
     </div>
     <div class="row">
       <div id="stat" class="col d-flex flex-row-reverse">
-        <div id="proggress_bar3" data-bs-toggle="tooltip"><img id="stat_img1" src="" alt=""></div>
-        <div id="proggress_bar2" data-bs-toggle="tooltip"><img id="stat_img2" src="" alt=""></div>
-        <div id="proggress_bar1" data-bs-toggle="tooltip"><img id="stat_img3" src="" alt=""></div>
+        <div id="proggress_bar3" title="Fun" data-bs-toggle="tooltip"><img id="stat_img1" src="" alt=""></div>
+        <div id="proggress_bar2" title="Energy" data-bs-toggle="tooltip"><img id="stat_img2" src="" alt=""></div>
+        <div id="proggress_bar1" title="Hunger" data-bs-toggle="tooltip"><img id="stat_img3" src="" alt=""></div>
       </div>
     </div>
     <div class="row_character row">
@@ -251,7 +251,7 @@
       <div class="container-fluid" id="Pop_credit">
         <div class="row">
           <div class="col-1">
-            <button class="closeX" id="close_info">X</button>
+            <button class="closeX btn btn-danger" id="close_info">X</button>
           </div>
           <div class="col-10">
             <center><h2 class="title">Menu</h2></center>
@@ -273,7 +273,7 @@
       <div class="container-fluid" id="Pop_credit">
         <div class="row">
           <div class="col-1">
-            <button class="closeX" id="close_confirmation">X</button>
+            <button class="closeX btn btn-danger" id="close_confirmation">X</button>
           </div>
           <div class="col-10">
             <center><h2 class="title">Are You Sure?</h2></center>
@@ -323,22 +323,24 @@
         <h3 id="sem" class="py-1 px-3"></h3>
       </div>
     </div>
-  </div>
-
-  <!--Belajar bar-->
-    <div class="row">
-      <div class="col">
+    <div id="semester" class="row">
+      <div class="col semester">
+        <p id="semester_title" class="m-0">Semester</p>
         <div id="bar_study">
           <div id="bar_study_fill"></div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!--Belajar bar-->
+
       <!--Wardrobe-->
       <div id="background_wardrobe">
         <div class="container-fluid" id="Pop_credit">
           <div class="row">
             <div class="col-1">
-              <button class="closeX" id="close_wardrobe" onmousedown="audio2.play();">X</button>
+              <button class="closeX btn btn-danger" id="close_wardrobe" onmousedown="audio2.play();">X</button>
             </div>
             <div class="col-10">
               <center><h2 class="title">Change Outfit</h2></center>
@@ -357,22 +359,29 @@
   
       <!--go back button-->
   
-      <div id="gif_col" class="row">
+      <div id="gif_col1" class="row">
         <div class="gif_action col-2">
           <img  id="eat_gif" src="" alt="">
         </div>
+      </div> <!--kyknya ini ga perlu-->
+      <div id="gif_col2" class="row">
         <div class="gif_action col-2">
           <img  id="sleep_gif"src="" alt="">
         </div>
+      </div>
+      <div id="gif_col3" class="row">
         <div class="gif_action col-2">
           <img id="study_gif" src="" alt="">
         </div>
+      </div>
+      <div id="gif_col4" class="row" >
         <div class="gif_action col-2">
           <img id="play_gif" src="" alt="">
         </div>
-      </div> <!--kyknya ini ga perlu-->
       </div>
-  
+
+
+
       <!--Digital clock-->
       <div id="digital">
         <span id="hr">00</span>
@@ -467,7 +476,7 @@
           </div>
         </div>
       </div>
-      <!--
+
       <script>
         var p2 = document.getElementById("Page2_1");
         p2.style.display = "none";
