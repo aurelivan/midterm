@@ -56,6 +56,11 @@ window.addEventListener('load', mulaiMusick);
 const audio2 = new Audio();
 audio2.src = "asset/Audio/click/click.mp3";
 
+//clicking noises
+
+const audio2 = new Audio();
+audio2.src = "asset/Audio/click/click.mp3";
+
 //rgb function
 function rgb(r, g, b, o){
     return "rgb("+r+","+g+","+b+","+o+")";
@@ -83,7 +88,6 @@ $("#open_setting").click(function(){
 $("#close_setting").click(function(){
     $("#background_setting").hide();
 });
-
 
 //guide
 $("#background_guide").hide();
@@ -286,7 +290,10 @@ function clock(){
     animate=setTimeout(clock,1000); //nanti balikin jadi 1000
 };
 
+
 window.onload=init;
+
+
 //greetings
 greetings(m);
 function greetings(){
@@ -324,13 +331,11 @@ function change_back(){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/siang.png)'
         },4000);
-
     }
     if(m >= 16 && m<=19){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/sore.png)'
         },1000);
-
     }
     if(m >= 18){
         $("#Page2_1").css({
@@ -361,6 +366,7 @@ function gif_gender()
     }
 }
 
+
 //Tombol back
 function back() {
     var p1 = document.getElementById("Page1");
@@ -390,7 +396,6 @@ var width_belajar = 1;
 var width_bermain = 50;
 var sem = 0;
 
-
 $("#background_warning").hide();
 
 function move() {
@@ -419,7 +424,6 @@ function move() {
                 makan.style.backgroundImage = grad_color(width_makan);
                 
                 $(document).ready(function($) {
-
                     $("#background_warning").show();
                     if (z == 1) {
                         $("#gif_warning").attr("src", "asset/gif/boy/hungry.gif");
@@ -458,7 +462,6 @@ function move() {
             else if(width_tidur < 20){
                 document.getElementById("stat_img2").src = 'asset/stat/sleep4.png';
                 tidur.style.backgroundImage = grad_color(width_tidur);
-
                 
                 $(document).ready(function($) {
                     if (z == 1) {
@@ -476,7 +479,6 @@ function move() {
                     $("#background_warning").show();
                 }); 
             }
-
         }
         else {
             gameover();
@@ -522,7 +524,6 @@ function move() {
         else {
             gameover();
             $("#background_warning").hide();
-
         }
     }
 }
@@ -613,7 +614,7 @@ function tambah_belajar() {
     $(document).ready(function($) {
         setTimeout(function() {
             $("#study_gif").hide();
-            $("#gif_col").hide();            
+            $("#gif_col").hide();
         }, 1500);
 
         if (study == 1) {
@@ -643,7 +644,6 @@ function tambah_belajar() {
             return;
         }
 
-
         if (width_belajar >= 99) {
             sem += 1;
             width_belajar = 0;
@@ -656,7 +656,6 @@ function tambah_belajar() {
                 }
                 $("#background_congrats").show();
                 $("#congrats_name").text("Congrats, " + username + " !!");
-
             });  
         };
         
@@ -665,7 +664,6 @@ function tambah_belajar() {
         }
         else if (sem == 2) {
             width_belajar += 1;
-
             $("#naik_sem").html("<h4>You have reached the 2nd semester</h4>");
         }
         else if (sem == 3) {
@@ -698,7 +696,6 @@ function tambah_belajar() {
             $("#naik_sem").html("<h4>You graduated !!</h4>");
         }
     }
-
 }
 
 // tombol tambah stat makan, dll
@@ -727,7 +724,6 @@ $("#close_congrats").click(function(){
 
 username = $("#username").val();
 $("#congrats_name").text("Congrats, " + username + "!!");
-
 //for clock
 const hour = document.querySelector(".hour");
 const minute = document.querySelector(".minute");
@@ -793,9 +789,9 @@ $("#close_wardrobe").click(function() {
 });
 
 
+
 $(".change_outfit").click(function(){
     $("#background_wardrobe").hide();
-
 
     var index = $(this).parent().index();
     document.getElementById('accessories').src = search_acc(index+1);
@@ -831,9 +827,6 @@ $("#open_trophy").click(function(){
     achievements();
 });
 
-$("#close_trophy").click(function(){
-    $("#background_trophy").hide();
-}); $("#awards").show();
 
 $("#close_trophy").click(function(){
     $("#background_trophy").hide();
@@ -847,4 +840,3 @@ $("#open_pause").click(function(){
 });
 $("#close_pause").click(function(){
     $("#pause_screen").hide();
-});

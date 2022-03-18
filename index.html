@@ -99,8 +99,10 @@
             <h3 class="text-center">Volume</h3>
             <div class="row text-center mt-2">
               <div class="col-sm-6">
+                <button class="click rounded-3 main_btn" onmousedown="audio2.play();">Nanti ganti" gambar pas click</button>
               </div>
               <div class="col-sm-6">
+                <button class="click rounded-3 main_btn"onmousedown="audio2.play();">Slider (?)</button>
               </div>
             </div>
           </div>
@@ -330,23 +332,22 @@
         <button id="tambahBelajar" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_study.png"></button>
       </div>
     </div>
-
+  
     <!--Button in the right-->
     <div class="right_btn row my-4">
       <div class="col-12 d-flex flex-row-reverse">
-        <button id="open_trophy" class="click btn btn-danger"><img class="button-action" src="asset/icon/Trophy.png"></button>
+        <button id="open_trophy" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Trophy.png"></button>
       </div>
     </div>
     <div class="row right_btn ">
       <div class="col-12 d-flex flex-row-reverse">
-        <button id="open_wardrobe" class="click btn btn-danger" onclick="open_pop()"><img class="button-action" src="asset/icon/Baju.png"></button>
+        <button id="open_wardrobe" class="click btn btn-danger" onclick="open_pop()"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Baju.png"></button>
       </div>
     </div>
     <div class="row right_btn ">
       <div class="col-12" id="belajar_bar">
         <h3 id="sem" class="py-1 px-3"></h3>
       </div>
-    </div>
     </div>
   </div>
   
