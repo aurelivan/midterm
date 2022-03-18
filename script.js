@@ -673,7 +673,9 @@ $("#close_congrats").click(function(){
 
 stat_tooltip();
 function stat_tooltip() {
-    $("#proggress_bar1").attr("title", "Eat : " + width_makan + "%");
+    $("#proggress_bar1").attr("title", "Eat : " + parseInt(width_makan) + "%");
+    $("#proggress_bar2").attr("title", "Sleep : " + parseInt(width_tidur) + "%");
+    $("#proggress_bar3").attr("title", "Fun : " + parseInt(width_bermain) + "%");
 }
 
 //for clock
