@@ -95,13 +95,13 @@
             <h3 class="text-center">Volume</h3>
             <div class="row text-center mt-2">
               <div class="col-sm-6">
-                <button class="click">Nanti ganti" gambar pas click</button>
+                <button class="click main_btn">Nanti ganti" gambar pas click</button>
               </div>
               <div class="col-sm-6">
-                <button class="click">Slider (?)</button>
+                <button class="click main_btn">Slider (?)</button>
               </div>
             </div>
-            <button class="click w-50 mt-3 px-4">Guide (nanti dirapihin lagi)</button>
+            <button class="click main_btn w-50 mt-3 px-4">Guide (nanti dirapihin lagi)</button>
           </div>
         </div>
   
@@ -146,10 +146,9 @@
           </div>
           <hr />
           <h4 class="text-center" id="naik_sem"></h4>
-          <img id="gif_congrats" src="asset/gif/boy/congrats.gif">
+          <img id="gif_congrats">
         </div>
       </div>
-  
       
       <!--Warning pop up-->
       <div id="background_warning">
@@ -163,12 +162,12 @@
             </div>
           </div>
           <hr />
-          <p class="text-center">Oh No !</p>
-          <p class="what"></p>
+          <h4 class="text-center">Oh No !</h4>
+          <h4 id="what"></h4>
           <div>
             <img id="gif_warning">
           </div>
-          <button id="lesgo" class="click"></button>
+          <button id="lesgo" class="click main_btn"></button>
         </div>
       </div>
   
@@ -177,7 +176,7 @@
   <div id="Page2_1" class="container-fluid">
     <div class="row">
       <div class="col-4">
-        <button class="click btn btn-info">II</button>
+        <button id="open_info" class="click btn btn-info">II</button>
       </div>
       <div class="col-4">
         <div id="greetings_container" class="col-6 mt-3">
@@ -226,6 +225,49 @@
       <img class="goyang" id="hand-right" src="" alt="">
     </div>
   </div>
+
+    <!--Info pop up-->
+    <div id="background_info">
+      <div class="container-fluid" id="Pop_credit">
+        <div class="row">
+          <div class="col-1">
+            <button class="closeX" id="close_info">X</button>
+          </div>
+          <div class="col-10">
+            <center><h2 class="title">Menu</h2></center>
+          </div>
+        </div>
+        <hr />
+        <h4>Volume</h4>
+        <div class="row text-center mt-2">
+          <div class="col-sm-6">
+            <button class="click main_btn">Nanti ganti" gambar pas click</button>
+          </div>
+          <div class="col-sm-6">
+            <button class="click main_btn">Slider (?)</button>
+          </div>
+        </div>
+        <br />
+        <button id="open_confirmation" class="click main_btn btn-danger">reset game</button>
+      </div>
+    </div>
+
+    <!--Reset confirmation pop up-->
+    <div id="background_confirmation">
+      <div class="container-fluid" id="Pop_credit">
+        <div class="row">
+          <div class="col-1">
+            <button class="closeX" id="close_confirmation">X</button>
+          </div>
+          <div class="col-10">
+            <center><h2 class="title">Are You Sure?</h2></center>
+          </div>
+        </div>
+        <hr />
+        <h4 class="text-center">This action cannot be undone</h4>
+        <button class="click main_btn btn-danger" onclick="window.location.reload(true)">RESET NOW</button>
+      </div>
+    </div>
   
     <!--button action-->
     <div id="stat_first_row" class="row">
@@ -332,6 +374,7 @@
           <div class="row" id="gameover">
             <img src="" alt="">
             <p>gameover</p>
+            <button class="click main_btn btn-danger" onclick="window.location.reload(true)">RESET NOW</button>
           </div>
           <div class="row">
             <div class="col ">
@@ -348,7 +391,7 @@
       </div>
       <!--
       <script>
-        var p2 = document.getElementById("Page2");
+        var p2 = document.getElementById("Page2_1");
         p2.style.display = "none";
       </script>-->
       
