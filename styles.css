@@ -4,6 +4,23 @@ body{
     cursor: url('asset/misc/cursor/cursor_normal.png'), auto;
     font-family: "Dimbo";
     overflow-x: hidden;
+
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+/*credit img setting*/
+#credit1 
+{
+    width:100px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
 }
 
 @font-face {
@@ -21,20 +38,6 @@ body{
 }
 
 
-/* del aja kl ga kepake
-#Page2{
-    background-color: rgb(255, 166, 233);
-    background-size: cover;
-    overflow: hidden;
-    height: auto;
-    width: auto;
-    background-size: 100%;
-    padding: 5%;
-    margin: 0%;
-    background-repeat: no-repeat;
-    transition: background 1s linear;
-*/
-
 #Page2_1{
     background-image: url(/asset/background/malam.png);
     background-size: cover;
@@ -43,6 +46,7 @@ body{
     padding: 20px;
     height: 100vh;
     width: 100%;
+    transition: 2s;
 }
 
 /*Page index */
@@ -51,11 +55,12 @@ body{
     background-color: aliceblue;
     border-radius: 8px; 
     width: 500px;
+    outline: none;
 }
 
 #username::placeholder {
     font-style: italic;
-  }
+}
 
 #confirm {
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
@@ -109,6 +114,7 @@ body{
     right: 0;
     text-align: center;
     text-decoration: none;
+    -webkit-text-stroke: 1.2px black;
     color: #f3f3f3;
 }
 
@@ -442,7 +448,6 @@ body{
 
 .button-action:hover {
     transform: translateY(-15px);
-
 }
 
 .right_btn{
@@ -452,6 +457,11 @@ body{
 
 #tambahBelajar{
     pointer-events: all;
+    z-index: 20;
+}
+
+#open_thropy, #open_wardorbe{
+    z-index: 20;
 }
 
 
@@ -630,27 +640,26 @@ body{
 
 /*Game over screen*/
 #gameover_screen{
-    display: none;
-    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(100, 86, 86, 0.8);
     position: fixed;
     width: 100%;
-    height: 300vh;
+    height: 100vh;
     top: 0px;
     z-index: 1000;
 }
 
 #gameover{
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+    position: fixed;
+    padding: 20px;
     text-align: center;
     width: auto;
-    height: 120px;
     font-size: 40px;
+    z-index: 30;
 }
-
 
 /*Outfit setting*/
 .change_costum{
@@ -658,12 +667,18 @@ body{
     height: auto;
 }
 
+.change_costum img{
+    height: auto;
+    width: 120px;
+}
+
+
 .change_outfit{
     border-radius: 10px;
     border: none;
-    padding: 10px;
+    padding: 5px;
     width: auto;
-    height: 160px;
+    height: 140px;
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
     z-index: 10;
     width: 150px;
@@ -681,9 +696,36 @@ button.closeX, button.click, img.click{
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
 
-h2.title {
+.closeX{
+    z-index: 100;
+}
+.title {
     text-align: center;
     color: #fd6a6a;
+}
+
+button.notmain_btn {
+    padding: 5px 15px;
+    font-size: 18px;
+    border: none;
+}
+
+button.main_btn {
+    padding: 5px 15px;
+    font-size: 18px;
+    border: none;
+}
+
+button.main_btn:hover {
+    background-color: ghostwhite;
+    color: rgb(30, 25, 32);
+    transform: scale(1.08);
+    transition: 0.2s ease-in-out;
+}
+
+button.main_btn:active {
+    transform: scale(0.98);
+    transition: 0.2s ease-in-out;
 }
 
 /*For credit and setting page*/
@@ -694,13 +736,34 @@ h2.title {
     cursor: url('asset/misc/cursor/cursor_point.png'), pointer;
 }
 
+#open_credit:hover, #open_setting:hover {
+    background-color: rgb(26, 27, 27);
+    color: wheat;
+    transition: 0.2s ease-in-out;
+}
+
 #background_credit, #background_setting, 
 #background_congrats, #background_warning,
-#background_trophy, #background_wardrobe {
+#background_trophy, #background_wardrobe,
+#background_info, #background_guide {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(0, 0, 0, .7);
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+#background_confirmation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(221, 34, 34, 0.7);
     position: fixed;
     left: 0;
     width: 100%;
@@ -722,9 +785,28 @@ h2.title {
     z-index: 30;
 }
 
+#Pop_guide {
+    position: fixed;
+    text-align: center;
+    overflow-y: scroll;
+    padding: 20px;
+    background-color: beige;
+    height: 60%;
+    width: 70%;
+    border: 1px solid rgb(124, 124, 124);
+    box-shadow: 2px 2px 6px #fd6a6a;
+    border-radius: 20px;
+    z-index: 30;
+}
+
 /*congrats pop up*/
 #gif_congrats, #gif_warning {
     width: 30%;
+}
+
+#lesgo {
+    background-color: darkslategray;
+    color: aliceblue;
 }
 
 /*Home button setting*/
@@ -732,8 +814,6 @@ h2.title {
     bottom: 100px;
     transform: translateY(-30%);
 }
-
-
 
 /*Stat for page 2.1*/
 #stat{
@@ -775,6 +855,7 @@ h2.title {
     -webkit-filter: drop-shadow(10px 10px 10px rgb(216, 216, 216));
     filter: drop-shadow(5px 5px 5px rgb(83, 155, 0));
 }
+/*
 #stat_img3::after{
     position: relative;
     top: 10px;
@@ -796,6 +877,7 @@ h2.title {
     transition: 50ms transform;
     transform: translateX(50%) translateY(100%);
 }
+*/
 
 #stat_img2{
     width: 35px;
@@ -803,6 +885,7 @@ h2.title {
     -webkit-filter: drop-shadow(10px 10px 10px rgb(216, 216, 216));
     filter: drop-shadow(5px 5px 5px rgb(83, 155, 0));
 }
+/*
 #stat_img2::after{
     position: relative;
     top: 10px;
@@ -824,6 +907,7 @@ h2.title {
     transition: 50ms transform;
     transform: translateX(50%) translateY(100%);
 }
+*/
 
 #stat_img1{
     width: 40px;
@@ -832,6 +916,7 @@ h2.title {
     -webkit-filter: drop-shadow(10px 10px 10px rgb(216, 216, 216));
     filter: drop-shadow(5px 5px 5px rgb(83, 155, 0));
 }
+/*
 #stat_img1::after{
     position: relative;
     top: 10px;
@@ -853,6 +938,7 @@ h2.title {
     transition: 50ms transform;
     transform: translateX(50%) translateY(100%);
 }
+*/
 
 /*semester in the bottom*/
 #belajar_bar{
@@ -864,6 +950,23 @@ h2.title {
     width: 100%;
     bottom: 0;
 }
+
+
+
+/*Pause screen*/
+#pause_menu{
+    position: fixed;
+    text-align: center;
+    padding: 20px;
+    background-color: beige;
+    height: 90%;
+    width: 70%;
+    border: 1px solid rgb(124, 124, 124);
+    box-shadow: 2px 2px 6px #fd6a6a;
+    border-radius: 20px;
+    z-index: 30;
+}
+
 /*SMALL SCREEN*/
 @media (max-width: 768px) {
     #char-home1, #char-home2 {

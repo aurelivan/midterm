@@ -51,6 +51,11 @@ window.addEventListener('load', mulaiAudio);
 
 
 
+//clicking noises
+
+const audio2 = new Audio();
+audio2.src = "asset/Audio/click/click.mp3";
+
 //rgb function
 function rgb(r, g, b, o){
     return "rgb("+r+","+g+","+b+","+o+")";
@@ -69,7 +74,6 @@ $("#close_credit").click(function(){
     $("#background_credit").hide();
 });
 
-
 //setting
 $("#background_setting").hide();
 
@@ -80,6 +84,29 @@ $("#close_setting").click(function(){
     $("#background_setting").hide();
 });
 
+
+//guide
+$("#background_guide").hide();
+
+$("#open_guide").click(function(){
+    $("#background_guide").show();
+});
+$("#close_guide").click(function(){
+    $("#background_guide").hide();
+});
+
+//gameover screen
+$("#gameover_screen").hide();
+function gameover() {
+    $("#gameover_screen").show();
+    if (z == 1) {
+        $("#gameover_gif").attr("src", "asset/gif/boy/gameover.gif");
+    }
+    else {
+        $("#gameover_gif").attr("src", "asset/gif/girl/gameover.gif");
+    }
+}
+
 //get username
 function input_username(){
     document.getElementById('greetings').insertAdjacentText('beforeend', username);
@@ -87,17 +114,15 @@ function input_username(){
 
 //Algorithm for change gender
 var z = 1;
-function displayX() {
+function displayX() { //cowo
     z = 1;
     clicked();
 }
 
-function displayY() {
+function displayY() { //cewe
     z = 0;
     clicked();
 }
-
-
 
 function clicked (){
     var char1 = document.getElementById("char-home1");
@@ -161,6 +186,7 @@ function submit_username(){
 
 //function for play / start button
 $("#start").click(function(){
+    gif_gender();
     $("#loading_screen").show();
     chooseChara();//function for gender
     $("#greetings").text(username);//display user name at greetings
@@ -181,10 +207,37 @@ $("#start").click(function(){
 
 //Page 2
 
+//info/menu pop up
+$("#background_info").hide();
+
+$("#open_info").click(function(){
+    $("#background_info").show();
+});
+$("#close_info").click(function(){
+    $("#background_info").hide();
+});
+
+//reset game confirmation pop up
+$("#background_confirmation").hide();
+
+$("#open_confirmation").click(function(){
+    $("#background_confirmation").show();
+    $("#background_info").hide();
+});
+$("#close_confirmation").click(function(){
+    $("#background_confirmation").hide();
+});
+
 //Algoritm for time
 var d,h,m,s,animate;
 
+var deadline;
+var alert_count;
+
 function init(){
+    deadline = 0;
+    dropout = 0;
+    alert_count = 0;
     d=new Date();
     m= 11;
     s= 00;
@@ -196,8 +249,33 @@ function clock(){
     if(s==60){
         s=0;
         m++;
+        deadline++;
         if(m==24){
             m=0;
+        }
+        if (alert_count >= 3) {
+            dropout++;
+        }
+        if (dropout >= 1 && alert_count >= 3) {
+            gameover();
+            $("#background_warning").hide();
+        }
+        if (deadline >= 1.5) {
+            $("#background_warning").show();
+            $("#what").text ("You need to study -_-")
+            if (z == 1) {
+                $("#gif_warning").attr("src", "asset/gif/boy/shocked.png");
+            }
+            else {
+                $("#gif_warning").attr("src", "asset/gif/girl/shocked.png");
+            }
+            $("#lesgo").text("Let's Study");
+            $("#lesgo").click(function() {
+                tambah_belajar();
+                $("#background_warning").hide();
+            });
+            alert_count++;
+            deadline = 1;
         }
     }
     $('min',s);
@@ -209,7 +287,6 @@ function clock(){
 };
 
 window.onload=init;
-
 //greetings
 greetings(m);
 function greetings(){
@@ -236,22 +313,24 @@ function change_back(){
     if(m >= 00){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/malam.png)'
-        },5000);
+        },1000);
     }
-    if(m >= 08 && m<=11){
+    if(m >= 08 && m<12){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/pagi.png)'
-        },5000);
+        },4000);
     }
     if(m >= 12 && m<=15){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/siang.png)'
-        },5000);
+        },4000);
+
     }
     if(m >= 16 && m<=19){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/sore.png)'
-        },5000);
+        },1000);
+
     }
     if(m >= 18){
         $("#Page2_1").css({
@@ -264,6 +343,24 @@ function change_back(){
 
 
 //Algortm for gif
+function gif_gender()
+{
+    if (z == 1)
+    {
+        document.getElementById('play_gif').src='asset/gif/boy/play.gif';
+        document.getElementById('eat_gif').src='asset/gif/boy/eat.gif';
+        document.getElementById('study_gif').src='asset/gif/boy/study.gif';
+        document.getElementById('sleep_gif').src='asset/gif/boy/sleep.gif';
+    }
+    else if (z == 0)
+    {
+        document.getElementById('play_gif').src='asset/gif/girl/play.gif';
+        document.getElementById('eat_gif').src='asset/gif/girl/eat.gif';
+        document.getElementById('study_gif').src='asset/gif/girl/study.gif';
+        document.getElementById('sleep_gif').src='asset/gif/girl/sleep.gif';
+    }
+}
+
 //Tombol back
 function back() {
     var p1 = document.getElementById("Page1");
@@ -291,7 +388,8 @@ var width_makan = 50;
 var width_tidur = 50;
 var width_belajar = 1;
 var width_bermain = 50;
-var sem = 1;
+var sem = 0;
+
 
 $("#background_warning").hide();
 
@@ -321,17 +419,26 @@ function move() {
                 makan.style.backgroundImage = grad_color(width_makan);
                 
                 $(document).ready(function($) {
-                    $("#gif_warning").attr("src", "asset/gif/boy/hungry.gif");
+
+                    $("#background_warning").show();
+                    if (z == 1) {
+                        $("#gif_warning").attr("src", "asset/gif/boy/hungry.gif");
+                    }
+                    else {
+                        $("#gif_warning").attr("src", "asset/gif/girl/hungry.gif");
+                    }
                     $("#what").text ("You are straving ...")
                     $("#lesgo").text("Let's Eat");
                     $("#lesgo").click(function() {
-                        tambah_makan();
                         $("#background_warning").hide();
+                        tambah_makan();
                     });
-                    $("#background_warning").show();
-                }); 
-                
+                });
             }
+        }
+        else{
+            gameover();
+            $("#background_warning").hide();
         }
         /*else{
             $("#gameover_screen").show();
@@ -351,10 +458,17 @@ function move() {
             else if(width_tidur < 20){
                 document.getElementById("stat_img2").src = 'asset/stat/sleep4.png';
                 tidur.style.backgroundImage = grad_color(width_tidur);
-                $(document).ready(function($) { //gifnya kea numpuk sama makan :(
-                    $("#gif_warning").attr("src", "asset/gif/boy/sleepy.gif");
+
+                
+                $(document).ready(function($) {
+                    if (z == 1) {
+                        $("#gif_warning").attr("src", "asset/gif/boy/sleepy.gif");
+                    }
+                    else {
+                        $("#gif_warning").attr("src", "asset/gif/girl/sleepy.gif");
+                    }
                     $("#what").text ("You are sleepy ...")
-                    $("#lesgo").text("Let's Sleep");
+                    $("#lesgo").text("Let's Sleep!");
                     $("#lesgo").click(function() {
                         tambah_tidur();
                         $("#background_warning").hide();
@@ -362,6 +476,11 @@ function move() {
                     $("#background_warning").show();
                 }); 
             }
+
+        }
+        else {
+            gameover();
+            $("#background_warning").hide();
         }
 
         if(width_bermain >0){
@@ -379,18 +498,36 @@ function move() {
             else if(width_bermain < 20){
                 document.getElementById("stat_img1").src = 'asset/stat/fun_4.png';
                 bermain.style.backgroundImage = grad_color(width_bermain);
-                /*
-               alert disini
-                */
+                
+                $(document).ready(function($) {
+                    if (z == 1) {
+                        $("#gif_warning").attr("src", "asset/gif/boy/bored.gif");
+                    }
+                    else {
+                        $("#gif_warning").attr("src", "asset/gif/girl/bored.gif");
+                    }
+                    $("#what").text ("You are bored ...")
+                    $("#lesgo").text("Let's Have Some Fun!");
+                    $("#lesgo").click(function() {
+                        tambah_main();
+                        $("#background_warning").hide();
+                    });
+                    $("#background_warning").show();
+                }); 
             }
         }
         if(width_belajar >0){
             belajar.style.width = width_belajar + "%";
         }
+        else {
+            gameover();
+            $("#background_warning").hide();
+
+        }
     }
 }
 
-//close warning pop-up and hide pas awal 
+//close warning pop-up & hide pas awal 
 //$("#background_warning").hide(); -> kyknya ga perlu
 
 $("#close_warning").click(function(){
@@ -399,8 +536,10 @@ $("#close_warning").click(function(){
 
 //fungsi tambah
 function tambah_makan() {
-    $("#gif_col").show();
-    $("#eat_gif").show();
+    if ( $("#gif_col").css('display') == 'none' || $("#gif_col").css("visibility") == "hidden"){
+        $("#gif_col").show();
+        $("#eat_gif").show();
+    }
     $(document).ready(function($) {
         setTimeout(function() {
         $("#gif_col").hide();
@@ -419,8 +558,10 @@ function tambah_makan() {
 }
 
 function tambah_tidur() {
-    $("#gif_col").show();
-    $("#sleep_gif").show();
+    if ( $("#gif_col").css('display') == 'none' || $("#gif_col").css("visibility") == "hidden"){
+        $("#gif_col").show();
+        $("#sleep_gif").show();
+    }
     $(document).ready(function($) {
         setTimeout(function() {
         $("#gif_col").hide();
@@ -440,8 +581,10 @@ function tambah_tidur() {
 }
 
 function tambah_main() {
-    $("#gif_col").show();
-    $("#play_gif").show();
+    if ( $("#gif_col").css('display') == 'none' || $("#gif_col").css("visibility") == "hidden"){
+        $("#gif_col").show();
+        $("#play_gif").show();
+    }
     $(document).ready(function($) {
         setTimeout(function() {
         $("#gif_col").hide();
@@ -459,14 +602,32 @@ function tambah_main() {
     }
 }
 
+var study = 0;
 function tambah_belajar() {
-    $("#gif_col").show();
-    $("#study_gif").show();
+    deadline = 0;
+    study += 1;
+    if ( $("#gif_col").css('display') == 'none' || $("#gif_col").css("visibility") == "hidden"){
+        $("#gif_col").show();
+        $("#study_gif").show();
+    }
     $(document).ready(function($) {
         setTimeout(function() {
             $("#study_gif").hide();
-            $("#gif_col").hide();
+            $("#gif_col").hide();            
         }, 1500);
+
+        if (study == 1) {
+            sem = 1;
+            if (z == 1) {
+                $("#gif_congrats").attr("src", "asset/gif/boy/congrats.gif");
+                }
+            else {
+                $("#gif_congrats").attr("src", "asset/gif/girl/congrats.gif");
+            }
+            $("#background_congrats").show();
+            $("#congrats_name").text("Welcome to college, " + username );
+            $("#naik_sem").html("<h4>You have started your 1st semester</h4>");
+        }
     });
 
     if (width_makan > 0) {
@@ -478,12 +639,24 @@ function tambah_belajar() {
             width_belajar = 99;
             return;
         }
+        if (sem > 9) {
+            return;
+        }
+
 
         if (width_belajar >= 99) {
             sem += 1;
             width_belajar = 0;
             $(document).ready(function($) {
+                if (z == 1) {
+                    $("#gif_congrats").attr("src", "asset/gif/boy/congrats.gif");
+                }
+                else {
+                    $("#gif_congrats").attr("src", "asset/gif/girl/congrats.gif");
+                }
                 $("#background_congrats").show();
+                $("#congrats_name").text("Congrats, " + username + " !!");
+
             });  
         };
         
@@ -492,47 +665,40 @@ function tambah_belajar() {
         }
         else if (sem == 2) {
             width_belajar += 1;
-            $("#naik_sem").html("<h4>Kamu naik ke semester 2</h4>");
+
+            $("#naik_sem").html("<h4>You have reached the 2nd semester</h4>");
         }
         else if (sem == 3) {
             width_belajar += 0.6;
-            $("#naik_sem").html("<h4>Kamu naik ke semester 3</h4>");
+            $("#naik_sem").html("<h4>You have reached the 3rd semester</h4>");
         }
         else if (sem == 4) {
             width_belajar += 0.4;
-            $("#naik_sem").html("<h4>Kamu naik ke semester 4</h4>");
+            $("#naik_sem").html("<h4>You have reached the 4th semester</h4>");
         }
         else if (sem == 5) {
             width_belajar += 0.2;
-            $("#naik_sem").html("<h4>Kamu naik ke semester 5</h4>");
+            $("#naik_sem").html("<h4>You have reached the 5th semester</h4>");
         }
         else if (sem == 6) {
             width_belajar += 0.1;
-            $("#naik_sem").html("<h4>Kamu naik ke semester 6</h4>");
+            $("#naik_sem").html("<h4>You have reached the 6th semester</h4>");
         }
         else if (sem == 7) {
             width_belajar += 0.08;
-            $("#naik_sem").html("<h4>Kamu naik ke semester 7</h4>");
+            $("#naik_sem").html("<h4>You have reached the 7th semester</h4>");
         }
         else if (sem == 8) {
             width_belajar += 0.06;
-            $("#naik_sem").html("<h4>Kamu naik ke semester 8</h4>");
+            $("#naik_sem").html("<h4>You have reached the last semester</h4>");
         }
+
         else if (sem == 9) {
             width_belajar = 100;
-            $("#naik_sem").html("<h4>Kamu lulus !!</h4>");
+            $("#naik_sem").html("<h4>You graduated !!</h4>");
         }
     }
-    
-    /* setelah beberapa saat ga belajar akan ada alert tp blm jalan :)
-    $("background_warning").delay(20).show(); //nanti pendekin waktunya buat test
-    $("#what").text ("You need to study -_-")
-    $("#lesgo").text("Let's Study");
-    $("#lesgo").click(function() {
-        tambah_belajar();
-        $("#background_warning").hide();
-    });
-    */
+
 }
 
 // tombol tambah stat makan, dll
@@ -630,6 +796,7 @@ $("#close_wardrobe").click(function() {
 $(".change_outfit").click(function(){
     $("#background_wardrobe").hide();
 
+
     var index = $(this).parent().index();
     document.getElementById('accessories').src = search_acc(index+1);
     document.getElementById('body').src = search_body(index+1);
@@ -640,21 +807,44 @@ $(".change_outfit").click(function(){
 
 //achievements
 
-$("#user-name").text("Your Gameplay")
-$("#sem").text("Semester " + sem);
-$("#makan_status").text("Makan : " + width_makan + "%");
-$("#tidur_status").text("Tidur : " + width_tidur + "%");
-$("#bermain_status").text("Bermain : " + width_bermain + "%");
-$("#belajar_status").text("Belajar : " + width_belajar + "%");
+function achievements() {
+    $("#user-name").text("Your Gameplay")
+    if (sem == 0) {
+        $("#sem").text("You aren't in college yet");
+    }
+    else if (sem > 0) {
+        $("#sem").text("Semester " + sem);
+    }
+    else if (sem > 8) {
+        $("#sem").text("You have graduated from college");
+    }
+    $("#makan_status").text("Makan : " + parseInt(width_makan) + "%");
+    $("#tidur_status").text("Tidur : " + parseInt(width_tidur) + "%");
+    $("#bermain_status").text("Bermain : " + parseInt(width_bermain) + "%");
+    $("#belajar_status").text("Belajar : " + parseInt(width_belajar) + "%");
+}
 
 $("#background_trophy").hide();
 
 $("#open_trophy").click(function(){
     $("#background_trophy").show();
+    achievements();
 });
 
 $("#close_trophy").click(function(){
     $("#background_trophy").hide();
 }); $("#awards").show();
 
-//contorl volume dan mute//
+$("#close_trophy").click(function(){
+    $("#background_trophy").hide();
+}); $("#awards").show();
+
+
+//pause menu
+$("#pause_screen").hide();
+$("#open_pause").click(function(){
+    $("#pause_screen").show();
+});
+$("#close_pause").click(function(){
+    $("#pause_screen").hide();
+});
