@@ -79,16 +79,6 @@ $("#close_credit").click(function(){
     $("#background_credit").hide();
 });
 
-//setting
-$("#background_setting").hide();
-
-$("#open_setting").click(function(){
-    $("#background_setting").show();
-});
-$("#close_setting").click(function(){
-    $("#background_setting").hide();
-});
-
 //guide
 $("#background_guide").hide();
 

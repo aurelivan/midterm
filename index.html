@@ -83,34 +83,12 @@
             </div>
           </div>      
         </div>
-        
-        <!--Setting pop up-->
-        <div id="background_setting">
-          <div class="container-fluid" id="Pop_credit">
-            <div class="row">
-              <div class="col-1">
-                <button class="closeX" id="close_setting" onmousedown="audio2.play();">X</button>
-              </div>
-              <div class="col-10">
-                <center><h2 class="title">Setting</h2></center>
-              </div>
-            </div>
-            <hr />
-            <h3 class="text-center">Volume</h3>
-            <div class="row text-center mt-2">
-              <div class="col-sm-6">
-                <button class="click rounded-3 main_btn" onmousedown="audio2.play();">Nanti ganti" gambar pas click</button>
-              </div>
-              <div class="col-sm-6">
-                <button class="click rounded-3 main_btn"onmousedown="audio2.play();">Slider (?)</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="home-button" class="text-center mt-2 mb-4">
-          <button id="open_credit"onmousedown="audio2.play();">credit</button>
+
+        <div id="home-button" class="text-center mt-2 mb-1">
           <img src="asset/icon/start.png" id="start">
-          <button id="open_setting"onmousedown="audio2.play();">setting</button>
+        </div>
+        <div id="home-button" class="text-center mt-1 mb-4">
+          <button id="open_credit"onmousedown="audio2.play();">credit</button>
         </div>
       </div>
 
@@ -210,7 +188,6 @@
           <button id="lesgo" class="click rounded-3 main_btn" onmousedown="audio2.play()";></button>
         </div>
       </div>
-  
   
   <!--page 2.1 -->
   <div id="Page2_1" class="container-fluid">
@@ -314,22 +291,23 @@
     <!--button action-->
     <div id="stat_first_row" class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahMakan" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_eat.png" ></button>
+        <button id="tambahMakan" title="eat" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_eat.png" ></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahTidur" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_sleep.png"></button>
+        <button id="tambahTidur" title="sleep" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_sleep.png"></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahBermain" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_game.png"></button>
+        <button id="tambahBermain" title="play" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_game.png"></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahBelajar" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_study.png"></button>
+        <button id="tambahBelajar" title="study" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_study.png"></button>
+        <p class="ml-5 mt-3 text-light">  study</p>
       </div>
     </div>
   
@@ -445,11 +423,10 @@
         </div>
       </div>
 
-      <!--
       <script>
         var p2 = document.getElementById("Page2_1");
         p2.style.display = "none";
-      </script>-->
+      </script>
       
       <!--end of the page-->
       <script src="jquery-3.6.0.min.js"></script>
