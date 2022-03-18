@@ -2,8 +2,54 @@
 
 //background audio
 
-var audio = new Audio('asset/Audio/Backsound/Sapphire Lotus.mp3');
-audio.loop = true;
+var musick = new Audio('asset/Audio/Backsound/Sapphire Lotus.mp3');
+musick.loop = true;
+
+function mulaiAudio()
+{
+    var play=document.getElementById("mulai");
+    var mute=document.getElementById("mute");
+    var volumeslider=document.getElementById('volumeslider');
+
+    play.addEventListener('click', fplay);
+    mute.addEventListener('click', fmute);
+    volumeslider.addEventListener('mousemove', setvolume);
+
+    function setvolume()
+    {
+        musick.volume=volumeslider.value / 100 
+    }
+
+
+    function fplay()
+    {
+        if(musick.paused)
+        {
+            musick.play();
+            play.style.background="url (asset/icon/pause.png)";
+        }else{
+            musick.pause();
+            play.style.background="url (asset/icon/speaker.png)";
+        }
+    }
+
+    function fmute()
+    {
+        if(musick.muted)
+        {
+            musick.muted = false;
+            mute.style.background="url (asset/icon/mute speaker.png)";
+        }else{
+            musick.muted = true;
+            mute.style.background="url (asset/icon/speaker.png)";
+        }
+    }
+}
+
+window.addEventListener('load', mulaiAudio);
+
+
+
 
 //clicking noises
 
@@ -37,6 +83,7 @@ $("#open_setting").click(function(){
 $("#close_setting").click(function(){
     $("#background_setting").hide();
 });
+
 
 //guide
 $("#background_guide").hide();
@@ -144,7 +191,7 @@ $("#start").click(function(){
     chooseChara();//function for gender
     $("#greetings").text(username);//display user name at greetings
     document.getElementById("Page2_1").scrollIntoView({behavior: 'auto'});//jump to page 2
-    audio.play();//play backsound music 
+    musick.play();//play backsound music 
     $(document).ready(function($) {
         setTimeout(function() {
         $("#loading_screen").hide(1000);
@@ -156,7 +203,6 @@ $("#start").click(function(){
     $("#Page2_1").show();
     $("#Page1").hide();
     move();
-    init();
 });
 
 //Page 2
@@ -240,6 +286,7 @@ function clock(){
     animate=setTimeout(clock,1000); //nanti balikin jadi 1000
 };
 
+window.onload=init;
 //greetings
 greetings(m);
 function greetings(){
@@ -277,11 +324,13 @@ function change_back(){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/siang.png)'
         },4000);
+
     }
     if(m >= 16 && m<=19){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/sore.png)'
         },1000);
+
     }
     if(m >= 18){
         $("#Page2_1").css({
@@ -294,7 +343,6 @@ function change_back(){
 
 
 //Algortm for gif
-
 function gif_gender()
 {
     if (z == 1)
@@ -312,7 +360,6 @@ function gif_gender()
         document.getElementById('sleep_gif').src='asset/gif/girl/sleep.gif';
     }
 }
-
 
 //Tombol back
 function back() {
@@ -343,6 +390,7 @@ var width_belajar = 1;
 var width_bermain = 50;
 var sem = 0;
 
+
 $("#background_warning").hide();
 
 function move() {
@@ -371,6 +419,7 @@ function move() {
                 makan.style.backgroundImage = grad_color(width_makan);
                 
                 $(document).ready(function($) {
+
                     $("#background_warning").show();
                     if (z == 1) {
                         $("#gif_warning").attr("src", "asset/gif/boy/hungry.gif");
@@ -391,6 +440,9 @@ function move() {
             gameover();
             $("#background_warning").hide();
         }
+        /*else{
+            $("#gameover_screen").show();
+        }*/
         if(width_tidur >0){
             width_tidur = width_tidur - 0.8;
             tidur.style.backgroundImage = gradation(width_tidur);
@@ -406,6 +458,7 @@ function move() {
             else if(width_tidur < 20){
                 document.getElementById("stat_img2").src = 'asset/stat/sleep4.png';
                 tidur.style.backgroundImage = grad_color(width_tidur);
+
                 
                 $(document).ready(function($) {
                     if (z == 1) {
@@ -423,6 +476,7 @@ function move() {
                     $("#background_warning").show();
                 }); 
             }
+
         }
         else {
             gameover();
@@ -468,6 +522,7 @@ function move() {
         else {
             gameover();
             $("#background_warning").hide();
+
         }
     }
 }
@@ -558,8 +613,7 @@ function tambah_belajar() {
     $(document).ready(function($) {
         setTimeout(function() {
             $("#study_gif").hide();
-            $("#gif_col").hide();
-            
+            $("#gif_col").hide();            
         }, 1500);
 
         if (study == 1) {
@@ -585,10 +639,10 @@ function tambah_belajar() {
             width_belajar = 99;
             return;
         }
-
         if (sem > 9) {
             return;
         }
+
 
         if (width_belajar >= 99) {
             sem += 1;
@@ -602,6 +656,7 @@ function tambah_belajar() {
                 }
                 $("#background_congrats").show();
                 $("#congrats_name").text("Congrats, " + username + " !!");
+
             });  
         };
         
@@ -610,6 +665,7 @@ function tambah_belajar() {
         }
         else if (sem == 2) {
             width_belajar += 1;
+
             $("#naik_sem").html("<h4>You have reached the 2nd semester</h4>");
         }
         else if (sem == 3) {
@@ -642,6 +698,7 @@ function tambah_belajar() {
             $("#naik_sem").html("<h4>You graduated !!</h4>");
         }
     }
+
 }
 
 // tombol tambah stat makan, dll
@@ -667,6 +724,9 @@ $("#background_congrats").hide();
 $("#close_congrats").click(function(){
     $("#background_congrats").hide();
 });
+
+username = $("#username").val();
+$("#congrats_name").text("Congrats, " + username + "!!");
 
 //for clock
 const hour = document.querySelector(".hour");
@@ -736,6 +796,7 @@ $("#close_wardrobe").click(function() {
 $(".change_outfit").click(function(){
     $("#background_wardrobe").hide();
 
+
     var index = $(this).parent().index();
     document.getElementById('accessories').src = search_acc(index+1);
     document.getElementById('body').src = search_body(index+1);
@@ -769,6 +830,10 @@ $("#open_trophy").click(function(){
     $("#background_trophy").show();
     achievements();
 });
+
+$("#close_trophy").click(function(){
+    $("#background_trophy").hide();
+}); $("#awards").show();
 
 $("#close_trophy").click(function(){
     $("#background_trophy").hide();

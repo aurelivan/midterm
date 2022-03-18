@@ -190,7 +190,6 @@
           <img id="gif_congrats">
         </div>
       </div>
-      
       <!--Warning pop up-->
       <div id="background_warning">
         <div class="container-fluid" id="Pop_credit">
@@ -244,9 +243,9 @@
     </div>
     <div class="row">
       <div id="stat" class="col d-flex flex-row-reverse">
-        <div id="proggress_bar3"><img id="stat_img1" src="" alt=""></div>
-        <div id="proggress_bar2"><img id="stat_img2" src="" alt=""></div>
-        <div id="proggress_bar1"><img id="stat_img3" src="" alt=""></div>
+        <div id="proggress_bar3" data-tooltip="barmain"><img id="stat_img1" src="" alt=""></div><!--main-->
+        <div id="proggress_bar2" data-tooltip="bartidur"><img id="stat_img2" src="" alt=""></div><!--tidur-->
+        <div id="proggress_bar1" data-tooltip="barmakan"><img id="stat_img3" src="" alt=""></div><!--makan-->
       </div>
     </div>
     <div class="row_character row">
@@ -315,15 +314,27 @@
     <div id="stat_first_row" class="row">
       <div class="col_stat col-12 d-flex flex-row">
         <button id="tambahMakan" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_eat.png" ></button>
+        <button id="tambahBelajar" class="click btn btn-danger"><img class="button-action" src="asset/icon/status_study.png"></button>
       </div>
     </div>
-    <div class="row">
-      <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahTidur" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_sleep.png"></button>
+  
+    <!--Button in the right-->
+    <div class="right_btn row my-4">
+      <div class="col-12 d-flex flex-row-reverse">
+        <button id="open_trophy" class="click btn btn-danger"><img class="button-action" src="asset/icon/Trophy.png"></button>
       </div>
     </div>
-    <div class="row">
-      <div class="col_stat col-12 d-flex flex-row">
+    <div class="row right_btn ">
+      <div class="col-12 d-flex flex-row-reverse">
+        <button id="open_wardrobe" class="click btn btn-danger" onclick="open_pop()"><img class="button-action" src="asset/icon/Baju.png"></button>
+      </div>
+    </div>
+    <div class="row right_btn ">
+      <div class="col-12" id="belajar_bar">
+        <h3 id="sem" class="py-1 px-3"></h3>
+      </div>
+    </div>
+    <div>
         <button id="tambahBermain" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_game.png"></button>
       </div>
     </div>
@@ -348,6 +359,9 @@
       <div class="col-12" id="belajar_bar">
         <h3 id="sem" class="py-1 px-3"></h3>
       </div>
+       <button type="button" class="btnmusik" id="mulai"><img src="asset/icon/tombolpause.jpg" id="speaker"></button>
+      <button type="button" class="btnmusik" id="mute"><img src="asset/icon/mute speaker.png" id="mute_speaker"></button>
+      <input type="range" id="volumeslider" max="100" min="0" step="1" value="10" />     
     </div>
   </div>
   
@@ -366,7 +380,6 @@
           <div id="change_costum_row" class="row"></div>
         </div>
       </div>
-  
       <!--greetings-->
   
       <!--Content-->
