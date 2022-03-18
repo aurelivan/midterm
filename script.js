@@ -28,7 +28,6 @@ $("#close_credit").click(function(){
     $("#background_credit").hide();
 });
 
-
 //setting
 $("#background_setting").hide();
 
@@ -38,6 +37,28 @@ $("#open_setting").click(function(){
 $("#close_setting").click(function(){
     $("#background_setting").hide();
 });
+
+//guide
+$("#background_guide").hide();
+
+$("#open_guide").click(function(){
+    $("#background_guide").show();
+});
+$("#close_guide").click(function(){
+    $("#background_guide").hide();
+});
+
+//gameover screen
+$("#gameover_screen").hide();
+function gameover() {
+    $("#gameover_screen").show();
+    if (z == 1) {
+        $("#gameover_gif").attr("src", "asset/gif/boy/gameover.gif");
+    }
+    else {
+        $("#gameover_gif").attr("src", "asset/gif/girl/gameover.gif");
+    }
+}
 
 //get username
 function input_username(){
@@ -190,7 +211,7 @@ function clock(){
             dropout++;
         }
         if (dropout >= 1 && alert_count >= 3) {
-            $("#gameover_screen").show();
+            gameover();
             $("#background_warning").hide();
         }
         if (deadline >= 1.5) {
@@ -350,6 +371,7 @@ function move() {
                 makan.style.backgroundImage = grad_color(width_makan);
                 
                 $(document).ready(function($) {
+                    $("#background_warning").show();
                     if (z == 1) {
                         $("#gif_warning").attr("src", "asset/gif/boy/hungry.gif");
                     }
@@ -359,16 +381,15 @@ function move() {
                     $("#what").text ("You are straving ...")
                     $("#lesgo").text("Let's Eat");
                     $("#lesgo").click(function() {
-                        tambah_makan();
                         $("#background_warning").hide();
+                        tambah_makan();
                     });
-                    $("#background_warning").show();
-                }); 
-                
+                });
             }
         }
         else{
-            $("#gameover_screen").show();
+            gameover();
+            $("#background_warning").hide();
         }
         if(width_tidur >0){
             width_tidur = width_tidur - 0.8;
@@ -402,6 +423,10 @@ function move() {
                     $("#background_warning").show();
                 }); 
             }
+        }
+        else {
+            gameover();
+            $("#background_warning").hide();
         }
 
         if(width_bermain >0){
@@ -440,6 +465,10 @@ function move() {
         if(width_belajar >0){
             belajar.style.width = width_belajar + "%";
         }
+        else {
+            gameover();
+            $("#background_warning").hide();
+        }
     }
 }
 
@@ -452,8 +481,10 @@ $("#close_warning").click(function(){
 
 //fungsi tambah
 function tambah_makan() {
-    $("#gif_col").show();
-    $("#eat_gif").show();
+    if ( $("#gif_col").css('display') == 'none' || $("#gif_col").css("visibility") == "hidden"){
+        $("#gif_col").show();
+        $("#eat_gif").show();
+    }
     $(document).ready(function($) {
         setTimeout(function() {
         $("#gif_col").hide();
@@ -472,8 +503,10 @@ function tambah_makan() {
 }
 
 function tambah_tidur() {
-    $("#gif_col").show();
-    $("#sleep_gif").show();
+    if ( $("#gif_col").css('display') == 'none' || $("#gif_col").css("visibility") == "hidden"){
+        $("#gif_col").show();
+        $("#sleep_gif").show();
+    }
     $(document).ready(function($) {
         setTimeout(function() {
         $("#gif_col").hide();
@@ -493,8 +526,10 @@ function tambah_tidur() {
 }
 
 function tambah_main() {
-    $("#gif_col").show();
-    $("#play_gif").show();
+    if ( $("#gif_col").css('display') == 'none' || $("#gif_col").css("visibility") == "hidden"){
+        $("#gif_col").show();
+        $("#play_gif").show();
+    }
     $(document).ready(function($) {
         setTimeout(function() {
         $("#gif_col").hide();
@@ -516,8 +551,10 @@ var study = 0;
 function tambah_belajar() {
     deadline = 0;
     study += 1;
-    $("#gif_col").show();
-    $("#study_gif").show();
+    if ( $("#gif_col").css('display') == 'none' || $("#gif_col").css("visibility") == "hidden"){
+        $("#gif_col").show();
+        $("#study_gif").show();
+    }
     $(document).ready(function($) {
         setTimeout(function() {
             $("#study_gif").hide();
@@ -537,27 +574,6 @@ function tambah_belajar() {
             $("#congrats_name").text("Welcome to college, " + username );
             $("#naik_sem").html("<h4>You have started your 1st semester</h4>");
         }
-        /*
-        if (sem < 9) {
-            time = 10000;
-            warning = setTimeout (function() {
-                $("#background_warning").show();
-                $("#what").text ("You need to study -_-")
-                if (z == 1) {
-                    $("#gif_warning").attr("src", "asset/gif/boy/shocked.png");
-                }
-                else {
-                    $("#gif_warning").attr("src", "asset/gif/girl/shocked.png");
-                }
-                $("#lesgo").text("Let's Study");
-                $("#lesgo").click(function() {
-                    clearTimeout(warning);
-                    tambah_belajar();
-                    $("#background_warning").hide();
-                });
-            }, time) //alert utk belajar
-        }
-        */
     });
 
     if (width_makan > 0) {
