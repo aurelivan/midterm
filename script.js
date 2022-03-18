@@ -270,12 +270,6 @@ function move() {
             width_makan = width_makan - 0.8;
             makan.style.backgroundImage = gradation(width_makan);
             makan2.style.width = width_makan + "%";
-            if(width_makan2 < 20){
-                makan2.style.backgroundColor = 'red';
-            }
-            else{
-                makan2.style.backgroundColor = '#01a10e';
-            }
             if(width_makan >70){
                 document.getElementById("stat_img3").src = 'asset/stat/lambung1.png';
             }
