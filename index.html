@@ -221,9 +221,9 @@
     </div>
     <div class="row">
       <div id="stat" class="col d-flex flex-row-reverse">
-        <div id="proggress_bar3"><img id="stat_img1" src="" alt=""></div>
-        <div id="proggress_bar2"><img id="stat_img2" src="" alt=""></div>
-        <div id="proggress_bar1"><img id="stat_img3" src="" alt=""></div>
+        <div id="proggress_bar3" data-bs-toggle="tooltip" data-bs-placement="right"><img id="stat_img1" src="" alt=""></div>
+        <div id="proggress_bar2" data-bs-toggle="tooltip" data-bs-placement="right"><img id="stat_img2" src="" alt=""></div>
+        <div id="proggress_bar1" data-bs-toggle="tooltip" data-bs-placement="left"><img id="stat_img3" src="" alt=""></div>
       </div>
     </div>
     <div class="row_character row">
@@ -291,35 +291,34 @@
     <!--button action-->
     <div id="stat_first_row" class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahMakan" title="eat" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_eat.png" ></button>
+        <button id="tambahMakan" title="eat"data-bs-toggle="tooltip" data-bs-placement="right" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_eat.png" ></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahTidur" title="sleep" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_sleep.png"></button>
+        <button id="tambahTidur" title="sleep" data-bs-toggle="tooltip" data-bs-placement="right" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_sleep.png"></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahBermain" title="play" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_game.png"></button>
+        <button id="tambahBermain" title="play" data-bs-toggle="tooltip" data-bs-placement="right" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_game.png"></button>
       </div>
     </div>
     <div class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahBelajar" title="study" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_study.png"></button>
-        <p class="ml-5 mt-3 text-light">  study</p>
+        <button id="tambahBelajar" title="study" data-bs-toggle="tooltip" data-bs-placement="right" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_study.png"></button>
       </div>
     </div>
   
     <!--Button in the right-->
     <div class="right_btn row my-4">
       <div class="col-12 d-flex flex-row-reverse">
-        <button id="open_trophy" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Trophy.png"></button>
+        <button id="open_trophy" title="achievements" data-bs-toggle="tooltip" data-bs-placement="left" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Trophy.png"></button>
       </div>
     </div>
     <div class="row right_btn ">
       <div class="col-12 d-flex flex-row-reverse">
-        <button id="open_wardrobe" class="click btn btn-danger" onclick="open_pop()"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Baju.png"></button>
+        <button id="open_wardrobe" title="wardrobe" data-bs-toggle="tooltip" data-bs-placement="left" class="click btn btn-danger" onclick="open_pop()"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/Baju.png"></button>
       </div>
     </div>
     <div class="row right_btn ">
@@ -423,11 +422,11 @@
           </div>
         </div>
       </div>
-
+      <!--
       <script>
         var p2 = document.getElementById("Page2_1");
         p2.style.display = "none";
-      </script>
+      </script> -->
       
       <!--end of the page-->
       <script src="jquery-3.6.0.min.js"></script>

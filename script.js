@@ -15,6 +15,11 @@ function rgb(r, g, b, o){
     return "rgb("+r+","+g+","+b+","+o+")";
 }
 
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
 //Page 1
 
 //credit list
@@ -659,6 +664,11 @@ $("#background_congrats").hide();
 $("#close_congrats").click(function(){
     $("#background_congrats").hide();
 });
+
+stat_tooltip();
+function stat_tooltip() {
+    $("#proggress_bar1").attr("title", "Eat : " + width_makan + "%");
+}
 
 //for clock
 const hour = document.querySelector(".hour");
