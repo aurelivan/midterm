@@ -58,6 +58,8 @@ function gameover() {
     else {
         $("#gameover_gif").attr("src", "asset/gif/girl/gameover.gif");
     }
+    $("#background_info").hide();
+    $("#background_confirmation").hide();
 }
 
 //get username
@@ -137,51 +139,6 @@ function submit_username(){
 }
 //function for loading screen
 
-//function for play / start button
-$("#start").click(function(){
-    gif_gender();
-    $("#loading_screen").show();
-    chooseChara();//function for gender
-    $("#greetings").text(username);//display user name at greetings
-    document.getElementById("Page2_1").scrollIntoView({behavior: 'auto'});//jump to page 2
-    audio.play();//play backsound music 
-    $(document).ready(function($) {
-        setTimeout(function() {
-        $("#loading_screen").hide(1000);
-        }, 1500);
-    });
-    chooseChara();
-    input_username();
-    
-    $("#Page2_1").show();
-    $("#Page1").hide();
-    move();
-    init();
-});
-
-//Page 2
-
-//info/menu pop up
-$("#background_info").hide();
-
-$("#open_info").click(function(){
-    $("#background_info").show();
-});
-$("#close_info").click(function(){
-    $("#background_info").hide();
-});
-
-//reset game confirmation pop up
-$("#background_confirmation").hide();
-
-$("#open_confirmation").click(function(){
-    $("#background_confirmation").show();
-    $("#background_info").hide();
-});
-$("#close_confirmation").click(function(){
-    $("#background_confirmation").hide();
-});
-
 //Algoritm for time
 var d,h,m,s,animate;
 
@@ -214,7 +171,7 @@ function clock(){
             gameover();
             $("#background_warning").hide();
         }
-        if (deadline >= 1.5) {
+        if (deadline >= 2) {
             $("#background_warning").show();
             $("#what").text ("You need to study -_-")
             if (z == 1) {
@@ -239,6 +196,51 @@ function clock(){
     clock2(m,s);
     animate=setTimeout(clock,1000); //nanti balikin jadi 1000
 };
+
+//function for play / start button
+$("#start").click(function(){
+    init();
+    gif_gender();
+    $("#loading_screen").show();
+    chooseChara();//function for gender
+    $("#greetings").text(username);//display user name at greetings
+    document.getElementById("Page2_1").scrollIntoView({behavior: 'auto'});//jump to page 2
+    audio.play();//play backsound music 
+    $(document).ready(function($) {
+        setTimeout(function() {
+        $("#loading_screen").hide(1000);
+        }, 1500);
+    });
+    chooseChara();
+    input_username();
+    
+    $("#Page2_1").show();
+    $("#Page1").hide();
+    move();
+});
+
+//Page 2
+
+//info/menu pop up
+$("#background_info").hide();
+
+$("#open_info").click(function(){
+    $("#background_info").show();
+});
+$("#close_info").click(function(){
+    $("#background_info").hide();
+});
+
+//reset game confirmation pop up
+$("#background_confirmation").hide();
+
+$("#open_confirmation").click(function(){
+    $("#background_confirmation").show();
+    $("#background_info").hide();
+});
+$("#close_confirmation").click(function(){
+    $("#background_confirmation").hide();
+});
 
 //greetings
 greetings(m);
