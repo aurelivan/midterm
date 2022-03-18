@@ -292,7 +292,7 @@
     <!--button action-->
     <div id="stat_first_row" class="row">
       <div class="col_stat col-12 d-flex flex-row">
-        <button id="tambahMakan" title="eat" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/icon/status_eat.png" ></button>
+        <button id="tambahMakan" title="eat" class="click btn btn-danger"onmousedown="audio2.play();"><img class="button-action" src="asset/food/burger.png" ></button>
       </div>
     </div>
     <div class="row">
@@ -425,6 +425,49 @@
         </div>
       </div>
 
+      <!--testing page makan-->
+      <div id="makan_background">
+        <div id="makan_page" class="container">
+          <div class="row mb-1">
+            <div class="col-2">
+              <button id="close_makan" class="btn btn-danger d-flex flex-row">x</button>
+            </div>
+            <div class="col-8 d-flex justify-content-center">
+              <p id="title_makan">Masukan makanan ke mulut nya!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div id="bar_eat">
+                <div id="bar_eat_fill"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div id="drop" class="drop">
+              <img id="eat_char" src="">
+            </div>
+          </div>
+          <div id="food_row" class="row">
+            <div class="drag col-3 d-flex justify-content-center">
+              <img class="food_icon" src="asset/food/chips.png">
+            </div>
+            <div class="drag col-3 d-flex justify-content-center">
+              <img class="food_icon" src="asset/food/burger.png">
+            </div>
+            <div class="drag col-3 d-flex justify-content-center">
+              <img class="food_icon" src="asset/food/cupcake.png">
+            </div>
+            <div class="drag col-3 d-flex justify-content-center">
+              <img class="food_icon" src="asset/food/macaron.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!--
       <script>
         var p2 = document.getElementById("Page2_1");
         p2.style.display = "none";
@@ -435,6 +478,7 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
       <script src="script.js">
       </script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <!-- JavaScript Bundle with Popper -->
     </body>
   </html>
