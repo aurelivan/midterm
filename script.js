@@ -5,6 +5,11 @@
 var audio = new Audio('asset/Audio/Backsound/Sapphire Lotus.mp3');
 audio.loop = true;
 
+//clicking noises
+
+const audio2 = new Audio();
+audio2.src = "asset/Audio/click/click.mp3";
+
 //rgb function
 function rgb(r, g, b, o){
     return "rgb("+r+","+g+","+b+","+o+")";
@@ -113,6 +118,7 @@ function submit_username(){
 
 //function for play / start button
 $("#start").click(function(){
+    gif_gender();
     $("#loading_screen").show();
     chooseChara();//function for gender
     $("#greetings").text(username);//display user name at greetings
@@ -239,22 +245,22 @@ function change_back(){
     if(m >= 00){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/malam.png)'
-        },5000);
+        },1000);
     }
-    if(m >= 08 && m<=11){
+    if(m >= 08 && m<12){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/pagi.png)'
-        },5000);
+        },4000);
     }
     if(m >= 12 && m<=15){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/siang.png)'
-        },5000);
+        },4000);
     }
     if(m >= 16 && m<=19){
         $("#Page2_1").css({
             backgroundImage : 'url(asset/background/sore.png)'
-        },5000);
+        },1000);
     }
     if(m >= 18){
         $("#Page2_1").css({
@@ -267,6 +273,26 @@ function change_back(){
 
 
 //Algortm for gif
+
+function gif_gender()
+{
+    if (z == 1)
+    {
+        document.getElementById('play_gif').src='asset/gif/boy/play.gif';
+        document.getElementById('eat_gif').src='asset/gif/boy/eat.gif';
+        document.getElementById('study_gif').src='asset/gif/boy/study.gif';
+        document.getElementById('sleep_gif').src='asset/gif/boy/sleep.gif';
+    }
+    else if (z == 0)
+    {
+        document.getElementById('play_gif').src='asset/gif/girl/play.gif';
+        document.getElementById('eat_gif').src='asset/gif/girl/eat.gif';
+        document.getElementById('study_gif').src='asset/gif/girl/study.gif';
+        document.getElementById('sleep_gif').src='asset/gif/girl/sleep.gif';
+    }
+}
+
+
 //Tombol back
 function back() {
     var p1 = document.getElementById("Page1");
@@ -731,3 +757,13 @@ $("#open_trophy").click(function(){
 $("#close_trophy").click(function(){
     $("#background_trophy").hide();
 }); $("#awards").show();
+
+
+//pause menu
+$("#pause_screen").hide();
+$("#open_pause").click(function(){
+    $("#pause_screen").show();
+});
+$("#close_pause").click(function(){
+    $("#pause_screen").hide();
+});
